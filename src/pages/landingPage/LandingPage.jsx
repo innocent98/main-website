@@ -1,9 +1,13 @@
 import React from 'react'
-import "./landingpage.sass"
+import "./landingpage.scss"
+import Navbar from '../../components/nav/Navbar'
+
 
 const LandingPage = () => {
   return (
-    <div>LandingPage</div>
+    <>
+    <Navbar/>
+    </>
   )
 }
 
