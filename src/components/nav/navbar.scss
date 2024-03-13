@@ -1,11 +1,49 @@
 nav {
     display: flex;
     justify-content: space-between;
-    background-color: aqua;
+    align-items: center;
+    padding: 10px 60px;
+    border-bottom: 1px solid #eee5f1;
 
     .left-nav {
+        flex: 1;
+        h2 {
+            margin: 0;
+            color: #B304FD;
+        }
         .img {
 
         }
+    }
+
+    .mid-nav {
+        color: #755F7E;
+        flex: 2;
+        ul {
+            display: flex;
+            gap: 32px;
+            font-size: 16px;
+            font-weight: 500;
+        
+        }
+        li {
+            list-style: none;
+        }
+    }
+
+    .right-nav {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        align-items: center;
+    }
+    .signup {
+        padding: 10px 20px;
+        border-radius: 7px;
+        background:#B304FD;
+        display: flex;
+        align-items: center;
+        color: #ffff;
     }
 }
