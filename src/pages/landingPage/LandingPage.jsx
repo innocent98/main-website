@@ -5,6 +5,7 @@ import Hero from '../../components/herosection/Hero'
 import Clientframe from '../../components/client-frame/Clientframe'
 import FrelancerFrame from '../../components/Freelancer-frame/FrelancerFrame'
 import Recommend from '../../components/recommend/Recommend'
+import Benefit from '../../components/Benefits/Benefit'
 
 
 
@@ -17,6 +18,7 @@ const LandingPage = () => {
     <Clientframe/>
     <FrelancerFrame/>
     <Recommend/>
+    <Benefit/>
     </>
   )
 }

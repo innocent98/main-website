@@ -1,6 +1,22 @@
 .recom {
     padding: 0px 60px;
     text-align: center;
+    position: relative;
+
+    img {
+      position: absolute;
+    }
+    .icon {
+      top: 0;
+      left: 32%;
+ 
+    }
+    .icon1 {
+      top: 3.3rem;
+      right: 36%;
+
+      
+    }
 
    
   p {
