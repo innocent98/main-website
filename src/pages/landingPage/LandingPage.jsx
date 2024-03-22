@@ -7,6 +7,8 @@ import FrelancerFrame from '../../components/Freelancer-frame/FrelancerFrame'
 import Recommend from '../../components/recommend/Recommend'
 import Benefit from '../../components/Benefits/Benefit'
 import HowItWorks from '../../components/Howitworks/HowItWorks'
+import ZealToken from '../../components/zealtoken/ZealToken'
+import BlogFrame from '../../components/blog-frame/BlogFrame'
 
 
 
@@ -21,6 +23,8 @@ const LandingPage = () => {
     <Recommend/>
     <Benefit/>
     <HowItWorks/>
+    <ZealToken/>
+    <BlogFrame/>
     </>
   )
 }
