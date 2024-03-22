@@ -1,5 +1,8 @@
 import React from 'react'
 import "./benefits.scss"
+import image1 from "../../assets/Frame 30.png"
+import icon from "../../assets/Icon.png"
+
 
 const Benefit = () => {
   return (
@@ -7,6 +10,7 @@ const Benefit = () => {
         <div className='benefit-contents'>
             <h2>Zealworkers Affiliate Benefits</h2>
             <ul>
+            
                 <li>
                     <h3>Commisions</h3>
                     <p>Get 70% of the first contract have a share of upto $150 on every new client refer to the network.</p>
@@ -23,7 +27,9 @@ const Benefit = () => {
                 </li>
             </ul>
         </div>
-        <div className='benefit-image'></div>
+        <div className='benefit-image'>
+            <img src={image1}/>
+        </div>
 
     </div>
   )

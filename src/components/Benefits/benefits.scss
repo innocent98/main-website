@@ -1,0 +1,29 @@
+.benefit {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0px 60px;
+    
+
+
+    .benefit-contents {
+        width: 80%;
+        
+        li {
+          list-style: url(../../assets/Icon.png); 
+        }
+
+        h3,p {
+            margin-left: .5rem;
+        }
+        
+    }
+
+
+    img {
+        width: 70%;
+    }
+    .benefit-image {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
