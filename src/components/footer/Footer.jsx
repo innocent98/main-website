@@ -55,7 +55,7 @@ const Footer = () => {
         </div>
         <hr/>
         <div className='down'>
-          <p>&copy;2024 Zealworkers.</p>
+          <p>&copy; 2024 Zealworkers.</p>
           <select>
             <option value="English">English</option>
             <option value="Spanish">Spanish</option>
