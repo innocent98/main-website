@@ -1,16 +1,30 @@
 .works {
     padding: 0px 60px;
-   text-align: center;
+    text-align: center;
 }
 .procedure {
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: left;
+  
 
+    > div {
+        background-color: rgb(250, 243, 250);
+        width: 398px;
+        height: 200px;
+        padding: 27px;
+    }
     .arrow {
         width: 62px;
         height: 32px;
+    }
+     h3, p {
+      
+        margin-bottom: 0;   
+    }
+    p {
+        margin-top: 5px;
     }
 
 }

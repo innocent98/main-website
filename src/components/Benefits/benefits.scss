@@ -1,19 +1,31 @@
 .benefit {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 0px 60px;
+    padding: 60px;
     
 
 
     .benefit-contents {
-        width: 80%;
+        width: 70%;
+
+        h2 {
+            font-size: 1.9rem;
+        }
         
         li {
           list-style: url(../../assets/Icon.png); 
+          margin-top: 2rem;
         }
 
         h3,p {
-            margin-left: .5rem;
+            margin: 0;
+            margin-left: 0.5rem;
+        }
+       
+
+        p {
+           
+            color: #777777;
         }
         
     }

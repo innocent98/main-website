@@ -2,11 +2,11 @@
     display: flex;
     justify-content: space-between;
     padding: 0px 60px;
-   
+    margin-top: 2rem;
     align-items: center;
  
     .section-title {
-        width: 30%;
+        width: 35%;
         display: flex;
         flex-direction: column;
       
@@ -23,14 +23,20 @@
     }
 
     .section-title >:nth-child(1) {
-        background: rgb(236, 234, 234);
-        color: purple;
-        padding: 10px 24px;
+        background: rgb(247, 240, 240);
         width: fit-content;
+        padding: .3rem 1.2rem;
+        border-radius: 20px;
+        color: purple;
+       
+      
+      
+        text-align: center;
+      
     }
 
     .btn {
-        padding: 12px 30px;
+            padding: 12px 30px;
             border-radius: 7px;
             background:#B304FD;
             display: flex;

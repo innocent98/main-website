@@ -6,7 +6,7 @@ const ZealToken = () => {
   return (
     <div className='zealtoken'>
         <div className='zeal-header'>
-        <h2>Zealworkers Tokens</h2>
+        <h1>Zealworkers Tokens</h1>
         <p>Aside the traditional currency, you will also get our token <br/> for transactions too.</p>
         </div>
        <div className='zeal-image'>
