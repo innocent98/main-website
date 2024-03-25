@@ -11,9 +11,7 @@ nav {
             margin: 0;
             color: #B304FD;
         }
-        .img {
-
-        }
+       
     }
 
     .mid-nav {
@@ -38,6 +36,7 @@ nav {
         gap: 1rem;
         align-items: center;
         color: #B304FD;
+        
     }
     .signup {
         padding: 10px 20px;
@@ -48,3 +47,38 @@ nav {
         color: #ffff;
     }
 }
+
+/* media queries (medium screen) */
+@media screen  and (max-width: 1024px) {
+}
+  
+  /* media queries (small screen) */
+  @media screen  and (max-width: 600px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:10px 20px;
+        border-bottom: 1px solid #eee5f1;
+    
+        .mid-nav {
+            color: #755F7E;
+            flex: 2;
+            display: none;
+           
+        }
+    
+        .right-nav {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            align-items: center;
+            color: #B304FD;
+            display: none;
+            
+        }
+        
+    }
+   
+  }

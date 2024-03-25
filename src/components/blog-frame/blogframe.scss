@@ -23,3 +23,42 @@
         }
     }
 }
+
+  /* media queries (medium screen) */
+  @media screen  and (max-width: 1024px) {
+}
+  
+  /* media queries (small screen) */
+  @media screen  and (max-width: 600px) {
+    .blogframe {
+        padding: 60px 24px;
+        background: #ECEDF2;
+       
+    
+        .blogframe-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+    
+            h1,p {
+                margin: 0;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            p {
+                font-size: 20px;
+            }
+            .btn {
+                padding: 12px 30px;
+                border-radius: 7px;
+                background:#B304FD;
+                display: flex;
+                align-items: center;
+                color: #ffff;
+                width: fit-content;
+    
+            }
+        }
+    }
+  }

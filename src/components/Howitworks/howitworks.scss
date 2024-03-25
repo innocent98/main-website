@@ -28,3 +28,48 @@
     }
 
 }
+
+/* media queries (medium screen) */
+@media screen  and (max-width: 1024px) {
+}
+  
+  /* media queries (small screen) */
+  @media screen  and (max-width: 600px) {
+    .works {
+        padding: 40px 24px;
+        text-align: center;
+    }
+    .procedure {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        gap: 3rem;
+      
+    
+        > div {
+            background-color: rgb(250, 243, 250);
+            width: 300px;
+            height: 200px;
+            padding: 29px;
+        }
+        .arrow {
+            width: 62px;
+            height: 32px;
+            display: none;
+        }
+      
+        h3 {
+            font-size: 24px;
+            margin-bottom: 0; 
+        }
+        p {
+            font-size: 20px;
+            margin-top: 5px;
+            margin-bottom: 0; 
+        }
+    
+    }
+    
+  }
