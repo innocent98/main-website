@@ -11,6 +11,14 @@ import arrow from "../../assets/Vecr.png"
 
 
 const Footer = () => {
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <footer>
         <div className='top'>
@@ -50,7 +58,7 @@ const Footer = () => {
                 </ul>
 
                 <ul>
-                  <div className='arrow'><img src={arrow} alt='icon'/></div>
+                  <div className='arrow' onClick={scrollToTop}><img src={arrow} alt='icon'/></div>
                 </ul>
             </div>
         </div>

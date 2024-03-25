@@ -19,7 +19,7 @@ footer {
         flex: 1;
         p {
             font-weight: 400;
-            font-size: 14px; 
+            font-size: 16px; 
             line-height: 21.8px;
         }
         .circle {
@@ -54,13 +54,13 @@ footer {
             margin: 0;
             margin-bottom: 1.5rem;
             font-weight: 600;
-            font-size: 20px;
+            font-size: 24px;
         }
         li {
             list-style: none;
             margin-bottom: 1rem;
             font-weight: 400;
-            font-size: 14px;
+            font-size: 16px;
         }
         ul {
             margin: 0;
@@ -80,6 +80,8 @@ footer {
 
     p {
         margin: 0;
+        font-size: 16px;
+        line-height: 22px;
     }
 
     select {
@@ -160,13 +162,15 @@ footer {
                 margin: 0;
                 margin-bottom: 1.5rem;
                 font-weight: 600;
-                font-size: 20px;
+                font-size: 24px;
+                line-height: 33px;
             }
             li {
                 list-style: none;
                 margin-bottom: 1rem;
                 font-weight: 400;
-                font-size: 14px;
+                font-size: 16px;
+                line-height: 22px;
             }
             ul {
                 margin: 0;
@@ -185,6 +189,8 @@ footer {
     .down {
         display: flex;
         justify-content: space-between;
+        font-size: 16px;
+        line-height: 22px;
     
         p {
             margin: 0;
