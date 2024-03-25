@@ -1,0 +1,5 @@
+@import "../../../scss//mixins";
+
+.input--default {
+  @include input(9px, 9px);
+}

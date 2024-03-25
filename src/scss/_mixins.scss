@@ -1,0 +1,63 @@
+@import "./colors";
+
+// mediaquery mixin
+@mixin mq($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+//container mixins
+@mixin block() {
+  display: block;
+}
+
+@mixin flex_between($width: inherit, $dir: row) {
+  display: flex;
+  align-items: center;
+  flex-direction: $dir;
+  justify-content: space-between;
+}
+
+@mixin flex_fit($align: center, $dir: row, $gap: 0) {
+  gap: $gap;
+  display: flex;
+}
+
+@mixin flex_center($align: center, $dir: row, $gap, $width) {
+  gap: $gap;
+  display: flex;
+  width: $width;
+  align-items: center;
+  justify-content: center;
+}
+@mixin flex_align($gap: 0) {
+  gap: $gap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//button mixin
+@mixin btn($outline, $color, $text, $border, $cursor, $bg, $width, $padding) {
+  width: $width;
+  color: $color;
+  cursor: $cursor;
+  border: $border;
+  font-size: $text;
+  outline: $outline;
+  padding: $padding;
+  border-radius: 8px;
+  background-color: $bg;
+}
+
+//input mixin
+@mixin input($pt: 0, $pb: 0) {
+  outline: none;
+  padding-top: $pb;
+  text-indent: 7px;
+  border-radius: 8px;
+  padding-bottom: $pb;
+  color: $slate;
+  border: 1.7px solid $grey;
+}
