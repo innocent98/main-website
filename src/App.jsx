@@ -1,4 +1,5 @@
-import './App.scss'
+import './App.css'
+import About from './pages/aboutPage/About'
 import LandingPage from './pages/landingPage/LandingPage'
 
 
@@ -8,6 +9,7 @@ function App() {
   
      <div>
       <LandingPage/>
+      <About/>
      </div>
   )
 }
