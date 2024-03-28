@@ -1,6 +1,7 @@
 import React from 'react'
 import "./navbar.scss"
 import logo from "../../../assets/logo.svg"
+import { Link } from 'react-router-dom'
 
 
 
@@ -12,10 +13,11 @@ const Navbar = () => {
         </div>
         <div className='mid-nav'>
             <ul>
-                <li>Home</li>
-                <li>About Us</li>
-                <li>FAQs</li>
-                <li>Affiliate Program</li>
+                <Link className='link' to="/"><li>Home</li></Link>
+                <Link className='link' to="/about"><li>About Us</li></Link>
+                <Link className='link' to="/faq"><li>FAQs</li></Link>
+                <Link className='link' to="/affiliate"><li>Affiliate Program</li></Link>
+
                 <li>Contact Us</li>
             </ul>
         </div>

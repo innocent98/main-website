@@ -2,7 +2,7 @@
 @import "../../scss/typography.scss";
 
 .num {
-    width: 314px;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -25,4 +25,9 @@
         margin: 0;
         color: $slate;
     }
+   
+}
+.special-card {
+    color: red;
+    font-size: 5rem;
 }

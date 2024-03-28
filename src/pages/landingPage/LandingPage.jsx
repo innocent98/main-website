@@ -16,7 +16,6 @@ import Footer from '../../components/landingpage/footer/Footer'
 const LandingPage = () => {
   return (
     <>
-    <Navbar/>
     <Hero/>
     <Clientframe/>
     <FrelancerFrame/>
@@ -25,7 +24,6 @@ const LandingPage = () => {
     <HowItWorks/>
     <ZealToken/>
     <BlogFrame/>
-    <Footer/>
     </>
   )
 }
