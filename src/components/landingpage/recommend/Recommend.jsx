@@ -1,7 +1,7 @@
 import React from 'react'
 import "./recommend.scss"
-import icon from "../../assets/3dicons.png"
-import icon1 from "../../assets/3diconss.png"
+import icon from "../../../assets/3dicons.png"
+import icon1 from "../../../assets/3diconss.png"
 
 const Recommend = () => {
   return (

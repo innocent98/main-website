@@ -1,6 +1,6 @@
 import React from 'react'
 import "./zealtoken.scss"
-import zealIcon from "../../assets/image 10.png"
+import zealIcon from "../../../assets/image 10.png"
 
 const ZealToken = () => {
   return (

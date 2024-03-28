@@ -1,7 +1,7 @@
 import React from 'react'
 import "./benefits.scss"
-import image1 from "../../assets/Frame 30.png"
-import icon from "../../assets/Icon.png"
+import image1 from "../../../assets/Frame 30.png"
+import icon from "../../../assets/Icon.png"
 
 
 const Benefit = () => {

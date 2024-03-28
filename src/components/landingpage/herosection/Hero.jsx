@@ -1,7 +1,7 @@
 import React from 'react'
 import "./hero.scss"
-import congratulations from "../../assets/Congratulations 1.png"
-import image1 from "../../assets/IMG Frame.png"
+import congratulations from "../../../assets/Congratulations 1.png"
+import image1 from "../../../assets/IMG Frame.png"
 
 const hero = () => {
   return (

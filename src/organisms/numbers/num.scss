@@ -1,0 +1,28 @@
+@import "../../scss/color.scss";
+@import "../../scss/typography.scss";
+
+.num {
+    width: 314px;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    h1 {
+        font-size: 64px;
+        line-height: 27.43px;
+        margin-bottom: 40px;
+        color: $blue;
+
+    }
+    h2 {
+        font-size: 24px;
+        line-height: 32.74px;
+        margin: 0;
+
+    }
+    p {
+        font-size: 20px;
+        line-height: 27.28px;
+        margin: 0;
+        color: $slate;
+    }
+}

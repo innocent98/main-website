@@ -1,0 +1,14 @@
+@import "../../../scss/color.scss";
+@import "../../../scss/typography.scss";
+
+.numbers {
+    padding: 60px;
+    text-align: center;
+    background-color: $primary_color;
+    background-color: rgba(231, 113, 172, 0.1);
+    .numbers-content {
+        display: flex;
+        text-align: left;
+        justify-content: center;
+    }
+}

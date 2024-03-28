@@ -1,10 +1,10 @@
 import React from 'react'
 import "./footer.scss"
-import logo from "../../assets/logo.svg"
-import facebook from "../../assets/Vectr.png"
-import linkedin from "../../assets/Vectors.png"
-import twiter from "../../assets/Ver.png"
-import arrow from "../../assets/Vecr.png"
+import logo from "../../../assets/logo.svg"
+import facebook from "../../../assets/Vectr.png"
+import linkedin from "../../../assets/Vectors.png"
+import twiter from "../../../assets/Ver.png"
+import arrow from "../../../assets/Vecr.png"
 
 
 

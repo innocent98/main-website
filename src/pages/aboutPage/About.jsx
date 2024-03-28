@@ -1,9 +1,18 @@
 import React from 'react'
-import "./about.scss"
+import Navbar from '../../components/landingpage/nav/Navbar'
+import Header from '../../components/aboutpage/header/Header'
+import Numbers from '../../components/aboutpage/numbers/Numbers'
+
 
 const About = () => {
   return (
-    <div>About</div>
+    <div>
+      <Navbar/>
+      <Header/>
+      <Numbers/>
+      
+    
+    </div>
   )
 }
 

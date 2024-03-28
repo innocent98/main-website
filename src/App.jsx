@@ -1,6 +1,10 @@
 import './App.css'
-import About from './pages/aboutPage/About'
-import LandingPage from './pages/landingPage/LandingPage'
+import About from './pages/aboutpage/About'
+import LandingPage from './pages/landingpage/LandingPage'
+
+
+
+
 
 
 function App() {
@@ -8,8 +12,7 @@ function App() {
   return (
   
      <div>
-      <LandingPage/>
-      <About/>
+       <About/>
      </div>
   )
 }
