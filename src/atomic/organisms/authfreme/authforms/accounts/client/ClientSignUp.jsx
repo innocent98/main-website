@@ -7,8 +7,6 @@ import Image from "../../../../../atoms/image/Image"
 import Button from '../../../../../atoms/button/Button'
 import Container from '../../../../../atoms/container/Container'
 
-
-//this page is still under development
 const ClientSignUp = () => {
     //password visibility state
     const [isPasswordVisible, setIsPasswordVisible] = useState(false)
@@ -51,7 +49,9 @@ const ClientSignUp = () => {
                         <p>I agree to the <Link className="link">Privacy Policy</Link> and <Link className="link">Terms of Service</Link></p>
                     </Container>
                     <Button variant="default">Create Account</Button>
-                    <p>Already have an account? <Link className='link'>Login</Link></p>
+                    <Container variant="wrapper--flex--center">
+                        <p>Already have an account? <Link className='link' to="/signin">Login</Link></p>
+                    </Container>
                 </section>
             </form>
         </>

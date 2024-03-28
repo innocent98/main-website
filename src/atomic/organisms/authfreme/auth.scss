@@ -21,14 +21,14 @@
       font-size: $text_xxl;
       color: $white;
     }
-    .left-frame--textsection > p {
+    .left-frame--textsection > .left-frame--textsection__child{
       color: $tint_white;
-      font-size: $text_md;
+      font-size: $text_sm;
+      margin-bottom: 20px;
       line-height: 15px;
     }
   }
 }
-
 //>> InterractiveFormComponent
 .wrapper--link-container {
   @include mq(220px) {
@@ -44,11 +44,11 @@
     display: flex;
     align-items: end;
     justify-content: end;
-    .link {
-      color: $zeal_purple;
-      text-align: center;
-    }
   }
+}
+.link {
+  color: $zeal_purple;
+  text-align: center;
 }
 
 .signup {
@@ -76,22 +76,22 @@
     .auth--wrapper__form-itemOne {
       width: 100%;
       margin-bottom: 20px;
-      @include input(15px, 15px);
+      @include input(15px, 15px, $grey);
     }
     .auth--wrapper__form-itemTwo {
       width: 100%;
       margin-bottom: 20px;
-      @include input(15px, 15px);
+      @include input(15px, 15px, $grey);
     }
     .auth--wrapper__form-itemThree {
       width: 100%;
       margin-bottom: 20px;
-      @include input(15px, 15px);
+      @include input(15px, 15px, $grey);
     }
     .auth--wrapper__form-itemFour {
       width: 100%;
       margin-bottom: 20px;
-      @include input(15px, 15px);
+      @include input(15px, 15px, $grey);
     }
     .auth--wrapper {
       gap: 20px;
@@ -138,25 +138,25 @@
       grid-column-start: 1;
       grid-column-end: 3;
       margin-bottom: 0;
-      @include input(15px, 15px);
+      @include input(15px, 15px, $grey);
     }
     .auth--wrapper__form-itemTwo {
       grid-column-start: 3;
       grid-column-end: 5;
       margin-bottom: 0;
-      @include input(15px, 15px);
+      @include input(15px, 15px, $grey);
     }
     .auth--wrapper__form-itemThree {
       grid-column-start: 1;
       grid-column-end: 5;
       margin-bottom: 0;
-      @include input(15px, 15px);
+      @include input(15px, 15px, $grey);
     }
     .auth--wrapper__form-itemFour {
       grid-column-start: 1;
       grid-column-end: 5;
       margin-bottom: 0;
-      @include input(15px, 15px);
+      @include input(15px, 15px, $grey);
     }
     .gridItemOne,
     .gridItemTwo {
@@ -226,5 +226,108 @@
       color: $zeal_purple;
       background-color: rgba($color: $zeal_purple, $alpha: 0.1);
     }
+  }
+}
+
+.password--layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  @include mq(220px) {
+    .password--layout__wrapper {
+      width: 100%;
+    }
+    .auth--input {
+      width: 25px;
+      text-align: center;
+      text-indent: 0;
+      @include input(10px, 8px, $grey);
+    }
+    .input--wrapper {
+      gap: 6px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  @include mq(768px) {
+    .password--layout__wrapper {
+      width: 50%;
+    }
+    .auth--input {
+      width: 37px;
+      text-align: center;
+      text-indent: 0;
+      @include input(10px, 15px, $grey);
+    }
+    .input--wrapper {
+      gap: 10px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .wrapper--link-container {
+    align-items: start;
+    justify-content: start;
+    margin-bottom: 25px;
+    .link {
+      color: $zeal_purple;
+    }
+  }
+  @include mq(220px) {
+    .layout--text {
+      text-align: left;
+      & > p {
+        color: $slate;
+        font-size: $text_sm;
+      }
+      & > h3 {
+        font-size: $text_md;
+      }
+    }
+  }
+  @include mq(768px) {
+    .layout--text {
+      text-align: center;
+      & > p {
+        color: $slate;
+        font-size: $text_md;
+      }
+      & > h3 {
+        font-size: $text_xxl;
+      }
+    }
+  }
+  .layout--input {
+    width: 100%;
+    margin-bottom: 18px;
+    @include input(15px, 15px, $grey);
+  }
+  .button--link {
+    color: white;
+    text-decoration: none;
+  }
+  .auth--wrapper__form{
+    position: relative;
+  }
+  .auth--wrapper__form-itemFour{
+    @include input(15px, 15px, $grey);
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .auth--wrapper__form-itemFour-error{
+    @include input(15px, 15px, $error);
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .auth--wrapper-password__icon{
+    top: 16px;
+    right: 10px;
+    color: $slate;
+    cursor: pointer;
+    position: absolute;
+  }
+  .error--message{
+    color: $error;
   }
 }

@@ -1,5 +1,9 @@
 @import "../../../scss//mixins";
+@import "../../../scss//colors";
 
 .input--default {
-  @include input(9px, 9px);
+  @include input(9px, 9px, $grey);
+}
+.input--error{
+  @include input(15px, 15px, $error)
 }
