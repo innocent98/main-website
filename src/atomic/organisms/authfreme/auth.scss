@@ -1,0 +1,333 @@
+@import "../../../scss/colors";
+@import "../../../scss/mixins";
+@import "../../../scss/typography";
+
+//>>leftFrame
+.left-frame {
+  @include mq(220px) {
+    display: none;
+  }
+  @include mq(768px) {
+    display: block;
+    height: 115vh;
+    width: 35%;
+    position: fixed;
+    z-index: 1000;
+    background: rgba($color: $surface_purple, $alpha: 0.9);
+    .left-frame--img {
+      margin-top: 15%;
+    }
+    .left-frame--info__masthead {
+      font-size: $text_xxl;
+      color: $white;
+    }
+    .left-frame--textsection > .left-frame--textsection__child{
+      color: $tint_white;
+      font-size: $text_sm;
+      margin-bottom: 20px;
+      line-height: 15px;
+    }
+  }
+}
+//>> InterractiveFormComponent
+.wrapper--link-container {
+  @include mq(220px) {
+    align-items: start;
+    justify-content: start;
+    margin-bottom: 25px;
+    .link {
+      color: $zeal_purple;
+    }
+  }
+  @include mq(768px) {
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+  }
+}
+.link {
+  color: $zeal_purple;
+  text-align: center;
+}
+
+.signup {
+  @include mq(220px) {
+    width: 100%;
+    margin-left: 0;
+    .signup--img-container {
+      display: inline-flex;
+      margin-bottom: 25px;
+    }
+    .auth--wrapper__form {
+      display: block;
+      .auth--wrapper-password {
+        width: 100%;
+        position: relative;
+        .auth--wrapper-password__icon {
+          top: 16px;
+          right: 10px;
+          color: $slate;
+          cursor: pointer;
+          position: absolute;
+        }
+      }
+    }
+    .auth--wrapper__form-itemOne {
+      width: 100%;
+      margin-bottom: 20px;
+      @include input(15px, 15px, $grey);
+    }
+    .auth--wrapper__form-itemTwo {
+      width: 100%;
+      margin-bottom: 20px;
+      @include input(15px, 15px, $grey);
+    }
+    .auth--wrapper__form-itemThree {
+      width: 100%;
+      margin-bottom: 20px;
+      @include input(15px, 15px, $grey);
+    }
+    .auth--wrapper__form-itemFour {
+      width: 100%;
+      margin-bottom: 20px;
+      @include input(15px, 15px, $grey);
+    }
+    .auth--wrapper {
+      gap: 20px;
+      display: block;
+    }
+    .gridItemOne,
+    .gridItemTwo {
+      width: 100%;
+      padding: 13px 0;
+      font-weight: 500;
+      font-size: $text_sm;
+      margin-bottom: 20px;
+      @include flex_align(17px);
+    }
+  }
+  @include mq(768px) {
+    width: 55%;
+    margin-left: 40%;
+    .signup--img-container {
+      display: none;
+    }
+    .auth--wrapper {
+      gap: 20px;
+      display: flex;
+    }
+    .auth--wrapper__form {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      .auth--wrapper-password {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        position: relative;
+        .auth--wrapper-password__icon {
+          top: 15px;
+          right: 10px;
+          color: $slate;
+          cursor: pointer;
+          position: absolute;
+        }
+      }
+    }
+    .auth--wrapper__form-itemOne {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      margin-bottom: 0;
+      @include input(15px, 15px, $grey);
+    }
+    .auth--wrapper__form-itemTwo {
+      grid-column-start: 3;
+      grid-column-end: 5;
+      margin-bottom: 0;
+      @include input(15px, 15px, $grey);
+    }
+    .auth--wrapper__form-itemThree {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      margin-bottom: 0;
+      @include input(15px, 15px, $grey);
+    }
+    .auth--wrapper__form-itemFour {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      margin-bottom: 0;
+      @include input(15px, 15px, $grey);
+    }
+    .gridItemOne,
+    .gridItemTwo {
+      width: 100%;
+      padding: 13px 0;
+      font-size: $text_sm;
+      font-weight: 500;
+      @include flex_align(17px);
+    }
+  }
+  .wrapper--flex {
+    margin-bottom: 20px;
+  }
+  .auth--wrapper__hr {
+    height: 1px;
+    background-color: $grey;
+    width: 43%;
+  }
+  .auth--wrapper__text {
+    color: $slate;
+    font-size: $text_s;
+    background-color: $white;
+    padding: 0 9px;
+    width: 200px;
+    text-align: center;
+  }
+}
+
+.wraper--btn-group {
+  border: 1px solid $grey;
+  padding: 12px;
+  border-radius: 7px;
+  box-shadow: 0px 7px 14px -5px rgba(0, 0, 0, 0.1);
+  @include mq(220px) {
+    width: fit-content;
+    padding: 10px;
+    .wrapper--btn-group__itemOne,
+    .wrapper--btn-group__itemTwo {
+      width: 130px;
+      color: $slate;
+      padding: 9px 0;
+      border-radius: 0;
+    }
+    .wrapper--btn-group__itemOne-active,
+    .wrapper--btn-group__itemTwo-active {
+      width: 100px;
+      padding: 9px 0;
+      border-radius: 0;
+      color: $zeal_purple;
+      background-color: rgba($color: $zeal_purple, $alpha: 0.1);
+    }
+  }
+  @include mq(768px) {
+    width: fit-content;
+    .wrapper--btn-group__itemOne,
+    .wrapper--btn-group__itemTwo {
+      width: 200px;
+      color: $slate;
+      padding: 9px 0;
+      border-radius: 0;
+    }
+    .wrapper--btn-group__itemOne-active,
+    .wrapper--btn-group__itemTwo-active {
+      width: 200px;
+      padding: 9px 0;
+      border-radius: 0;
+      color: $zeal_purple;
+      background-color: rgba($color: $zeal_purple, $alpha: 0.1);
+    }
+  }
+}
+
+.password--layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  @include mq(220px) {
+    .password--layout__wrapper {
+      width: 100%;
+    }
+    .auth--input {
+      width: 25px;
+      text-align: center;
+      text-indent: 0;
+      @include input(10px, 8px, $grey);
+    }
+    .input--wrapper {
+      gap: 6px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  @include mq(768px) {
+    .password--layout__wrapper {
+      width: 50%;
+    }
+    .auth--input {
+      width: 37px;
+      text-align: center;
+      text-indent: 0;
+      @include input(10px, 15px, $grey);
+    }
+    .input--wrapper {
+      gap: 10px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .wrapper--link-container {
+    align-items: start;
+    justify-content: start;
+    margin-bottom: 25px;
+    .link {
+      color: $zeal_purple;
+    }
+  }
+  @include mq(220px) {
+    .layout--text {
+      text-align: left;
+      & > p {
+        color: $slate;
+        font-size: $text_sm;
+      }
+      & > h3 {
+        font-size: $text_md;
+      }
+    }
+  }
+  @include mq(768px) {
+    .layout--text {
+      text-align: center;
+      & > p {
+        color: $slate;
+        font-size: $text_md;
+      }
+      & > h3 {
+        font-size: $text_xxl;
+      }
+    }
+  }
+  .layout--input {
+    width: 100%;
+    margin-bottom: 18px;
+    @include input(15px, 15px, $grey);
+  }
+  .button--link {
+    color: white;
+    text-decoration: none;
+  }
+  .auth--wrapper__form{
+    position: relative;
+  }
+  .auth--wrapper__form-itemFour{
+    @include input(15px, 15px, $grey);
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .auth--wrapper__form-itemFour-error{
+    @include input(15px, 15px, $error);
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .auth--wrapper-password__icon{
+    top: 16px;
+    right: 10px;
+    color: $slate;
+    cursor: pointer;
+    position: absolute;
+  }
+  .error--message{
+    color: $error;
+  }
+}
