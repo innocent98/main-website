@@ -1,0 +1,27 @@
+
+
+.blogframe {
+    padding: 60px;
+    display: flex;
+    gap: 44px;
+    justify-content: center;
+
+        .blogframe-content {
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        h2 {
+            font-size: 32px;
+            line-height: 44px;
+            margin: 0;
+        }
+        p {
+            font-size: 20px;
+            line-height: 27.28px;
+            margin: 0;
+            
+           
+        }
+}
