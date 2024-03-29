@@ -1,0 +1,50 @@
+.zealtoken {
+    text-align: center;
+    padding: 60px;
+
+    h1 {
+        font-size: 50px;
+        margin: 0;
+    }
+    p {
+       
+        color: #777777;
+    }
+
+    .zeal-image {
+        margin-top: 3rem;
+        img {
+            width: 500px;
+        
+        }
+    }
+}
+
+/* media queries (medium screen) */
+@media screen  and (max-width: 1024px) {
+}
+  
+  /* media queries (small screen) */
+  @media screen  and (max-width: 600px) {
+    .zealtoken {
+        text-align: center;
+        padding: 60px 24px ;
+    
+        h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+        p {
+            font-size: 18px;
+            color: #777777;
+        }
+    
+        .zeal-image {
+            margin-top: 3rem;
+            img {
+                width: 325px;
+            
+            }
+        }
+    }
+  }
