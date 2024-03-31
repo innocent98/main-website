@@ -1,10 +1,13 @@
 import React from 'react'
-import imageframe from "../../assets/IMG Frame2.png"
+import imageframe from "../../../assets/IMG Frame2.png"
 import "./affiliate.scss"
-import Button from '../../atoms/button/Button'
+import Button from '../../../atoms/button/Button'
+
+
 
 const Affiliate = () => {
   return (
+    <>
     <div className='container header'>
   
       <div className='header-content'>
@@ -22,6 +25,8 @@ const Affiliate = () => {
 
       </div>
   </div>
+  
+  </>
   )
 }
 

@@ -1,0 +1,36 @@
+.accordion-item {
+    border-bottom: 1px solid #D9DBE9;
+    margin-bottom: 10px;
+   
+  }
+  
+  .accordion-title {
+    display: flex;
+    justify-content: space-between; // Align items at the start and end of the container
+    background-color: none;
+    padding: 30px 0px;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 500;
+  
+    &.open {
+      background-color: none;
+      padding-bottom: 0;
+    }
+  
+    .accordion-icon {
+      margin-left: 10px; // Add spacing between the title and icon
+    }
+  }
+  
+  .accordion-content {
+    padding:10px 0px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+    
+  }
+  
+  

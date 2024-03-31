@@ -2,6 +2,7 @@ import React from "react";
 import "./navbar.scss";
 import logo from "../../../assets/logo.svg";
 import { Link } from "react-router-dom";
+import Button from "../../../atomic/atoms/button/Button";
 
 const Navbar = () => {
   return (
@@ -28,9 +29,11 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="right-nav">
-        <Link to="/signin">Log In</Link>
-        <Link to="/signup">Sign Up</Link>
+        <Link className="link" to="/signin"><div>Log In</div></Link>
+        <Link to="/signup"><Button className="sign-up">Sign Up</Button></Link>
       </div>
+      
+            
     </nav>
   );
 };

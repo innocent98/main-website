@@ -8,16 +8,17 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./App.scss";
-import LandingPage from "./pages/landingPage/LandingPage";
+import LandingPage from "./pages/LandingPage";
 import SignIn from "./atomic/organisms/authfreme/authforms/SignIn";
 import ForgotPassword from "./atomic/organisms/authfreme/forgotpasswordflow/ForgotPassword";
 import VerifyEmail from "./atomic/organisms/authfreme/forgotpasswordflow/VerifyEmail";
 import NewPassword from "./atomic/organisms/authfreme/forgotpasswordflow/NewPassword";
 import Success from "./atomic/organisms/authfreme/forgotpasswordflow/Success";
 import Layout from "./Layout";
-import About from "./pages/aboutPage/About";
-import FaqPage from "./components/faq-frame/FaqPage";
-import Affiliate from "./components/affiliate-page/Affiliate";
+import About from "./pages/About";
+import FaqPage from "./pages/FaqPage";
+import AfilliatePage from "./pages/AfilliatePage";
+
 
 const router = createBrowserRouter([
   {
@@ -62,7 +63,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/affiliate",
-        element: <Affiliate />,
+        element: <AfilliatePage />,
       },
     ],
   },
