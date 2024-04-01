@@ -1,6 +1,6 @@
 import React from 'react'
 import "./frelancerframe.scss"
-import image1 from "../../../assets/Asset 4figma 1.png"
+import image1 from "../../../assets/IMGs frane.png"
 
 const FrelancerFrame = () => {
   return (

@@ -9,22 +9,28 @@ const Stats = () => {
         <h1>Trust The Numbers</h1>
         <div className='numbers-content'>
             <StatCard
-            number="100k+"
-            title="Active clients"
-            desc="Join our platform to tap into this expansive network of clients actively seeking top-tier talent."/>
+              number="100k+"
+              title="Active clients"
+              desc="Join our platform to tap into this expansive network of clients actively seeking top-tier talent."
+              color="blue"
+            />
 
             <StatCard
-            number="100k+"
-            title="Active talents"
-            desc="With over 100,000 active talents, our platform connects you with a vibrant community of freelancers, ensuring you have the talent you need to bring your projects to life."/>
+              number="100k+"
+              title="Active talents"
+              desc="With over 100,000 active talents, our platform connects you with a vibrant community of freelancers, ensuring you have the talent you need to bring your projects to life."
+              color="orange"
+            />
             
             <StatCard
-            number="95%"
-            title="Success rate"
-            desc="With a remarkable 95% success rate, our clients consistently find the right talent, complete projects with precision, and leave a trail of satisfied freelancers."/>
+              number="95%"
+              title="Success rate"
+              desc="With a remarkable 95% success rate, our clients consistently find the right talent, complete projects with precision, and leave a trail of satisfied freelancers."
+              color="green"
+            />
         </div>
     </div>
-  )
-}
+  );
+};
 
-export default Stats
+export default Stats;

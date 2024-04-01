@@ -1,6 +1,6 @@
 import React from 'react'
 import "./clientframe.scss"
-import image1 from "../../../assets/Asset 3figma 1.png"
+import image1 from "../../../assets/IMGs frame1.png"
 
 const Clientframe = () => {
   return (
