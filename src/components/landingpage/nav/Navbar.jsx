@@ -24,8 +24,11 @@ const Navbar = () => {
           <Link className="link" to="/affiliate">
             <li>Affiliate Program</li>
           </Link>
+          <Link className="link" to="/contact">
+            <li>Contact Us</li>
+          </Link>
 
-          <li>Contact Us</li>
+         
         </ul>
       </div>
       <div className="right-nav">

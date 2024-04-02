@@ -6,9 +6,7 @@ import { HiMiniMinus } from "react-icons/hi2";
 
 const Accordion = () => {
   const [openIndex, setOpenIndex] = useState(null);
-
-
-
+  
   const toggleAccordion = (index) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
   };

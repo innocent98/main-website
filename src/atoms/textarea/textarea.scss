@@ -1,0 +1,25 @@
+.textarea-label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    label {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 400;
+       
+     
+     
+    }
+
+    textarea {
+        height: 150px;
+        border: 1px solid #AAAAAA;
+        border-radius: 10px;
+        font-size: 14px;
+        color: #AAAAAA;
+        padding: 14px;
+        resize: none; 
+    }
+}
+

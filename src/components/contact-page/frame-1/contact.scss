@@ -1,0 +1,8 @@
+section {
+    padding: 10px 200px 200px 200px;
+}
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}

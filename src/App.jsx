@@ -18,6 +18,7 @@ import Layout from "./Layout";
 import About from "./pages/About";
 import FaqPage from "./pages/FaqPage";
 import AfilliatePage from "./pages/AfilliatePage";
+import ContactPage from "./pages/ContactPage";
 
 
 const router = createBrowserRouter([
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       {
         path: "/affiliate",
         element: <AfilliatePage />,
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />,
       },
     ],
   },
