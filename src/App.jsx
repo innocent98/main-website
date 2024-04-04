@@ -1,23 +1,25 @@
 import "./App.scss";
+import Layout from "./Layout";
 import "../src/scss/_globals.scss";
-import Auth from "./atomic/organisms/Auth";
+import Auth from "./atomic/pages/auth/Auth";
+import About from "./pages/aboutPage/About";
+import ProfileSetUp from "./atomic/organisms/profile/ProfileSetUp";
 import {
-  Route,
-  Routes,
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 import "./App.scss";
-import LandingPage from "./pages/landingPage/LandingPage";
-import SignIn from "./atomic/organisms/authfreme/authforms/SignIn";
-import ForgotPassword from "./atomic/organisms/authfreme/forgotpasswordflow/ForgotPassword";
-import VerifyEmail from "./atomic/organisms/authfreme/forgotpasswordflow/VerifyEmail";
-import NewPassword from "./atomic/organisms/authfreme/forgotpasswordflow/NewPassword";
-import Success from "./atomic/organisms/authfreme/forgotpasswordflow/Success";
-import Layout from "./Layout";
-import About from "./pages/aboutPage/About";
+import Intro from "./atomic/organisms/profile/intro/Intro";
+import SkillSet from "./atomic/organisms/profile/skillSet/SkillSet";
+import UploadImg from "./atomic/organisms/profile/uploadImg/UploadImg";
 import FaqPage from "./components/faq-frame/FaqPage";
+import LandingPage from "./pages/landingPage/LandingPage";
 import Affiliate from "./components/affiliate-page/Affiliate";
+import SignIn from "./atomic/organisms/authfreme/authforms/SignIn";
+import GetStarted from "./atomic/organisms/profile/getStarted/GetStarted";
+import NewPassword from "./atomic/organisms/authfreme/forgotpasswordflow/NewPassword";
+import VerifyEmail from "./atomic/organisms/authfreme/forgotpasswordflow/VerifyEmail";
+import ForgotPassword from "./atomic/organisms/authfreme/forgotpasswordflow/ForgotPassword";
 
 const router = createBrowserRouter([
   {
@@ -27,30 +29,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <LandingPage />,
-      },
-      {
-        path: "/signUp",
-        element: <Auth />,
-      },
-      {
-        path: "/signIn",
-        element: <SignIn />,
-      },
-      {
-        path: "forgot_password",
-        element: <ForgotPassword />,
-      },
-      {
-        path: "forgot_password/verify_email",
-        element: <VerifyEmail />,
-      },
-      {
-        path: "forgot_password/new_password",
-        element: <NewPassword />,
-      },
-      {
-        path: "forgot_password/success",
-        element: <Success />,
       },
       {
         path: "/about",
@@ -65,6 +43,48 @@ const router = createBrowserRouter([
         element: <Affiliate />,
       },
     ],
+  },
+  {
+    path: "/setup_profile",
+    element: <ProfileSetUp/>,
+    children: [
+      {
+        path:"/setup_profile",
+        element: <Intro/>
+      },
+      {
+        path:"select_skills",
+        element: <SkillSet/>
+      },
+      {
+        path:"upload_profile_image",
+        element: <UploadImg/>
+      },
+    ],
+  },
+  {
+    path: "/signUp",
+    element: <Auth />,
+  },
+  {
+    path: "/signIn",
+    element: <SignIn />,
+  },
+  {
+    path: "forgot_password",
+    element: <ForgotPassword />,
+  },
+  {
+    path: "forgot_password/verify_email",
+    element: <VerifyEmail />,
+  },
+  {
+    path: "forgot_password/new_password",
+    element: <NewPassword />,
+  },
+  {
+    path: "/get-started",
+    element: <GetStarted />,
   },
 ]);
 

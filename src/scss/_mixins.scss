@@ -39,7 +39,7 @@
 }
 
 //button mixin
-@mixin btn($outline, $color, $text, $border, $cursor, $bg, $width, $padding) {
+@mixin btn($outline, $color, $text, $border, $cursor, $bg, $width, $rounded, $padding) {
   width: $width;
   color: $color;
   cursor: $cursor;
@@ -47,7 +47,7 @@
   font-size: $text;
   outline: $outline;
   padding: $padding;
-  border-radius: 8px;
+  border-radius: $rounded;
   background-color: $bg;
 }
 

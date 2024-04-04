@@ -12,7 +12,24 @@
     pointer,
     $zeal_purple,
     100%,
+    0,
     14px
+  );
+  outline: none;
+  margin-top: 10px;
+  background-color: $zeal_purple;
+}
+.button--default--fit{
+  @include btn(
+    none,
+    $tint_white,
+    14px,
+    none,
+    pointer,
+    $zeal_purple,
+    120px,
+    6px,
+    8px 20px
   );
   outline: none;
   margin-top: 10px;
@@ -28,7 +45,22 @@
     pointer,
     transparent,
     20%,
+    8px,
     7px
+  );
+}
+
+.button--border {
+  @include btn(
+    0,
+    $zeal_purple,
+    12px,
+    1px solid $zeal_purple,
+    pointer,
+    transparent,
+    fit-content,
+    40px,
+    7px 40px
   );
 }
 .button--transparent {
@@ -41,7 +73,24 @@
     transparent,
     fit-content,
     0,
+    0,
   );
+}
+.button--fitted{
+  @include btn(
+    none,
+    $tint_white,
+    14px,
+    none,
+    pointer,
+    $zeal_purple,
+    fit-content,
+    40px,
+    7px 40px
+  );
+  outline: none;
+  margin-top: 10px;
+  background-color: $zeal_purple;
 }
 
 .button__disabled {

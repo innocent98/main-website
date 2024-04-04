@@ -23,6 +23,9 @@ const Container = ({ variant, children, className }) => {
         case "wrapper--gridColsTwo":
             style = clsx(style, "container--gridColsTwo")
             break;
+        case "wrapper--padded":
+            style = clsx(style, "container--padded")
+            break;
         default:
             break;
     }

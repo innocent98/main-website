@@ -2,7 +2,7 @@
 @import "../../../scss/mixins";
 
 .container--flexcenter {
-  @include flex_center($gap:0, $width:100%);
+  @include flex_center($gap: 0, $width: 100%);
 }
 
 .container--flexfit {
@@ -25,10 +25,18 @@
     @include flex_between($dir: row);
   }
 }
-.container--gridColsTwo{
-    display: grid;
-    grid-template-columns: auto auto;
+.container--gridColsTwo {
+  display: grid;
+  grid-template-columns: auto auto;
 }
 .container--wrapper {
   padding: 30px;
+}
+.container--padded {
+  @include mq(220px) {
+    padding: 20px 20px;
+  }
+  @include mq(768px) {
+    padding: 30px 45px;
+  }
 }
