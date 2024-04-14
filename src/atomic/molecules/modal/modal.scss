@@ -1,0 +1,51 @@
+@import "../../../scss/colors";
+@import "../../../scss/mixins";
+
+.modal--overlay {
+  @include mq(220px) {
+    background-color: rgba($color: $black, $alpha: 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    height: 100vh;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+
+    .modal--overlay__content {
+      width: 100%;
+      height: fit-content;
+      text-align: center;
+      border-radius: 5px;
+      background-color: $white;
+      padding: 50px 25px;
+    }
+  }
+  @include mq(768px) {
+    background-color: rgba($color: $black, $alpha: 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    height: 100vh;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+
+    .modal--overlay__content {
+      width: 20%;
+      height: fit-content;
+      text-align: center;
+      border-radius: 5px;
+      background-color: $white;
+      padding: 50px 25px;
+    }
+  }
+}

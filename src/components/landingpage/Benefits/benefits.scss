@@ -1,0 +1,98 @@
+.benefit {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 60px;
+    
+
+
+    .benefit-contents {
+        width: 70%;
+
+        h2 {
+            font-size: 1.9rem;
+        }
+        
+        li {
+          list-style: url(../../assets/Icon.png); 
+          margin-top: 2rem;
+        }
+
+        h3,p {
+            margin: 0;
+            margin-left: 0.5rem;
+        }
+       
+
+        p {
+           
+            color: #777777;
+        }
+        
+    }
+
+
+    img {
+        width: 70%;
+    }
+    .benefit-image {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+/* media queries (medium screen) */
+@media screen  and (max-width: 1024px) {
+}
+  
+  /* media queries (small screen) */
+  @media screen  and (max-width: 600px) {
+    .benefit {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 24px;
+        
+    
+    
+        .benefit-contents {
+            width: 100%;
+    
+            h2 {
+                font-size: 1.9rem;
+                margin-left: 0;
+            }
+           
+            
+            li {
+              list-style: url(../../assets/Icon.png); 
+              margin-top: 2rem;
+              margin-left: 0;
+            }
+    
+            h3,p {
+                margin: 0;
+                margin-left: 0.5rem;
+            }
+           
+    
+            p {
+                font-size: 18px;
+                color: #777777;
+            }
+            h3 {
+                font-size: 24px;
+                margin-bottom: .5rem;
+            }
+            
+        }
+    
+    
+        img {
+            width: 100%;
+        }
+        .benefit-image {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+  }
+

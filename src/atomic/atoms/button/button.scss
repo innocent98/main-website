@@ -1,0 +1,53 @@
+@import "../../../scss/utils";
+@import "../../../scss/colors";
+@import "../../../scss/mixins";
+@import "../../../scss/typography";
+
+.button--default {
+  @include btn(
+    none,
+    $tint_white,
+    14px,
+    none,
+    pointer,
+    $zeal_purple,
+    100%,
+    14px
+  );
+  outline: none;
+  margin-top: 10px;
+  background-color: $zeal_purple;
+}
+
+.button--outlined {
+  @include btn(
+    0,
+    $black,
+    12px,
+    1px solid $grey,
+    pointer,
+    transparent,
+    20%,
+    7px
+  );
+}
+.button--transparent {
+  @include btn(
+    none,
+    $zeal_purple,
+    $text_sm,
+    none,
+    pointer,
+    transparent,
+    fit-content,
+    0,
+  );
+}
+
+.button__disabled {
+  opacity: 0.5;
+  cursor: not-allowed !important;
+}
+.button__error {
+  //style
+}

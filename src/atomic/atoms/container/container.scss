@@ -1,0 +1,34 @@
+@import "../../../scss/colors";
+@import "../../../scss/mixins";
+
+.container--flexcenter {
+  @include flex_center($gap:0, $width:100%);
+}
+
+.container--flexfit {
+  @include flex_fit($gap: 20px);
+}
+
+.container--flex {
+  display: flex;
+  align-items: center;
+}
+
+.container--flexbetween {
+  @include mq(100px) {
+    @include block();
+  }
+  @include mq(320px) {
+    //style
+  }
+  @include mq(768px) {
+    @include flex_between($dir: row);
+  }
+}
+.container--gridColsTwo{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.container--wrapper {
+  padding: 30px;
+}
