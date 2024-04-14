@@ -25,3 +25,36 @@
            
         }
 }
+
+/* media queries (medium screen) */
+@media screen  and (max-width: 1024px) {
+}
+  
+  /* media queries (small screen) */
+  @media screen  and (max-width: 600px) {
+    .blogframe {
+        padding: 60px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 44px;
+        justify-content: center;
+    
+            .blogframe-content {
+                width: fit-content;
+                display: grid;
+                gap: 20px;
+            }
+            h2 {
+                font-size: 32px;
+                line-height: 44px;
+                margin: 0;
+            }
+            p {
+                font-size: 20px;
+                line-height: 27.28px;
+                margin: 0;
+                
+               
+            }
+        }
+  }

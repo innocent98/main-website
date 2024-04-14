@@ -20,3 +20,32 @@
         gap: 52px;
     }
 }
+
+
+/* media queries (medium screen) */
+@media screen  and (max-width: 1024px) {
+}
+  
+  /* media queries (small screen) */
+  @media screen  and (max-width: 600px) {
+    .numbers {
+        padding: 60px 24px;
+        text-align: left;
+        background-color: rgba(236, 150, 193, 0.1);
+        h1 {
+            font-size: 38px;
+            line-height: 49px;
+            margin: 0;
+            
+        }
+        .numbers-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            padding: 60px 0px ;
+            text-align: left;
+            justify-content: center;
+            gap: 52px;
+        }
+    }
+    
+  }

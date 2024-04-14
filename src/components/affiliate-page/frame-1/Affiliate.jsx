@@ -15,7 +15,8 @@ const Affiliate = () => {
           <h1>Become An Affilliate</h1>
           <p>Are you passionate about remote work and helping others find fulfilling career opportunities? Join ZealWorkers as an affiliate and start earning commissions today!</p>
           <p>As a ZealWorkers affiliate, you'll have access to exclusive resources and support to help you succeed.</p>
-          <Button buttonText="Referral Link"/>
+          <Button buttonText="Referral Link"
+          classname="aff-btn"/>
         </div>
 
         <div className='header-image'>

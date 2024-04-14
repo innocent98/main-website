@@ -43,10 +43,10 @@ const Testimonial = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
           initialSlide: 2,
-          dots: false
+          dots: true
         }
       },
       {
@@ -54,13 +54,14 @@ const Testimonial = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots: false
+          dots: true
         }
       }
     ]
   };
 
   return (
+ 
     <div className="slider-container">
       <Slider {...settings}>
         {data.map(({ avatar, name, review }, index) => (
@@ -74,6 +75,8 @@ const Testimonial = () => {
         ))}
       </Slider>
     </div>
+
+ 
   );
 };
 

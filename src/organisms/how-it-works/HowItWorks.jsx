@@ -25,10 +25,7 @@ const Benefit = ({title}) => {
                 subTittle="Resources"
                 text="As an affiliate, you will have access to regularly refresh logo, ads and banners to help optimize conversation."
                 />
-                <li>
-                    <h3></h3>
-                    <p></p>
-                </li>
+              
             </ul>
         </div>
         <div className='benefit-image'>

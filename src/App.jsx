@@ -19,6 +19,8 @@ import About from "./pages/About";
 import FaqPage from "./pages/FaqPage";
 import AfilliatePage from "./pages/AfilliatePage";
 import ContactPage from "./pages/ContactPage";
+import ClientDashboard from "./pages/ClientDashboard";
+
 
 
 const router = createBrowserRouter([
@@ -70,6 +72,11 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <ContactPage />,
       },
+      {
+        path: "/clientdashboard",
+        element: <ClientDashboard />,
+      },
+   
     ],
   },
 ]);
