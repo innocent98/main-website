@@ -1,14 +1,14 @@
 import Layout from '../layout/Layout'
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaUser } from "react-icons/fa6";
-import Image from '../../../atoms/image/Image'
 import { BiSolidEnvelope } from "react-icons/bi";
-import Button from '../../../atoms/button/Button'
-import Container from '../../../atoms/container/Container'
+import Image from '../../../../atoms/image/Image';
+import Button from '../../../../atoms/button/Button';
+import Container from '../../../../atoms/container/Container';
 
 const GetStarted = () => {
-  const [footerLayout, setFooterlayout] = useState(false)
+  const footerLayout = false;
 
   return (
     <Layout footerLayout={footerLayout}>
@@ -21,7 +21,7 @@ const GetStarted = () => {
           <p><FaUser /> Get Paid Instantly</p>
           <Container variant="wrapper--flex" className="wrapper--flex__visible">
             <Button variant="default--fit">
-              <Link to="/setup_profile" className='link'>
+              <Link to="/profile-setup-page1" className='link'>
                 Get Started
               </Link>
             </Button>
@@ -40,6 +40,7 @@ const GetStarted = () => {
           <p className='wrapper--flex--between__text'>It takes only few steps to create your profile and you can edit it later.</p>
         </Container>
       </Container>
+      {/* <Outlet/> */}
     </Layout>
   )
 }

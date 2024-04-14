@@ -14,6 +14,9 @@ const Container = ({ variant, children, className }) => {
         case "wrapper--flex--center":
             style = clsx(style, "container--flexcenter")
             break;
+        case "wrapper--flex--center__col":
+            style = clsx(style, "container--flexcenter_col")
+            break;
         case "wrapper--flex--between":
             style = clsx(style, "container--flexbetween")
             break;
@@ -25,6 +28,9 @@ const Container = ({ variant, children, className }) => {
             break;
         case "wrapper--padded":
             style = clsx(style, "container--padded")
+            break;
+        case "wrapper--progress":
+            style = clsx(style, "container--progress")
             break;
         default:
             break;

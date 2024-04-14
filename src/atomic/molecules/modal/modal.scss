@@ -3,7 +3,7 @@
 
 .modal--overlay {
   @include mq(220px) {
-    background-color: rgba($color: $black, $alpha: 0.7);
+    background-color: rgba($color: $grey, $alpha: 0.7);
     position: absolute;
     top: 0;
     left: 0;
@@ -22,11 +22,11 @@
       text-align: center;
       border-radius: 5px;
       background-color: $white;
-      padding: 50px 25px;
+      padding: 50px 35px;
     }
   }
   @include mq(768px) {
-    background-color: rgba($color: $black, $alpha: 0.7);
+    background-color: rgba($color: $grey, $alpha: 0.7);
     position: absolute;
     top: 0;
     left: 0;
@@ -40,12 +40,12 @@
     justify-content: center;
 
     .modal--overlay__content {
-      width: 20%;
+      width: 30%;
       height: fit-content;
       text-align: center;
       border-radius: 5px;
       background-color: $white;
-      padding: 50px 25px;
+      padding: 1% 1%;
     }
   }
 }

@@ -30,6 +30,9 @@ const Button = ({
         case "default--fit":
             style = clsx(style, "button--default--fit")
             break;
+        case "border--fit":
+            style = clsx(style, "button--border--fit")
+            break;
         case "fitted":
             style = clsx(style, "button--fitted")
             break;

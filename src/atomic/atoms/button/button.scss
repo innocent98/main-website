@@ -19,7 +19,7 @@
   margin-top: 10px;
   background-color: $zeal_purple;
 }
-.button--default--fit{
+.button--default--fit {
   @include btn(
     none,
     $tint_white,
@@ -27,13 +27,30 @@
     none,
     pointer,
     $zeal_purple,
-    120px,
+    fit-content,
     6px,
     8px 20px
   );
   outline: none;
   margin-top: 10px;
   background-color: $zeal_purple;
+}
+
+.button--border--fit {
+  @include btn(
+    none,
+    $zeal_purple,
+    14px,
+    1px solid $zeal_purple,
+     pointer,
+    transparent,
+    fit-content,
+    6px,
+    6.5px 20px
+  );
+  outline: none;
+  margin-top: 10px;
+  background-color: transparent;
 }
 
 .button--outlined {
@@ -73,10 +90,10 @@
     transparent,
     fit-content,
     0,
-    0,
+    0
   );
 }
-.button--fitted{
+.button--fitted {
   @include btn(
     none,
     $tint_white,

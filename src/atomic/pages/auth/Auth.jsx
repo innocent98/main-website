@@ -1,7 +1,7 @@
 import React from 'react'
-import LeftFrame from '../../organisms/authfreme/LeftFrame'
 import Container from '../../atoms/container/Container'
-import InteractiveFormComponent from '../../organisms/authfreme/authforms/interaciveForm/InteractiveFormComponent'
+import LeftFrame from '../../organisms/authframe/LeftFrame'
+import InteractiveFormComponent from "../../organisms/authframe/authforms/interaciveForm/InteractiveFormComponent"
 
 const Auth = () => {
   return (

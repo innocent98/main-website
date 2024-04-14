@@ -1,10 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Button from '../../../atoms/button/Button'
+import React, { useState } from 'react'
+import Button from '../../../../atoms/button/Button'
+import Layout from '../layout/Layout'
 
 const SkillSet = () => {
   return (
-    <div>
+   <Layout footerLayout={true}>
+     <main className='wrapper--padded__children-skills'>
       <h2>select your skill(s)</h2>
       <p>Your skills shows the clients what you can offer and it helps us to choose which work to recommed to you.</p>
       <form action="">
@@ -19,11 +20,11 @@ const SkillSet = () => {
       </form>
       <section>
         <p>Suggested skill</p>
-        <Button variant="border">UI/UX Designer</Button> 
-        <Button variant="border">Software Developer</Button>
+        <Button variant="border" className="wrapper--padded__children-skills_skills--button">UI/UX Designer</Button>
+        <Button variant="border" className="wrapper--padded__children-skills_skills--button">Software Developer</Button>
       </section>
-      <Link to="/setup_profile/upload_profile_image">Upload image </Link>
-    </div>
+    </main>
+   </Layout>
   )
 }
 
