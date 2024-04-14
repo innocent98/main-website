@@ -29,9 +29,11 @@ jobs:
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
             nvm use v18.17.1
-            cd /var/www/zealworkers/main-client/
+            cd zealworkers/main-client/
             git pull origin main
             git status
             npm install --omit=dev
             npm install vite@latest # Install vite as a development dependency
             npx vite build
+            cp -r dist/* /var/www/zealworkers/main-client
+            sudo systemctl reload nginx
