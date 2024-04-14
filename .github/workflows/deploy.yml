@@ -32,5 +32,6 @@ jobs:
             cd /var/www/zealworkers/main-client/
             git pull origin main
             git status
-            npm install --only=prod
+            npm install --omit=dev
+            npm install vite@latest # Install vite as a development dependency
             npx vite build
