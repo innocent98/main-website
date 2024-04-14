@@ -30,5 +30,5 @@ jobs:
             cd /var/www/zealworkers/main-client/
             git pull origin main
             git status
-            /root/.nvm/versions/node/v18.17.1/bin/npm install --only=prod
+            /***/.nvm/versions/node/v18.17.1/bin/npm install --only=prod
             /root/.nvm/versions/node/v18.17.1/bin/node /root/.nvm/versions/node/v18.17.1/bin/npm run build
