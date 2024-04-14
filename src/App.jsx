@@ -7,11 +7,9 @@ import Layout from "./Layout";
 import "../src/scss/_globals.scss";
 import Auth from "./atomic/pages/auth/Auth";
 import About from "./pages/aboutPage/About";
-import useRouteStore from "../zustand/routeStore";
 import FaqPage from "./components/faq-frame/FaqPage";
 import LandingPage from "./pages/landingPage/LandingPage";
 import Affiliate from "./components/affiliate-page/Affiliate";
-import ProfileSetUp from "./atomic/pages/freelancer/profileSetUp/ProfileSetUp";
 import SignIn from "./atomic/organisms/authframe/authforms/SignIn";
 import Intro from "./atomic/pages/freelancer/profileSetUp/intro/Intro";
 import GetStarted from "./atomic/pages/freelancer/profileSetUp/getStarted/GetStarted"

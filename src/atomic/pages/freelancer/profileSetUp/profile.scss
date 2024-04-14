@@ -13,15 +13,11 @@
 }
 .wrapper--padded{
   position: relative;
-  height: 100vh;
+  height: 85dvh;
   padding-bottom: 0;
-.progress-section{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0 30px;
 }
+.progress-section{
+  padding: 0 40px;
 }
 
 .wrapper--padded__children {
@@ -217,6 +213,7 @@
       }
     }
   }
+
   .layout--data-section{
     margin-top: 7%;
     .data--wrapper{
