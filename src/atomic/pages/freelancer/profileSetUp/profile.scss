@@ -1,0 +1,253 @@
+@import "../../../../scss/colors";
+@import "../../../../scss/mixins";
+@import "../../../../scss/typography";
+
+.progress--container__bar {
+  height: 2px;
+  background-color: $zeal_purple;
+  transition: all;
+}
+.progress--container {
+  background-color: $grey;
+  height: 2px;
+}
+.wrapper--padded{
+  position: relative;
+  height: 85dvh;
+  padding-bottom: 0;
+}
+.progress-section{
+  padding: 0 40px;
+}
+
+.wrapper--padded__children {
+  .wrapper--flex__visible {
+    @include mq(220px) {
+      display: none;
+    }
+    @include mq(768px) {
+      display: flex;
+      gap: 20px;
+      p {
+        font-size: $text_sm;
+        width: 65%;
+      }
+    }
+  }
+  .wrapper--flex__hidden {
+    @include mq(220px) {
+      display: flex;
+      gap: 10px;
+      p {
+        font-size: $text_s;
+      }
+    }
+    @include mq(768px) {
+      display: none;
+    }
+  }
+  @include mq(220px) {
+    padding: 20px 0%;
+  }
+  @include mq(768px) {
+    padding: 30px 13%;
+  }
+  h1 {
+    margin: 0;
+    @include mq(220px) {
+      width: 90%;
+      font-size: $text_lg;
+      line-height: 25px;
+    }
+    @include mq(768px) {
+      width: 90%;
+      font-size: $text_large;
+      line-height: 50px;
+    }
+  }
+  .wrapper--flex--between__text {
+    color: $slate;
+  }
+  .link {
+    color: $white;
+    text-decoration: none;
+    font-weight: 100;
+    font-size: $text_s;
+  }
+  .select {
+    @include mq(220px) {
+      width: 100%;
+    }
+    @include mq(456px) {
+      width: 70%;
+    }
+    @include mq(768px) {
+      width: 50%;
+    }
+    outline: none;
+
+    color: $slate;
+    border: 1px solid $grey;
+    padding: 10px 7px;
+    border-radius: 6px;
+  }
+  label {
+    font-weight: 600;
+  }
+  textarea {
+    outline: none;
+    color: $slate;
+    border: 1px solid $grey;
+    border-radius: 6px;
+  }
+
+  .wrapper--padded__children-intro {
+    p {
+      @include mq(220px) {
+        width: 100%;
+      }
+      @include mq(456px) {
+        width: 70%;
+      }
+      @include mq(768px) {
+        width: 57%;
+      }
+      color: $slate;
+    }
+    label {
+      margin-bottom: 30px;
+    }
+  }
+  .wrapper--padded__children-skills {
+    p {
+      margin-bottom: 10px;
+      margin-top: 30px;
+    }
+  }
+  .wrapper--padded__children-skills > p {
+    @include mq(220px) {
+      width: 100%;
+    }
+    @include mq(768px) {
+      width: 57%;
+    }
+    margin-bottom: 40px;
+    color: $slate;
+  }
+  .wrapper--padded__children-skills_skills--button {
+    padding: 0 10px;
+    margin-right: 10px;
+  }
+  .uploadImage--wrapper--flex {
+    gap: 30px;
+    align-items: start;
+    @include mq(220px) {
+      display: block;
+      .uploadImage--wrapper--flex__formSection > form > div > input {
+        @include input(15px, 15px, $grey);
+        width: 100%;
+      }
+    }
+    @include mq(768px) {
+      display: flex;
+      .uploadImage--wrapper--flex__formSection > form > div > input {
+        @include input(15px, 15px, $grey);
+        width: 150%;
+      }
+      .uploadImage--wrapper--flex__formSection > form > div {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .modal {
+    h2 {
+      text-align: left;
+    }
+    @include mq(220px) {
+      .section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 10px;
+      }
+      .section--profileImage--wrapper {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        border-radius: 100%;
+        background-color: transparent;
+        justify-content: center;
+        border: 2px dashed$zeal_purple;
+      }
+      .modal--btnSec {
+        gap: 10px;
+        display: flex;
+        justify-content: flex-end;
+
+      }
+    }
+    @include mq(768px) {
+      .section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+      .section--profileImage--wrapper {
+        background-color: $grey;
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        border: 2px dashed$zeal_purple;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .modal--btnSec {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .layout--data-section{
+    margin-top: 7%;
+    .data--wrapper{
+      border: 1px solid $grey;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      @include mq(220px) {
+        padding: 10px 20px;
+      }
+      @include mq(768px) {
+        padding: 10px 30px;
+      }
+    }
+  }
+}
+.preview--container__custom{
+  @include mq(220px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.footer {
+  @include mq(220px) {
+    display: flex;
+    justify-content: space-between;
+  }
+  @include mq(768px) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.preview--icon{
+  color: $zeal_purple;
+  margin-left: 20px;
+}
+

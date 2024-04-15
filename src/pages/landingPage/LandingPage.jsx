@@ -11,8 +11,6 @@ import BlogFrame from '../../components/landingpage/blog-frame/BlogFrame'
 import Footer from '../../components/landingpage/footer/Footer'
 
 
-
-
 const LandingPage = () => {
   return (
     <>
