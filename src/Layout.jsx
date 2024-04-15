@@ -5,9 +5,9 @@ import Footer from "./components/landingpage/footer/Footer";
 export default function Layout() {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <Outlet />
-      <Footer/>
+      <Footer />
     </>
   );
 }

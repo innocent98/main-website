@@ -46,6 +46,7 @@ const router = createBrowserRouter([
       },
     ],
   },
+  
   {
     path: "/profile-setup-page1",
     element: <Intro />,
