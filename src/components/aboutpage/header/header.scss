@@ -2,7 +2,7 @@
 @import "../../../scss/typography.scss";
 
 
-.header {
+.headers {
     padding: 60px;
     h1 {
         margin: 0;
@@ -10,20 +10,20 @@
 
 
 
-    .header-content {
+    .headers-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 80px;
         align-items: center;
 
-        .header-image {
+        .headers-image {
           
            img {
             width: 100%;
            }
         }
 
-        .header-text {
+        .headers-text {
             font-size: $text_xl;
             line-height: 33px;
             color: $slate;
@@ -31,3 +31,44 @@
     }
 
 }
+
+
+/* media queries (medium screen) */
+@media screen  and (max-width: 1024px) {
+}
+  
+  /* media queries (small screen) */
+  @media screen  and (max-width: 600px) {
+    .headers {
+        padding: 60px 24px;
+        h1 {
+            margin: 0;
+        }
+    
+
+        .headers-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            align-items: center;
+    
+            .headers-image {
+                order: 2;
+               img {
+                width: 100%;
+           
+              
+               }
+            }
+    
+            .headers-text {
+                flex: 1;
+                font-size: 18px;
+                line-height: 24.5px;
+                color: $slate;
+            }
+        }
+    
+    }
+  }
+

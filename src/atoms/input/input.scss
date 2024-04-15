@@ -1,0 +1,27 @@
+.input-label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    label {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 400;
+     
+    }
+    input {
+        height: 60PX;
+        border: 1px solid #AAAAAA;
+        border-radius: 8px;
+        text-indent: 20px;
+        font-size: 14px;
+        &:focus {
+            outline: none; // Remove the outline when textarea is in focus
+            border-color: #AAAAAA; // Set border color to transparent
+            box-shadow: none; // Remove any box shadow
+        }
+    }
+      
+      
+
+    
+}

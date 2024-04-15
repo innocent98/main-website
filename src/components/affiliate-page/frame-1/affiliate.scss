@@ -1,0 +1,89 @@
+@import "../../../scss/color.scss";
+@import "../../../scss/typography.scss";
+
+.header {
+   padding: 60px;
+   .header-content {
+      display: flex;
+  
+
+      .header-text {
+         display: flex;
+         flex-direction: column;
+         gap: .5rem;
+         flex: .8;
+         h1 {
+            font-size: 50px;
+            line-height: 70px;
+            color: $black;
+            margin: 0;
+            
+         }
+       p {
+         font-size: 20px;
+         margin: 0;
+         margin-bottom: 15px;
+         line-height: 27px;
+       }
+       
+      }
+      .header-image {
+         flex: 1;
+         img {
+            width: 100%;
+         }
+      }
+   }
+}
+
+/* media queries (medium screen) */
+@media screen  and (max-width: 1024px) {
+}
+  
+  /* media queries (small screen) */
+  @media screen  and (max-width: 600px) {
+   .header {
+      .header-content {
+         display: flex;
+         flex-direction: column;
+         padding: 60px 24px;
+         gap: 32px;
+     
+   
+         .header-text {
+            display: flex;
+            flex-direction: column;
+            gap: .7rem;
+            flex: .8;
+            h1 {
+               font-size: 36px;
+               line-height: 49px;
+               color: $black;
+               margin: 0;
+               font-weight: 500;
+               
+            }
+          p {
+            font-size: 18px;
+            margin: 0;
+            margin-bottom: 15px;
+            line-height: 24.55px;
+
+          }
+          .aff-btn {
+            width: 100%;
+          }
+          
+         }
+         .header-image {
+            flex: 1;
+            img {
+               width: 100%;
+            }
+         }
+      }
+   }
+   
+  }
+
+

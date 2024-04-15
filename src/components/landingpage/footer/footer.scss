@@ -68,6 +68,7 @@ footer {
         .arrow {
             padding: .5rem;
             background-color: #7E6F84;
+            border-radius: 2.7px;
         }
 
     }
@@ -102,20 +103,12 @@ footer {
   @media screen  and (max-width: 600px) {
     footer {
         padding: 60px 24px 40px 24px;
-        background: #521F68;
-        color: #fff;
-    
-        hr {
-           margin-top: 2rem;
-           margin-bottom: 2rem;
-           opacity: .2;
-          
-        }
+     
         
     .top {
-        display: flex;
         flex-direction: column;
         gap: 4rem;
+        position: relative;
      
         
         .footer-left {
@@ -128,48 +121,25 @@ footer {
                 line-height: 22px;
             }
             .circle {
-                border: 1px solid #7E6F84;
-                border-radius: 50%;
-                width: 32px;
-                height: 32px;
-                text-align: center;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-top: 1rem;
-    
-                img {
-                    width: 13px;
-                    height: 13px; 
-                }
-               
-                
+                margin-top: 1rem;  
             }
             .socials {
-                display: flex;
                 gap: 1.3rem;
             }
         }
     
         .footer-right {
-            flex: 2;
-            display: flex;
             flex-direction: column;
             justify-content: left;
             gap: 2rem;
+            position: relative;
     
             h3 {
-                margin: 0;
-                margin-bottom: 1.5rem;
-                font-weight: 600;
-                font-size: 24px;
+           
                 line-height: 33px;
             }
             li {
-                list-style: none;
-                margin-bottom: 1rem;
-                font-weight: 400;
-                font-size: 16px;
+            
                 line-height: 22px;
             }
             ul {
@@ -180,6 +150,9 @@ footer {
                 padding: .5rem;
                 background-color: #7E6F84;
                 width: fit-content;
+                position: absolute;
+                top: 0;
+                right: 0;
             }
     
         }
@@ -187,22 +160,9 @@ footer {
       
     }
     .down {
-        display: flex;
-        justify-content: space-between;
-        font-size: 16px;
         line-height: 22px;
-    
-        p {
-            margin: 0;
-        }
-    
-        select {
-            height: fit-content;
-            background: transparent;
-            border: none;
-            color: #fff;
-        }
     }
+
     }
     
   }

@@ -2,6 +2,16 @@
 @import "../../scss/typography.scss";
 
 .num {
+    .orange {
+        color: #EFAD01;
+      }
+      .blue {
+       color: #0000FF;
+      }
+    
+      .green {
+        color: #008000;
+      }
     width: fit-content;
     display: flex;
     flex-direction: column;

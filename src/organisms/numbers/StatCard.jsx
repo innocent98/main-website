@@ -1,14 +1,16 @@
-import React from 'react'
-import "./statcard.scss"
+import React, { useEffect, useState } from 'react';
+import './statcard.scss';
 
-const StatCard = ({number, title, desc}) => {
+const StatCard = ({ number, title, desc ,color}) => {
+ 
+  
   return (
     <div className='num'>
-        <h1>{number}</h1>
+        <h1 className={color}>{number}</h1>
         <h2>{title}</h2>
         <p>{desc}</p>
     </div>
-  )
-}
+  );
+};
 
-export default StatCard
+export default StatCard;

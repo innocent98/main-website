@@ -1,0 +1,113 @@
+.frame-2 {
+    display: flex;
+    padding: 60px;
+    justify-content: space-between;
+    align-items: center;
+    
+
+
+    .frame-2-contents {
+        width: 500px;
+      
+
+        h2 {
+            font-size: 36px;
+            line-height: 49px;
+        }
+
+        h3 {
+            margin-left: 50px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 24px;
+            line-height: 33px;
+        }
+      
+
+        p {
+           
+            color: #777777;
+            font-size: 20px;
+            margin-left: 50px;
+            margin-top: 0;
+          
+        }
+       
+        li {
+            list-style: url(../../../assets/6054.png); 
+            width: 498px;
+            margin: 0;
+          }
+
+        
+    }
+
+
+   
+    .frame-2-image {
+        padding-right: 100px;
+        img {
+            width: 100%;
+        }
+    }
+    
+}
+
+/* media queries (medium screen) */
+@media screen  and (max-width: 1024px) {
+}
+  
+  /* media queries (small screen) */
+  @media screen  and (max-width: 600px) {
+    .frame-2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 24px;
+        
+    
+    
+        .frame-2-contents {
+            width: 100%;
+    
+            h2 {
+                font-size: 32px;
+                line-height: 43px;
+                margin-left: 0;
+            }
+    
+            p {
+                font-size: 18px;
+                line-height: 24.5px;
+                color: #777777;
+                margin: 0;
+                margin-left: 0.5rem;
+                margin-top: 15px;
+            }
+            h3 {
+                font-size: 24px;
+                line-height: 32px;
+                margin-bottom: .5rem;
+                margin: 0;
+                margin-left: 0.5rem;
+            }
+            
+            li {
+                list-style: url(../../../assets/6054.png); 
+                width: fit-content;
+                margin: 0;
+          }
+
+            
+        }
+    
+    
+        img {
+            width: 100%;
+        }
+        .frame-2-image {
+            display: flex;
+            justify-content: center;
+            display: none;
+        }
+    }
+  }

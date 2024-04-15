@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from '../../components/landingpage/nav/Navbar'
 import Hero from '../../components/landingpage/herosection/Hero'
 import Clientframe from '../../components/landingpage/client-frame/Clientframe'
 import FrelancerFrame from '../../components/landingpage/Freelancer-frame/FrelancerFrame'

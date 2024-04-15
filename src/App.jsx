@@ -1,18 +1,21 @@
 import "./App.scss";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import "./App.scss";
+import AfilliatePage from "./pages/AfilliatePage";
+import ContactPage from "./pages/ContactPage";
+import ClientDashboard from "./pages/ClientDashboard";
+
 import Layout from "./Layout";
 import "../src/scss/_globals.scss";
 import Auth from "./atomic/pages/auth/Auth";
-import About from "./pages/aboutPage/About";
-import FaqPage from "./components/faq-frame/FaqPage";
+// import About from "./pages/aboutPage/About";
+// import FaqPage from "./components/faq-frame/FaqPage";
 import LandingPage from "./pages/landingPage/LandingPage";
-import Affiliate from "./components/affiliate-page/Affiliate";
+// import Affiliate from "./components/affiliate-page/Affiliate";
 import SignIn from "./atomic/organisms/authframe/authforms/SignIn";
 import Intro from "./atomic/pages/freelancer/profileSetUp/intro/Intro";
-import GetStarted from "./atomic/pages/freelancer/profileSetUp/getStarted/GetStarted"
+import GetStarted from "./atomic/pages/freelancer/profileSetUp/getStarted/GetStarted";
 import SkillSet from "./atomic/pages/freelancer/profileSetUp/skillSet/SkillSet";
 import UploadImg from "./atomic/pages/freelancer/profileSetUp/uploadImg/UploadImg";
 import VerifyEmail from "./atomic/organisms/authframe/forgotpasswordflow/VerifyEmail";
@@ -21,7 +24,8 @@ import ForgotPassword from "./atomic/organisms/authframe/forgotpasswordflow/Forg
 import Preview from "./atomic/pages/freelancer/profileSetUp/preview/Preview";
 import Success from "./atomic/pages/freelancer/profileSetUp/success/Success";
 import FreelancerDashboard from "./atomic/pages/freelancer/dashboard/dashboardPage/Dashboard";
-
+import About from "./pages/About";
+import FaqPage from "./pages/FaqPage";
 
 const router = createBrowserRouter([
   {
@@ -42,7 +46,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/affiliate",
-        element: <Affiliate />,
+        element: <AfilliatePage />,
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />,
+      },
+      {
+        path: "/clientdashboard",
+        element: <ClientDashboard />,
       },
     ],
   },
@@ -53,19 +65,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/profile-setup-page2",
-    element: <SkillSet />
+    element: <SkillSet />,
   },
   {
     path: "/profile-setup-page3",
-    element: <UploadImg />
+    element: <UploadImg />,
   },
   {
     path: "/setup_profile/preview_profile",
-    element: <Preview />
+    element: <Preview />,
   },
   {
     path: "/setup_profile/success",
-    element: <Success />
+    element: <Success />,
   },
   {
     path: "/signUp",
