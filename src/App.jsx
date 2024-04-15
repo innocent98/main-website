@@ -1,7 +1,5 @@
 import "./App.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-import "./App.scss";
 import AfilliatePage from "./pages/AfilliatePage";
 import ContactPage from "./pages/ContactPage";
 import ClientDashboard from "./pages/ClientDashboard";
@@ -60,6 +58,14 @@ const router = createBrowserRouter([
   },
   
   {
+    path: "/signUp",
+    element: <Auth />,
+  },
+  {
+    path: "/signIn",
+    element: <SignIn />,
+  },
+  {
     path: "/profile-setup-page1",
     element: <Intro />,
   },
@@ -78,14 +84,6 @@ const router = createBrowserRouter([
   {
     path: "/setup_profile/success",
     element: <Success />,
-  },
-  {
-    path: "/signUp",
-    element: <Auth />,
-  },
-  {
-    path: "/signIn",
-    element: <SignIn />,
   },
   {
     path: "forgot_password",

@@ -53,17 +53,17 @@ const SignIn = () => {
                         </div>
                     </div>
                     <section>
-                       <Container variant="wrapper--flex--between">
-                       <Container variant="wrapper--flex">
-                            <Input type="checkbox" />
-                            <p>Remember Me</p>
+                        <Container variant="wrapper--flex--between">
+                            <Container variant="wrapper--flex">
+                                <Input type="checkbox" />
+                                <p>Remember Me</p>
+                            </Container>
+                            <Link to="/forgot_password" className='link'>Forgot Password</Link>
                         </Container>
-                        <Link to="/forgot_password" className='link'>Forgot Password</Link>
-                       </Container>
                         <Button variant="default">Login</Button>
-                       <Container variant="wrapper--flex--center">
-                       <p>Dont have an account? <Link className='link' to="/signup">Create Account</Link></p>
-                       </Container>
+                        <Container variant="wrapper--flex--center">
+                            <p>Dont have an account? <Link className='link' to="/signup">Create Account</Link></p>
+                        </Container>
                     </section>
                 </form>
             </Container>

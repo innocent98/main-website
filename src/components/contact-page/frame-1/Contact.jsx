@@ -5,11 +5,11 @@ import ContactUsSection from '../../../organisms/contact/ContactUsSection'
 
 const Contact = () => {
   return (
-    <section>
-        <div className='contact'>
-                <ContactUsSection/>
-                <NewsLetterSection/>
-         </div>
+    <section className='contact--wrapper'>
+      <div className='contact'>
+        <ContactUsSection />
+        <NewsLetterSection />
+      </div>
     </section>
   )
 }
