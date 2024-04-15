@@ -1,14 +1,14 @@
 import React from 'react'
 import Layout from './Layout'
 import { useState } from 'react';
-import { FiEye } from "react-icons/fi";
 import { Link } from 'react-router-dom'
-import Modal from '../../../molecules/modal/Modal';
+import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
-import Image from '../../../atoms/image/Image'
 import Input from '../../../atoms/input/Input'
 import { useNavigate } from 'react-router-dom';
+import Image from '../../../atoms/image/Image';
 import Button from '../../../atoms/button/Button'
+import Modal from '../../../molecules/modal/Modal';
 import Container from '../../../atoms/container/Container'
 
 const NewPassword = () => {
@@ -99,6 +99,7 @@ const NewPassword = () => {
                 <Button variant="default" onClick={validatePassword}>Reset Password</Button>
             </form>
             {isModalOpen && <Modal>
+                <Image src="success" alt="success" width={100} extension='svg' />
                 <h3>Reset Successful!</h3>
                 <p>You have successfully changed your password</p>
                 <Button variant="default"><Link to="/signin">Login</Link></Button>

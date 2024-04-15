@@ -27,8 +27,20 @@ const Button = ({
         case "default":
             style = clsx(style, "button--default")
             break;
+        case "default--fit":
+            style = clsx(style, "button--default--fit")
+            break;
+        case "border--fit":
+            style = clsx(style, "button--border--fit")
+            break;
+        case "fitted":
+            style = clsx(style, "button--fitted")
+            break;
         case "outlined":
             style = clsx(style, "button--outlined")
+            break;
+        case "border":
+            style = clsx(style, "button--border")
             break;
         case "transparent":
             style = clsx(style, "button--transparent")
