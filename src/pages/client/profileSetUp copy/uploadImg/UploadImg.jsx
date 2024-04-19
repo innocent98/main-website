@@ -45,22 +45,7 @@ const ClientUploadImg = () => {
           <h2> Your company's details</h2>
           <p>fill in other details of your company</p>
           <Container variant="wrapper--flex" className="uploadImage--wrapper--flex">
-          <section className='uploadImage--wrapper--flex__imageSection'>
-              <div>
-                <Image
-                  src={selectedImage ? selectedImage : {ProfileAvatar}}
-                  alt="Selected"
-                  extension={imageExtension}
-                  width={100} height={100} />
-              </div>
-              <input type="file"
-                accept="image/*"
-                onChange={handleFileSelect}
-                style={{ display: 'none' }}
-                ref={fileInputRef}
-              />
-              <Button variant="border" onClick={handleModalOpen}>Upload Company's logo</Button>
-            </section>
+          
             <section className='uploadImage--wrapper--flex__formSection'>
               <form action="">
                 <div>

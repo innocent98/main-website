@@ -13,9 +13,9 @@ const ClientSkillSet = () => {
       <Layout footerLayout={true}>
         <main className='wrapper--padded__children-skills'>
           <h2>Your Company's Interest</h2>
-          <p>What talent are you looking out for to hire.</p>
+          <p>What talents are you looking out for to hire.</p>
           <form action="">
-            <label htmlFor="">Your Skill(s)</label><br />
+            <label htmlFor="">Company’s interest</label><br />
             <select name="" id="" className='select'>
               <option value="skill" selected>e.g Software Developer, Digital Marketer</option>
               <option value="skill1">skill1</option>

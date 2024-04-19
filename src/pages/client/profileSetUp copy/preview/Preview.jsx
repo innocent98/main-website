@@ -48,7 +48,7 @@ const ClientPreview = () => {
                 
             </section>
         </Layout>
-        <Container className="progress-section">
+        <Container className="fp-progress-section">
         <Footer
           prevRoute="/client-profile-setup-page3"
           nextRoute="/client-setup_profile/success"
