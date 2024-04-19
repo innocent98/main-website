@@ -5,7 +5,7 @@ import ContactUsSection from '../../../organisms/contact/ContactUsSection'
 
 const Contact = () => {
   return (
-    <section>
+    <section className='wrapper-contact'>
         <div className='contact'>
                 <ContactUsSection/>
                 <NewsLetterSection/>

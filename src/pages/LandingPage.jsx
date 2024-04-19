@@ -8,11 +8,6 @@ import HowItWorks from '../components/landingpage/Howitworks/HowItWorks'
 import ZealToken from '../components/landingpage/zealtoken/ZealToken'
 import BlogFrame from '../components/landingpage/blog-frame/BlogFrame'
 
-
-
-
-
-
 const LandingPage = () => {
   return (
     <>

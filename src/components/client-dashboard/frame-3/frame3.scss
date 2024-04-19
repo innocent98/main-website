@@ -1,0 +1,22 @@
+.frame-3 {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #cccc;
+    
+
+    >:nth-child(1) {
+        flex: 1;
+        background: #cccccc;
+        color: #f7f7f7;
+    }
+    >:nth-child(2) {
+       flex: 2;
+        background: #ffffff;
+        display: flex;
+        justify-content: center;
+    }
+    >:nth-child(3) {
+        flex: 1;
+        background: #cccccc;
+    }
+}

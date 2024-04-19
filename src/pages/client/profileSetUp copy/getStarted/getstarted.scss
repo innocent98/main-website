@@ -1,0 +1,22 @@
+.getstarted {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .getstarted-left {
+
+        .left-b {
+            display: flex;
+            gap: 20px;
+
+            p {
+                font-size: 15px;
+                line-height: 20.46px;
+                color: #777777;
+            }
+            .getstarted-btn {
+                width: fit-content;
+              
+            }
+        }
+    }
+}

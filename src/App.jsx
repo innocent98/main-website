@@ -1,18 +1,13 @@
 import "./App.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 import "./App.scss";
 import AfilliatePage from "./pages/AfilliatePage";
 import ContactPage from "./pages/ContactPage";
-import ClientDashboard from "./pages/ClientDashboard";
-
+import ClientDashboard from "./pages/client/dashboard/ClientDashboard";
 import Layout from "./Layout";
 import "../src/scss/_globals.scss";
 import Auth from "./atomic/pages/auth/Auth";
-// import About from "./pages/aboutPage/About";
-// import FaqPage from "./components/faq-frame/FaqPage";
-import LandingPage from "./pages/landingPage/LandingPage";
-// import Affiliate from "./components/affiliate-page/Affiliate";
+
 import SignIn from "./atomic/organisms/authframe/authforms/SignIn";
 import Intro from "./atomic/pages/freelancer/profileSetUp/intro/Intro";
 import GetStarted from "./atomic/pages/freelancer/profileSetUp/getStarted/GetStarted";
@@ -26,6 +21,13 @@ import Success from "./atomic/pages/freelancer/profileSetUp/success/Success";
 import FreelancerDashboard from "./atomic/pages/freelancer/dashboard/dashboardPage/Dashboard";
 import About from "./pages/About";
 import FaqPage from "./pages/FaqPage";
+import ClientIntro from "./pages/client/profileSetUp copy/intro/Intro";
+import ClientSkillSet from "./pages/client/profileSetUp copy/skillSet/SkillSet";
+import ClientUploadImg from "./pages/client/profileSetUp copy/uploadImg/UploadImg";
+import ClientPreview from "./pages/client/profileSetUp copy/preview/Preview";
+import ClientSuccess from "./pages/client/profileSetUp copy/success/Success";
+import ClientGetStarted from "./pages/client/profileSetUp copy/getStarted/GetStarted";
+import LandingPage from "./pages/LandingPage";
 
 const router = createBrowserRouter([
   {
@@ -105,6 +107,38 @@ const router = createBrowserRouter([
   {
     path: "/freelancer-dashboard",
     element: <FreelancerDashboard />,
+  },
+
+  //CLIENT PROFILE-FLOW
+  {
+    path: "/client-profile-setup-page1",
+    element: <ClientIntro />,
+  },
+  {
+    path: "/client-get-started",
+    element: <ClientGetStarted />,
+  },
+  {
+    path: "/client-profile-setup-page2",
+    element: <ClientSkillSet />,
+  },
+  {
+    path: "/client-profile-setup-page3",
+    element: <ClientUploadImg />,
+  },
+  {
+    path: "/client-setup_profile/preview_profile",
+    element: <ClientPreview />,
+  },
+  {
+    path: "/client-setup_profile/success",
+    element: <ClientSuccess />,
+  },
+  //CLIENT DASHBOARD
+
+  {
+    path: "/client-dashboard",
+    element: <ClientDashboard />,
   },
 ]);
 
