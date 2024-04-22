@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.scss";
 import AfilliatePage from "./pages/AfilliatePage";
 import ContactPage from "./pages/ContactPage";
-import ClientDashboard from "./pages/client/dashboard/ClientDashboard";
+
 import Layout from "./Layout";
 import "../src/scss/_globals.scss";
 import Auth from "./atomic/pages/auth/Auth";
@@ -28,6 +28,7 @@ import ClientPreview from "./pages/client/profileSetUp copy/preview/Preview";
 import ClientSuccess from "./pages/client/profileSetUp copy/success/Success";
 import ClientGetStarted from "./pages/client/profileSetUp copy/getStarted/GetStarted";
 import LandingPage from "./pages/LandingPage";
+import ClientDashboard from "./pages/client/dashboard/ClientDashboard";
 
 const router = createBrowserRouter([
   {
@@ -134,8 +135,8 @@ const router = createBrowserRouter([
     path: "/client-setup_profile/success",
     element: <ClientSuccess />,
   },
-  //CLIENT DASHBOARD
 
+  //CLIENT DASHBOARD
   {
     path: "/client-dashboard",
     element: <ClientDashboard />,
