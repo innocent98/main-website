@@ -3,25 +3,39 @@ import Button from '../../../../atomic/atoms/button/Button'
 
 const Jobs = () => {
   return (
+   
     <div className='jobs_wrapper'>
         <div>
             <label htmlFor='work-category'>Select Work Category</label>
             <select  className='jobs_select' id='work-category' >
-            <option value="category" selected>Search to select category...</option>
-              <option value="cat1">content1</option>
-              <option value="cat2">content2</option>
-              <option value="cat3">content3</option>
-              <option value="cat4">content4</option>
+            <option disabled value="category" selected>Search to select category...</option>
+              <option value="Art and Creative designs">Art and Creative designs</option>
+              <option value="Video And Animination">Video And Animination</option>
+              <option value="Event Planning"> Event Planning</option>
+              <option value="Pending">Pending</option>
+              <option value="Pending">Pending</option>
+              <option value="Pending">Pending</option>
+              <option value="Pending">Pending</option>
+              <option value="Pending">Pending</option>
+              <option value="Pending">Pending</option>
+              <option value="Pending">Pending</option>
+              <option value="Pending">Pending</option>
+              <option value="Pending">Pending</option>
+              <option value="Pending">Pending</option>
+              <option value="Pending">Pending</option>
+              <option value="Pending">Pending</option>
             </select>
         </div>
         <div>
-            <label htmlFor='service-type'>Select Work Category</label>
+            <label htmlFor='service-type'>Service type</label>
             <select className='jobs_select' id='service-type' >
-            <option value="service" selected>Search to select category...</option>
-              <option value="service1">content1</option>
-              <option value="service2">content2</option>
-              <option value="service3">content3</option>
-              <option value="service4">content4</option>
+            <option disabled  value="service" selected>Search to select category...</option>
+              <option value="UI/UX Designs">UI/UX Designs</option>
+              <option value="Blockchain Developer">Blockchain Developer</option>
+              <option value="Web Design">Web Design</option>
+              <option value="Video Editing">Video Editing</option>
+              <option value="Translation And Transcription">Translation And Transcription</option>
+              <option value="Others">Others</option>
             </select>
         </div>
         <div>
@@ -46,6 +60,7 @@ const Jobs = () => {
         </div>
         <Button>Next</Button>
     </div>
+    
   )
 }
 
