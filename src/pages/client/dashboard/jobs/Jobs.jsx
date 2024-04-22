@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../../../../atomic/atoms/button/Button'
 
 const Jobs = () => {
+  const [firstSection, showFirstSection ] = useState(true)
+  const [SecondSection, showSecondSection ] = useState(false)
+  const HandleNextClick = () => {
+    showFirstSection(!firstSection)
+    showSecondSection(!SecondSection)
+  }
+  const HandleBackClick = () => {
+    showFirstSection(true)
+    showSecondSection(false)
+  }
   return (
-   
+   <>
+   { firstSection && (
     <div className='jobs_wrapper'>
         <div>
             <label htmlFor='work-category'>Select Work Category</label>
@@ -58,8 +69,47 @@ const Jobs = () => {
             <span className='special_span'>Number of  Frelancer to be hired for this Job</span>
             <input  className='jobs_input' placeholder='1'/>
         </div>
-        <Button>Next</Button>
+        <Button onClick={HandleNextClick}>Next</Button>
+
     </div>
+        )}
+
+        {SecondSection && (
+       <div className='jobs_wrapper'>
+        <div>
+           <label htmlFor=''>Budget</label>
+           <span className='special_span'>Leave blank if not sure</span>
+           <input  className='jobs_input' placeholder='The  Landing Page for  Elementary School'/>
+          
+       </div>
+       <div>
+           <label htmlFor='work-category'>Select Country</label>
+           <select  className='jobs_select' id='select_country' >
+           <option disabled value="category" selected>Select Country</option>
+             <option value="Pending">Pending</option>
+             <option value="Pending">Pending</option>
+           </select>
+       </div>
+       
+       
+        <div>
+           <label htmlFor=''>Propose start date</label>
+           <input className='jobs_input'/>
+           <span>Max. 100 characters</span>
+       </div>
+       <div>
+           <label htmlFor=''>Duration</label>
+           <input  className='jobs_input'/>
+       </div>
+       <div className='jobs_buttons'>
+       <Button onClick=" ">Post Job</Button>
+       <Button onClick={HandleBackClick}>Back</Button>
+       </div>
+
+   </div>
+          )}
+
+    </>
     
   )
 }

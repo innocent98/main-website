@@ -189,8 +189,22 @@
         color: #777777;
         text-indent: 8px;
     }
+    .jobs_buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        :nth-last-child(1) {
+            background-color: transparent;
+            color: $zeal_purple;
+            border: 1px solid $zeal_purple;
+        }
+     
+        
+    }
+   
 
 }
+
 
 
 
