@@ -99,8 +99,6 @@ const ClientIntro = () => {
             </Container>
           </Modal>}
 
-
-        <Footer/>
       </Layout>
       <div className="f-progress-section">
         <ProgressBar progress={progress} />

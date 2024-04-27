@@ -1,3 +1,4 @@
+@import "../../scss//colors";
 nav {
     display: flex;
     min-width: fit-content;
@@ -42,15 +43,38 @@ nav {
    
       
   }
-  .sign-up {
-      padding: 7px;
-      border-radius: 8px;
+  .sign-up-btn {
+      padding: 10px;
+      border-radius: 5px;
       background:#B304FD;
-      width: 100px;
-      font-size: 17px;
-      cursor: pointer;   
+      width: 120px;
+      font-size: inherit;
+      cursor: pointer;
+      font-weight: 400;
+       
+    &:hover {
+      background-color: $transparent_purple;
   }
   }
+  }
+
+  //ENHANCED NOTIFICATION//
+  nav {
+    position: relative;
+  }
+  
+  .notification-box {
+    position: absolute;
+    top: 110%; /* Position right below the navbar */
+    right: 150PX;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1; /* Ensure the notification box is above other content */
+   
+  }
+  
+  
 
   
 /* media queries (medium screen) */

@@ -1,7 +1,6 @@
 import "../profile.scss"
 import React from 'react'
 import { NavLink } from "react-router-dom"
-
 import Button from "../../../../atomic/atoms/button/Button"
 import Container from "../../../../atomic/atoms/container/Container"
 

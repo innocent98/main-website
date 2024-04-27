@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Logo from '../../atoms/logo/Logo';
 import NavLink from '../../molecules/navlink/NavLink';
@@ -5,7 +6,8 @@ import Button from '../../atoms/button/Button';
 import logo from "../../assets/logo.svg";
 import "./navbar.scss"
 
-const Navbar = () => (
+const NavBar = () => {
+  return (
     <nav>
       <div className="left-nav">
         <Logo src={logo} alt="logo" />
@@ -23,11 +25,16 @@ const Navbar = () => (
         <NavLink to="/signin">Log In</NavLink>
         <NavLink to="/signup">
           <Button
-          classname="sign-up"
+          classname="sign-up-btn"
           buttonText="Sign Up"/>
         </NavLink>
       </div>
     </nav>
-  );
-  
-  export default Navbar;
+  )
+}
+
+export default NavBar
+
+
+
+

@@ -6,6 +6,7 @@
 
 .client-dashboard_wrapper {
     padding: 60px;
+    background-color: #f3f3f3;
 }
 .welcome_wrapper {
     display: flex;
@@ -22,7 +23,7 @@
         justify-content: space-between;
         border: 1px solid #ccc;
         border-radius: 8px;
-
+        background-color: white;
         font-size: 20px;
         overflow: hidden;
         .left{
@@ -37,6 +38,8 @@
             font-size: 20px;
             line-height: 27px;
             border: none;
+            background-color: inherit;
+         
             &:focus {
                 outline: none; 
                 border-color: #AAAAAA; 
@@ -72,7 +75,7 @@
     line-height: 43px;
       text-align: center;
       cursor: pointer;
-      color: black;
+      color: #777777;
       transition: background-color 0.3s;
       &.active {
        color: $zeal_purple;
@@ -141,6 +144,7 @@
         display: flex;
         justify-content: center;
         padding: 40px;
+        background-color: #ffff;
     }
     >:nth-child(3) {
         display: flex;
@@ -193,6 +197,8 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        height: 59px;
+      
         :nth-last-child(1) {
             background-color: transparent;
             color: $zeal_purple;
@@ -201,8 +207,137 @@
      
         
     }
-   
+    button {
+        font-size: 16px;
+        font-weight: 400;
+        border-radius: 7px;
+      
+    }
+  
 
+}
+.jobs-preview_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    p,span,h1,h2,h3 {
+        margin: 0;
+    }
+    .jobs-preview_div1 {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid #CCCCCC;
+        align-items: center;
+        padding: 40px 200px;
+        background-color: white;
+
+        button {
+            background-color: #777777;
+            color: white;
+        }
+      
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            :nth-child(1) {
+                font-size: 14px;
+                color: #777777;
+            }
+            :nth-child(2) {
+                font-size: 20px;
+            }
+            :nth-child(3) {
+                font-size: 24px;
+                color: $zeal_purple;
+            }
+            :nth-child(4) {
+                font-size: 16px;
+                color: #777777;
+            }
+        }
+    }
+    .jobs-preview_div2 {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #CCCCCC;
+        padding: 40px 200px;
+        background-color: white;
+        span {
+            font-size: 16px;
+            color: #777777;
+        }
+        :nth-child(1) {
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+
+    .jobs-preview_div3 {
+        border: 1px solid #CCCCCC;
+        background-color: white;
+      hr {
+        width: 80%;
+        color: #CCCCCC;
+        opacity: .5;
+      }
+        
+        .jobs-preview_div3_sub {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 200px;
+            div {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+                :nth-child(1) {
+                   font-weight: 600;
+                   font-size: 16px;
+                }
+                :nth-child(2) {
+                    color: $zeal_purple;
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    .jobs-preview_div3_main {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 40px 200px;
+    }
+    .jobs-link {
+        display: flex;
+        flex-direction: column;
+        padding: 40px 200px;
+        justify-content: center;
+        gap: 50px;
+        font-size: 16px;
+        :nth-child(1) {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 100%;
+        }
+        label {
+            font-weight: 600;
+        }
+
+        input {
+            height: 48px;
+            width: 70%;
+            border: 1px solid #CCCCCC;
+            border-radius: 8px;
+            text-indent: 8px;
+         
+        }
+    }
 }
 
 

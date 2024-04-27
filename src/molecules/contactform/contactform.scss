@@ -2,4 +2,11 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    .contact-btn {
+        padding: 10px;
+        width: 187px;
+        font-size: 16px;
+        font-weight: 400;
+        border-radius: 7px;
+    }
 }

@@ -1,12 +1,11 @@
 import React from 'react'
-import FAQ from '../components/faq-frame/FAQ'
-import Accordion from '../organisms/accordion/accordion'
+import FAQ from '../../components/faq-frame/FAQ'
+
 
 const FaqPage = () => {
   return (
     <div>
         <FAQ/>
-      
     </div>
   )
 }

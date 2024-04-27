@@ -4,6 +4,9 @@ import { BiSearch } from 'react-icons/bi';
 import Button from '../../../atomic/atoms/button/Button';
 import Dashboard from './dashboardtab/Dashboard';
 import Jobs from './jobs/Jobs';
+import EnhancedNavbar from '../../../organisms/navbar/EnhancedNavbar';
+import Alert from './notification/Alert';
+
 
 const Tabs = ({ children }) => {
   const [activeTab, setActiveTab] = useState(0);
@@ -13,8 +16,10 @@ const Tabs = ({ children }) => {
   };
 
   return (
-
+    <>
+    <EnhancedNavbar/>
     <div className='client-dashboard_wrapper'>
+      <Alert/>
     <div className='welcome_wrapper'>
       <h1>Welcome Solomon</h1>
       <div className='search'>
@@ -44,7 +49,9 @@ const Tabs = ({ children }) => {
     </div>
 
     </div>
+    </>
   );
+  
 };
 
 const Tab = ({ children }) => {
@@ -63,16 +70,16 @@ const App = () => {
         <Jobs/>
       </Tab>
       <Tab title="Discover Talent">
-
+          Discover Talent
       </Tab>
       <Tab title="Wallet">
-        <h2>Tab 4 Content</h2>
-        <p>This is the content of Tab 3.</p>
+          Wallet
       </Tab>
     </Tabs>
 
 
   );
+  
 };
 
 export default App;
