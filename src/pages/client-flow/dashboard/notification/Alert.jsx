@@ -1,7 +1,8 @@
 import React from 'react'
 import "./notification.scss"
 import { BsBell } from 'react-icons/bs'
-import { IoMdClose } from 'react-icons/io'
+import { IoIosNotifications, IoMdClose } from 'react-icons/io'
+import { IoNotifications } from 'react-icons/io5'
 
 const Alert = ({Alert}) => {
   const alertData = {
@@ -13,7 +14,7 @@ const Alert = ({Alert}) => {
   return (
     <div className='alert-box'>
         <div className='alert-box_icon'>
-            <div><BsBell/></div>
+            <div><IoNotifications /></div>
         </div>
         <div className='alert-box_info'>
             <h3>Job Alert</h3>
