@@ -9,17 +9,20 @@ import Alert from './notification/Alert';
 
 
 const Tabs = ({ children }) => {
+
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (index) => {
     setActiveTab(index);
   };
 
+
+
   return (
     <>
     <EnhancedNavbar/>
     <div className='client-dashboard_wrapper'>
-      <Alert/>
+      <Alert  />
     <div className='welcome_wrapper'>
       <h1>Welcome Solomon</h1>
       <div className='search'>

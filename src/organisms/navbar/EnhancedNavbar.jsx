@@ -4,7 +4,7 @@ import logo from "../../assets/logo.svg";
 import "./navbar.scss"
 import { BsChat } from "react-icons/bs";
 import { IoIosNotificationsOutline } from "react-icons/io";
-import Notification from '../../pages/client/dashboard/notification/Notification';
+import Notification from '../../pages/client-flow/dashboard/notification/Notification';
 
 const EnhancedNavbar = () => {
   const [showNotification, setShowNotification] = useState(false);

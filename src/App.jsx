@@ -22,8 +22,8 @@ import FreelancerDashboard from "./atomic/pages/freelancer/dashboard/dashboardPa
 import About from "./pages/landing/About";
 import FaqPage from "./pages/landing/FaqPage";
 import ClientIntro from "./pages/client-flow/profileSetUp copy/intro/Intro";
-import ClientSkillSet from "./pages/client/profileSetUp copy/skillSet/SkillSet";
-import ClientUploadImg from "./pages/client/profileSetUp copy/uploadImg/UploadImg";
+import ClientSkillSet from "./pages/client-flow/profileSetUp copy/skillSet/SkillSet";
+import ClientUploadImg from "./pages/client-flow/profileSetUp copy/uploadImg/UploadImg";
 import ClientPreview from "./pages/client-flow/profileSetUp copy/preview/Preview";
 import ClientSuccess from "./pages/client-flow/profileSetUp copy/success/Success";
 import ClientGetStarted from "./pages/client-flow/profileSetUp copy/getStarted/GetStarted";
