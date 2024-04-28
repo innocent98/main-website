@@ -17,12 +17,12 @@ const Tabs = ({ children }) => {
   };
 
 
-
+  
   return (
     <>
     <EnhancedNavbar/>
     <div className='client-dashboard_wrapper'>
-      <Alert  />
+      <Alert/>
     <div className='welcome_wrapper'>
       <h1>Welcome Solomon</h1>
       <div className='search'>
