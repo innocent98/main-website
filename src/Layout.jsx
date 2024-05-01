@@ -5,9 +5,9 @@ import Navbar from "./organisms/navbar/NavBar";
 export default function Layout() {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <Outlet />
-      <Footer/>
+      <Footer />
     </>
   );
 }

@@ -40,7 +40,6 @@ const GetStarted = () => {
           <p className='wrapper--flex--between__text'>It takes only few steps to create your profile and you can edit it later.</p>
         </Container>
       </Container>
-      {/* <Outlet/> */}
     </Layout>
   )
 }

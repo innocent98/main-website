@@ -1,6 +1,6 @@
 @import "../../../scss/utils";
-@import "../../../scss/colors";
 @import "../../../scss/mixins";
+@import "../../../scss/colors";
 @import "../../../scss/typography";
 
 .button--default {
@@ -12,7 +12,7 @@
     pointer,
     $zeal_purple,
     100%,
-    0,
+    6px,
     14px
   );
   outline: none;
@@ -67,7 +67,7 @@
   );
 }
 
-.button--border {
+.button--border__zeal {
   @include btn(
     0,
     $zeal_purple,
@@ -78,6 +78,20 @@
     fit-content,
     40px,
     7px 40px
+  );
+}
+
+.button--border__slate {
+  @include btn(
+    0,
+    $slate,
+    12px,
+    1px solid $grey,
+    pointer,
+    transparent,
+    fit-content,
+    40px,
+    7px 20px
   );
 }
 .button--transparent {
@@ -112,8 +126,8 @@
 
 .button__disabled {
   opacity: 0.5;
-  cursor: not-allowed !important;
+  cursor: not-allowed;
 }
-.button__error {
-  //style
-}
+// .button__error {
+//   //style
+// }

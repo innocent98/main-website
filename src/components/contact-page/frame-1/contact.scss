@@ -1,26 +1,24 @@
-.wrapper-contact {
-    padding: 10px 200px 200px 200px;
+.contact--wrapper {
+  padding: 10px 200px 200px 200px;
 }
 .contact {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
 }
 
 /* media queries (medium screen) */
-@media screen  and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
 }
-  
-  /* media queries (small screen) */
-  @media screen  and (max-width: 600px) {
-    section {
-        padding: 60px 24px;
-    }
-    .contact {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
+
+/* media queries (small screen) */
+@media screen and (max-width: 600px) {
+  .contact--wrapper {
+    padding: 60px 24px;
   }
-
-
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
