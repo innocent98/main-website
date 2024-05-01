@@ -1,18 +1,10 @@
 import "./App.scss";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./App.scss";
 import AfilliatePage from "./pages/landing/AfilliatePage";
 import ContactPage from "./pages/landing/ContactPage";
 
 import Layout from "./Layout";
-import About from "./pages/About";
 import "../src/scss/_globals.scss";
-import FaqPage from "./pages/FaqPage";
 import Auth from "./atomic/pages/auth/Auth";
-import ContactPage from "./pages/ContactPage";
-import AfilliatePage from "./pages/AfilliatePage";
-import ClientDashboard from "./pages/ClientDashboard";
-import LandingPage from "./pages/landingPage/LandingPage";
 
 import SignIn from "./atomic/organisms/authframe/authforms/SignIn";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -31,9 +23,6 @@ import Dashboard from "./atomic/pages/freelancer/dashboard/overview/dashboardPag
 import VerificationPage from "./atomic/pages/freelancer/dashboard/verification/VerificationPage";
 import FreelancerDashboardLayout from "./atomic/pages/freelancer/dashboard/freelancerLayout/FreelancerDashboardLayout";
 
-import Preview from "./atomic/pages/freelancer/profileSetUp/preview/Preview";
-import Success from "./atomic/pages/freelancer/profileSetUp/success/Success";
-import FreelancerDashboard from "./atomic/pages/freelancer/dashboard/dashboardPage/Dashboard";
 import About from "./pages/landing/About";
 import FaqPage from "./pages/landing/FaqPage";
 import ClientIntro from "./pages/client-flow/profileSetUp copy/intro/Intro";
@@ -44,6 +33,7 @@ import ClientSuccess from "./pages/client-flow/profileSetUp copy/success/Success
 import ClientGetStarted from "./pages/client-flow/profileSetUp copy/getStarted/GetStarted";
 import Home from "./pages/landing/Home";
 import ClientDashboard from "./pages/client-flow/dashboard/ClientDashboard";
+import React from "react";
 
 const router = createBrowserRouter([
   {
@@ -132,20 +122,18 @@ const router = createBrowserRouter([
       },
       {
         path: "/overview/jobs",
-        element: <Jobs />
+        element: <Jobs />,
       },
       {
-        path:"/overview/profile",
-        element:<ProfilePage/>
+        path: "/overview/profile",
+        element: <ProfilePage />,
       },
       {
-        path:"/overview/verification",
-        element:<VerificationPage/>
-      }
-    ]
+        path: "/overview/verification",
+        element: <VerificationPage />,
+      },
+    ],
   },
-
-
 
   //CLIENT PROFILE-FLOW
   {
