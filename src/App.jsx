@@ -1,29 +1,30 @@
 import "./App.scss";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import AfilliatePage from "./pages/AfilliatePage";
-import ContactPage from "./pages/ContactPage";
-import ClientDashboard from "./pages/ClientDashboard";
-
 import Layout from "./Layout";
+import About from "./pages/About";
 import "../src/scss/_globals.scss";
+import FaqPage from "./pages/FaqPage";
 import Auth from "./atomic/pages/auth/Auth";
-// import About from "./pages/aboutPage/About";
-// import FaqPage from "./components/faq-frame/FaqPage";
+import ContactPage from "./pages/ContactPage";
+import AfilliatePage from "./pages/AfilliatePage";
+import ClientDashboard from "./pages/ClientDashboard";
 import LandingPage from "./pages/landingPage/LandingPage";
-// import Affiliate from "./components/affiliate-page/Affiliate";
 import SignIn from "./atomic/organisms/authframe/authforms/SignIn";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Intro from "./atomic/pages/freelancer/profileSetUp/intro/Intro";
-import GetStarted from "./atomic/pages/freelancer/profileSetUp/getStarted/GetStarted";
+import Jobs from "./atomic/pages/freelancer/dashboard/overview/jobs/Jobs";
+import Preview from "./atomic/pages/freelancer/profileSetUp/preview/Preview";
+import Success from "./atomic/pages/freelancer/profileSetUp/success/Success";
 import SkillSet from "./atomic/pages/freelancer/profileSetUp/skillSet/SkillSet";
+import ProfilePage from "./atomic/pages/freelancer/dashboard/profile/ProfilePage";
 import UploadImg from "./atomic/pages/freelancer/profileSetUp/uploadImg/UploadImg";
+import GetStarted from "./atomic/pages/freelancer/profileSetUp/getStarted/GetStarted";
 import VerifyEmail from "./atomic/organisms/authframe/forgotpasswordflow/VerifyEmail";
 import NewPassword from "./atomic/organisms/authframe/forgotpasswordflow/NewPassword";
 import ForgotPassword from "./atomic/organisms/authframe/forgotpasswordflow/ForgotPassword";
-import Preview from "./atomic/pages/freelancer/profileSetUp/preview/Preview";
-import Success from "./atomic/pages/freelancer/profileSetUp/success/Success";
-import FreelancerDashboard from "./atomic/pages/freelancer/dashboard/dashboardPage/Dashboard";
-import About from "./pages/About";
-import FaqPage from "./pages/FaqPage";
+import Dashboard from "./atomic/pages/freelancer/dashboard/overview/dashboardPage/Dashboard";
+import VerificationPage from "./atomic/pages/freelancer/dashboard/verification/VerificationPage";
+import FreelancerDashboardLayout from "./atomic/pages/freelancer/dashboard/freelancerLayout/FreelancerDashboardLayout";
+
 
 const router = createBrowserRouter([
   {
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-  
+
   {
     path: "/signUp",
     element: <Auth />,
@@ -101,10 +102,31 @@ const router = createBrowserRouter([
     path: "/get-started",
     element: <GetStarted />,
   },
+
   {
-    path: "/freelancer-dashboard",
-    element: <FreelancerDashboard />,
+    path: "/overview",
+    element: <FreelancerDashboardLayout />,
+    children: [
+      {
+        path: "/overview",
+        element: <Dashboard />,
+      },
+      {
+        path: "/overview/jobs",
+        element: <Jobs />
+      },
+      {
+        path:"/overview/profile",
+        element:<ProfilePage/>
+      },
+      {
+        path:"/overview/verification",
+        element:<VerificationPage/>
+      }
+    ]
   },
+
+
 ]);
 
 function App() {

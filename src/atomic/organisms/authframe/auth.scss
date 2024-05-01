@@ -2,7 +2,7 @@
 @import "../../../scss/mixins";
 @import "../../../scss/typography";
 
-//>>leftFrame
+//************************************************leftFrame
 .left-frame {
   @include mq(220px) {
     display: none;
@@ -30,7 +30,7 @@
   }
 }
 
-//>> InterractiveFormComponent
+//********************************************InterractiveFormComponent
 .wrapper--link-container {
   @include mq(220px) {
     align-items: start;
@@ -47,11 +47,8 @@
     justify-content: end;
   }
 }
-.link {
-  color: $zeal_purple;
-  text-align: center;
-}
 
+//******************************************sign up
 .signup {
   @include mq(220px) {
     width: 100%;
@@ -186,6 +183,8 @@
   }
 }
 
+//*******************************************button group
+
 .wraper--btn-group {
   border: 1px solid $grey;
   padding: 12px;
@@ -230,6 +229,7 @@
   }
 }
 
+//*******************************************password layout
 .password--layout {
   display: flex;
   justify-content: center;
@@ -331,4 +331,11 @@
   .error--message{
     color: $error;
   }
+}
+
+
+//individual style
+.link {
+  color: $zeal_purple;
+  text-align: center;
 }

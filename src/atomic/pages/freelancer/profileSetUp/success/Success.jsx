@@ -15,7 +15,7 @@ const Success = () => {
                 <h1>Profile successfully created</h1>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure dolorem ratione maiores, assumenda blanditiis facilis earum aspernatur perspiciatis cupiditate! Exercitationem.</p>
                 <Button variant="fitted">
-                    <Link to="/freelancer-dashboard" className='link--white'>
+                    <Link to="/overview" className='link--white'>
                         Go to Dashboard
                     </Link>
                 </Button>
