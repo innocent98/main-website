@@ -1,14 +1,14 @@
 import React from 'react'
 import Container from '../../atoms/container/Container'
 import Input from '../../atoms/input/Input'
-// import 
+import Button from '../../../atoms/button/Button'
 
-const InputField = () => {
+const ButtonInput = () => {
   return (
-    <div>
+    <Container>
       
-    </div>
+    </Container>
   )
 }
 
-export default InputField
+export default ButtonInput
