@@ -3,13 +3,13 @@ import React, { useState } from 'react'
 const MessageDropdown = () => {
   const [isNotificationEmpty, setIsNotificationEmpty] = useState(true)
   return (
-    <section>
+    <section className='message--dropdown'>
       <div>
-        <p>Notifications</p>
+        <p>Messages</p>
       </div>
       {isNotificationEmpty ? <div>
-        <p>No notifications yet</p>
-        <p>All your notifications will show here</p>
+        <p>Your Inbox is Empty</p>
+        <p>All your conversations will show here</p>
       </div> : ""}
     </section>
   )

@@ -16,7 +16,7 @@ const VerificationPage = () => {
                 <Container variant="wrapper--flex" className="verification--info-wrapper">
                     <div>
                         <Suspense fallback={<div>loading...</div>}>
-                            <LazyLoadedImg src="profileAvatar" alt="user" extension="svg" />
+                            <LazyLoadedImg src="profileAvatar" alt="user" extension="svg" className="profile-avatar"/>
                         </Suspense>
                     </div>
                     <div>

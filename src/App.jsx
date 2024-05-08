@@ -16,6 +16,7 @@ import Preview from "./atomic/pages/freelancer/profileSetUp/preview/Preview";
 import Success from "./atomic/pages/freelancer/profileSetUp/success/Success";
 import SkillSet from "./atomic/pages/freelancer/profileSetUp/skillSet/SkillSet";
 import ProfilePage from "./atomic/pages/freelancer/dashboard/profile/ProfilePage";
+import ReviewsPage from "./atomic/pages/freelancer/dashboard/reviews/ReviewsPage";
 import UploadImg from "./atomic/pages/freelancer/profileSetUp/uploadImg/UploadImg";
 import GetStarted from "./atomic/pages/freelancer/profileSetUp/getStarted/GetStarted";
 import VerifyEmail from "./atomic/organisms/authframe/forgotpasswordflow/VerifyEmail";
@@ -122,6 +123,10 @@ const router = createBrowserRouter([
       {
         path:"/overview/verification",
         element:<VerificationPage/>
+      },
+      {
+        path:"/overview/reviews",
+        element:<ReviewsPage/>
       }
     ]
   },

@@ -96,6 +96,30 @@
     width: 300px;
   }
 }
+.message--dropdown{
+  top: 70px;
+  right: 30px;
+  width: 300px;
+  z-index: 1000;
+  background-color: white;
+  padding: 10px 0;
+  position: absolute;
+  border: 1px solid $grey;
+  border-radius: 10px;
+  box-shadow: 0px 4px 25px -3px rgba(0, 0, 0, 0.2);
+}
+.notification--dropdown{
+  top: 70px;
+  right: 30px;
+  width: 300px;
+  z-index: 1000;
+  background-color: white;
+  padding: 10px 0;
+  position: absolute;
+  border: 1px solid $grey;
+  border-radius: 10px;
+  box-shadow: 0px 4px 25px -3px rgba(0, 0, 0, 0.2);
+}
 
 //**********************************link items***************************\\
 .link-items {
@@ -254,6 +278,11 @@
       gap: 40px;
       .project-wrapper {
         width: 100%;
+        .project--imageWrapper{
+          .project-img{
+            width: 100%;
+          }
+        }
       }
     }
   }
@@ -343,7 +372,6 @@
   }
 }
 
-
 //*************************************** verification page style *******************************\\
 .verification {
   height: 90dvh;
@@ -354,6 +382,7 @@
     margin-top: 50px;
     .verification--info-wrapper {
       gap: 15px;
+     
       .verification--username {
         color: $slate;
         margin-bottom: 7px;
@@ -408,6 +437,11 @@
   @include mq(200px) {
     .user-info{
       padding: 30px 1rem;
+      .profile-avatar{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+      }
       .verification--info-wrapper > div p {
         margin: 0;
         font-size: 15px;
@@ -426,10 +460,52 @@
     }
     .user-info{
       padding: 30px 10rem;
+      .profile-avatar{
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+      }
     }
     .verification--userMembership{
       padding: 10px 25px;
      }
+  }
+}
+
+//************************8 review page style
+.no-review-text{
+  text-align: center;
+  height: 70dvh;
+  p{
+    color: $slate;
+    font-weight: 600;
+    margin: 0
+  }
+  @include mq(200px) {
+    h2{
+      font-size: 20px;
+    }
+  }
+  @include mq(768px) {
+   h2{
+    font-size: 25px;
+   }
+  }
+}
+.review-count{
+  color: $slate;
+  font-weight: 700
+}
+.review--item{
+  background-color: $white;
+  padding: 10px 30px;
+  margin-bottom: 30px;
+  border-radius: 9px;
+  .review--username{
+    gap: 15px;
+  }
+  .review-text{
+    margin-top: 20px
   }
 }
 

@@ -17,7 +17,7 @@ const ProfilePage = () => {
         <section className='profile-info'>
           <>
             <Suspense fallback={<div>loading...</div>}>
-              <LazyLoadedImg src="profileAvatar" extension='svg' width={60} height={60} alt="user"/>
+              <LazyLoadedImg src="profileAvatar" extension='svg' width={60} height={60} alt="user" />
             </Suspense>
             <h2>Surname Solomon</h2>
           </>
@@ -54,7 +54,7 @@ const ProfilePage = () => {
             <aside className='project-wrapper'>
               <div className='project--imageWrapper'>
                 <Suspense fallback={<div>loading...</div>}>
-                  <LazyLoadedImg src="profile-project" extension='png' />
+                  <LazyLoadedImg src="profile-project" extension='png' className="project-img"/>
                 </Suspense>
               </div>
               <h3>Project Name</h3>
@@ -63,7 +63,7 @@ const ProfilePage = () => {
             <aside className='project-wrapper'>
               <div className='project--imageWrapper'>
                 <Suspense fallback={<div>loading...</div>}>
-                  <LazyLoadedImg src="profile-project" extension='png' />
+                  <LazyLoadedImg src="profile-project" extension='png' className="project-img" />
                 </Suspense>
               </div>
               <h3>Project Name</h3>

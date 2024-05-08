@@ -18,7 +18,7 @@ const dropdownLinks=[
     {
         icon:"star",
         title:"Reviews",
-        href:"/reviews"
+        href:"/overview/reviews"
     },
     {
         icon:"dollar-sign",

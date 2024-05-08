@@ -7,8 +7,8 @@ const Image = ({
     className,
     extension = "jpg" || "png" || "jpeg" || "svg",
 }) => {
-   // dynamic image source URL using the provided source and extension
-    const dynamicSrc = `src/assets/${src}.${extension}`
+    // dynamic image source URL using the provided source and extension
+    const dynamicSrc = `/src/assets/${src}.${extension}`
     return (
         <img
             alt={alt}

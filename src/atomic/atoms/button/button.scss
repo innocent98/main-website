@@ -107,6 +107,19 @@
     0
   );
 }
+.button--no-bg {
+  @include btn(
+    none,
+    $black,
+    $text_sm,
+    none,
+    pointer,
+    transparent,
+    fit-content,
+    0,
+    0
+  );
+}
 .button--fitted {
   @include btn(
     none,
