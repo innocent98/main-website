@@ -1,13 +1,11 @@
 import "./App.scss";
+import AfilliatePage from "./pages/landing/AfilliatePage";
+import ContactPage from "./pages/landing/ContactPage";
+
 import Layout from "./Layout";
-import About from "./pages/About";
 import "../src/scss/_globals.scss";
-import FaqPage from "./pages/FaqPage";
 import Auth from "./atomic/pages/auth/Auth";
-import ContactPage from "./pages/ContactPage";
-import AfilliatePage from "./pages/AfilliatePage";
-import ClientDashboard from "./pages/ClientDashboard";
-import LandingPage from "./pages/landingPage/LandingPage";
+
 import SignIn from "./atomic/organisms/authframe/authforms/SignIn";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Intro from "./atomic/pages/freelancer/profileSetUp/intro/Intro";
@@ -26,6 +24,17 @@ import Dashboard from "./atomic/pages/freelancer/dashboard/overview/dashboardPag
 import VerificationPage from "./atomic/pages/freelancer/dashboard/verification/VerificationPage";
 import FreelancerDashboardLayout from "./atomic/pages/freelancer/dashboard/freelancerLayout/FreelancerDashboardLayout";
 
+import About from "./pages/landing/About";
+import FaqPage from "./pages/landing/FaqPage";
+import ClientIntro from "./pages/client-flow/profileSetUp copy/intro/Intro";
+import ClientSkillSet from "./pages/client-flow/profileSetUp copy/skillSet/SkillSet";
+import ClientUploadImg from "./pages/client-flow/profileSetUp copy/uploadImg/UploadImg";
+import ClientPreview from "./pages/client-flow/profileSetUp copy/preview/Preview";
+import ClientSuccess from "./pages/client-flow/profileSetUp copy/success/Success";
+import ClientGetStarted from "./pages/client-flow/profileSetUp copy/getStarted/GetStarted";
+import Home from "./pages/landing/Home";
+import ClientDashboard from "./pages/client-flow/dashboard/ClientDashboard";
+import React from "react";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +43,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <LandingPage />,
+        element: <Home />,
       },
       {
         path: "/about",
@@ -114,24 +123,58 @@ const router = createBrowserRouter([
       },
       {
         path: "/overview/jobs",
-        element: <Jobs />
+        element: <Jobs />,
       },
       {
-        path:"/overview/profile",
-        element:<ProfilePage/>
+        path: "/overview/profile",
+        element: <ProfilePage />,
       },
       {
-        path:"/overview/verification",
-        element:<VerificationPage/>
+        path: "/overview/verification",
+        element: <VerificationPage />,
       },
       {
         path:"/overview/reviews",
         element:<ReviewsPage/>
-      }
-    ]
+      },
+    ],
+  },
+  //     path: "/overview/verification",
+  //     element: <VerificationPage />,
+  //   },
+  // ],
+
+  //CLIENT PROFILE-FLOW
+  {
+    path: "/client-profile-setup-page1",
+    element: <ClientIntro />,
+  },
+  {
+    path: "/client-get-started",
+    element: <ClientGetStarted />,
+  },
+  {
+    path: "/client-profile-setup-page2",
+    element: <ClientSkillSet />,
+  },
+  {
+    path: "/client-profile-setup-page3",
+    element: <ClientUploadImg />,
+  },
+  {
+    path: "/client-setup_profile/preview_profile",
+    element: <ClientPreview />,
+  },
+  {
+    path: "/client-setup_profile/success",
+    element: <ClientSuccess />,
   },
 
-
+  //CLIENT DASHBOARD
+  {
+    path: "/client-dashboard",
+    element: <ClientDashboard />,
+  },
 ]);
 
 function App() {

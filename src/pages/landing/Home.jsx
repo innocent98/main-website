@@ -7,8 +7,6 @@ import Benefit from '../../components/landingpage/Benefits/Benefit'
 import HowItWorks from '../../components/landingpage/Howitworks/HowItWorks'
 import ZealToken from '../../components/landingpage/zealtoken/ZealToken'
 import BlogFrame from '../../components/landingpage/blog-frame/BlogFrame'
-import Footer from '../../components/landingpage/footer/Footer'
-
 
 const LandingPage = () => {
   return (
@@ -21,6 +19,7 @@ const LandingPage = () => {
     <HowItWorks/>
     <ZealToken/>
     <BlogFrame/>
+
     </>
   )
 }

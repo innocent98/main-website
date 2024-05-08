@@ -1,0 +1,69 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+    }
+    .upload-image {
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        .avatar {
+            margin-left: 10px;
+        }
+    }
+
+    .com-name {
+        height: 47PX;
+        border: 1px solid #AAAAAA;
+        border-radius: 8px;
+        text-indent: 20px;
+        font-size: 14px;
+        color: #cccccc;
+        &:focus {
+            outline: none; // Remove the outline when textarea is in focus
+            border-color: #AAAAAA; // Set border color to transparent
+            box-shadow: none; // Remove any box shadow
+        }
+    }
+    .com-desc {
+        height: 150px;
+        border: 1px solid #AAAAAA;
+        border-radius: 8px;
+        font-size: 14px;
+        padding: 14px;
+        resize: none; 
+        font-family: inherit;
+        &:focus {
+            outline: none; // Remove the outline when textarea is in focus
+            border-color: #AAAAAA; // Set border color to transparent
+            box-shadow: none; // Remove any box shadow
+        }
+    }
+     label {
+        font-size: 20px;
+        line-height: 27px;
+        font-weight: 400;
+        margin-bottom: 10px;
+       p {
+        margin: 0px;
+       }
+      
+    }
+
+}
+.f-progress-section {
+    margin-top: 120PX;
+    padding: 40px;
+}
+.fp-progress-section {
+    margin-top: 300PX;
+    padding: 40px;
+}
