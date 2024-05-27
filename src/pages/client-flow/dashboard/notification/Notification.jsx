@@ -1,5 +1,6 @@
-import React from 'react';
+
 import "./notification.scss";
+import{ Link} from "react-router-dom"
 
 const Notification = ({ notifications }) => {
 
@@ -20,7 +21,7 @@ const Notification = ({ notifications }) => {
                         <div><p>{notification.message}</p></div>
                         <div>
                             <p style={{color:"#777777"}}>{notification.timestamp}</p>
-                            <a href={notification.profileLink}><button>View Profile</button></a>
+                            <Link to={notification.profileLink}><button>View Profile</button></Link>
                         </div>
                     </div>
                   </div>

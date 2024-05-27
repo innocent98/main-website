@@ -6,6 +6,8 @@ import Dashboard from './dashboardtab/Dashboard';
 import Jobs from './jobs/Jobs';
 import EnhancedNavbar from '../../../organisms/navbar/EnhancedNavbar';
 import Alert from './notification/Alert';
+import { Link } from 'react-router-dom';
+import DiscoverTalent from './discoverTalent/DiscoverTalent';
 
 
 const Tabs = ({ children }) => {
@@ -69,11 +71,11 @@ const App = () => {
       <Tab title="Dashboard">
           <Dashboard/>
       </Tab>
-      <Tab title="Jobs">
+    <Tab title="Jobs">
         <Jobs/>
       </Tab>
       <Tab title="Discover Talent">
-          Discover Talent
+          <DiscoverTalent/>
       </Tab>
       <Tab title="Wallet">
           Wallet

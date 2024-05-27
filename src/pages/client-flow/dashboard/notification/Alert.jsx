@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import './notification.scss';
 import { IoNotifications } from 'react-icons/io5';
 import { IoMdClose } from 'react-icons/io';
 import alertNotificationSound from '../../../../assets/alert_notification.mp3'; 
+import{ Link} from "react-router-dom"
 
 const Alert = () => {
   const [alertData, setAlertData] = useState([]);
@@ -64,13 +65,15 @@ const Alert = () => {
           <div className='alert-box_info'>
             <h3>Job Alert</h3>
             <p style={{ color: "#777777" }}>{alertData[currentAlertIndex].freelancer} applied for the job you posted</p>
-            <button onClick={handleCloseAlert}>View Profile</button>
+          <Link to="/freelancer-profile"><button onClick={handleCloseAlert}>View Profile</button></Link>
+            
           </div>
           <div className='close' onClick={handleCloseAlert}>
             <IoMdClose style={{ cursor: "pointer" }} />
           </div>
         </div>
       )}
+      
     </>
   );
 };

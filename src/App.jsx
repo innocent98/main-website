@@ -33,7 +33,9 @@ import ClientSuccess from "./pages/client-flow/profileSetUp copy/success/Success
 import ClientGetStarted from "./pages/client-flow/profileSetUp copy/getStarted/GetStarted";
 import Home from "./pages/landing/Home";
 import ClientDashboard from "./pages/client-flow/dashboard/ClientDashboard";
-import React from "react";
+
+import Profile from "./pages/client-flow/freelancer-profile/Profile";
+import ContactProfile from "./pages/client-flow/dashboard/dashboardtab/ContactProfile";
 
 const router = createBrowserRouter([
   {
@@ -165,6 +167,14 @@ const router = createBrowserRouter([
   {
     path: "/client-dashboard",
     element: <ClientDashboard />,
+  },
+  {
+    path: "/freelancer-profile",
+    element: <Profile />,
+  },
+  {
+    path: "/contact-profile",
+    element: <ContactProfile />,
   },
 ]);
 
