@@ -1,6 +1,7 @@
 import image from "../../../../assets/image 9.png";
 import profileimage from "../../../../assets/Frame 133742.png";
 import { Link } from "react-router-dom";
+import BasicModal from "./Modal";
 
 const Card = ({ isNew, name, location, skills }) => {
   return (
@@ -28,7 +29,7 @@ const Card = ({ isNew, name, location, skills }) => {
         <div>
           <Link className="link" to="/contact-profile">
             {" "}
-            <button className="btn">Contact</button>
+            <button onClick={BasicModal} className="btn">Contact</button>
           </Link>
         </div>
       </div>

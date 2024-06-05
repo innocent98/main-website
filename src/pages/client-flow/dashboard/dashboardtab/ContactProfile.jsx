@@ -3,6 +3,7 @@ import avatar from "../../../../assets/Frame 133776(1).png";
 import profileProject from "../../../../assets/profile-project.png";
 import "../../freelancer-profile/profile.scss";
 import { GrLocation } from "react-icons/gr";
+import BasicModal from "../discoverTalent/Modal";
 
 const ContactProfile = () => {
   return (
@@ -30,7 +31,7 @@ const ContactProfile = () => {
           </div>
 
           <div className="freelancer-CTA">
-            <button style={{ width: "111px" }}>Contact</button>
+            <button onClick={BasicModal} style={{ width: "111px" }}>Contact</button>
             <button style={{ display: "none" }}></button>
           </div>
 

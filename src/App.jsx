@@ -16,8 +16,6 @@ import SkillSet from "./atomic/pages/freelancer/profileSetUp/skillSet/SkillSet";
 import ProfilePage from "./atomic/pages/freelancer/dashboard/profile/ProfilePage";
 import UploadImg from "./atomic/pages/freelancer/profileSetUp/uploadImg/UploadImg";
 import GetStarted from "./atomic/pages/freelancer/profileSetUp/getStarted/GetStarted";
-import VerifyEmail from "./atomic/organisms/authframe/forgotpasswordflow/VerifyEmail";
-import NewPassword from "./atomic/organisms/authframe/forgotpasswordflow/NewPassword";
 import ForgotPassword from "./atomic/organisms/authframe/forgotpasswordflow/ForgotPassword";
 import Dashboard from "./atomic/pages/freelancer/dashboard/overview/dashboardPage/Dashboard";
 import VerificationPage from "./atomic/pages/freelancer/dashboard/verification/VerificationPage";
@@ -100,14 +98,6 @@ const router = createBrowserRouter([
   {
     path: "forgot_password",
     element: <ForgotPassword />,
-  },
-  {
-    path: "forgot_password/verify_email",
-    element: <VerifyEmail />,
-  },
-  {
-    path: "forgot_password/new_password",
-    element: <NewPassword />,
   },
   {
     path: "/get-started",
