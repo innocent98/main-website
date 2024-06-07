@@ -40,12 +40,12 @@
     justify-content: center;
 
     .modal--overlay__content {
-      width: 30%;
+      width: fit-content;
       height: fit-content;
       text-align: center;
       border-radius: 5px;
       background-color: $white;
-      padding: 1% 1%;
+      padding: 1% 2%;
     }
   }
 }

@@ -1,4 +1,4 @@
-import EmptyState from './EmptyState'
+import EmptyState from '../EmptyState'
 import reviewData from './reviewdata'
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
@@ -16,7 +16,11 @@ const ReviewsPage = () => {
       {
         reviewCount === 0
           ?
-          <EmptyState toggleState={() => setReviewCount(1)} />
+          <EmptyState
+            stateTitle={"You have no review(s) yet"}
+            stateDescription={"Finish jobs for clients to get reviews"}
+            toggleState={() => setReviewCount(1)}
+          />
           :
           <>
             {reviewData.map((data, i) => {

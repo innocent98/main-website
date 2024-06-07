@@ -6,10 +6,10 @@ const NotificationDropdown = () => {
   return (
     <div>
       <section className='notification--dropdown'>
-        <div>
+        <div className='title'>
           <p>Notifications</p>
         </div>
-        {isNotificationEmpty ? <div>
+        {isNotificationEmpty ? <div className='notification-text'>
           <p>No notification yet</p>
           <p>All your notifications will show here</p>
         </div> : ""}

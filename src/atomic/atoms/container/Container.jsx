@@ -11,6 +11,9 @@ const Container = ({ variant, children, className }) => {
         case "wrapper--flex":
             style = clsx(style, "container--flex")
             break;
+        case "wrapper--flex--col":
+            style = clsx(style, "container--flex--col")
+            break;
         case "wrapper--flex--center":
             style = clsx(style, "container--flexcenter")
             break;
@@ -36,7 +39,7 @@ const Container = ({ variant, children, className }) => {
             break;
     }
     return (
-        <main className={clsx(style, className)}>
+        <main className={clsx(style, className)} style={{style}}>
             {children}
         </main>
     )

@@ -8,9 +8,6 @@ const FreelancerDashboardLayout = () => {
         <>
             <Header />
             <main className='layout--children'>
-                {/* <main>
-                    <SearchSection />
-                </main> */}
                 <Outlet />
             </main>
         </>

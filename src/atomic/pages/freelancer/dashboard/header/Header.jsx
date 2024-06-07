@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { FaBars } from "react-icons/fa6";
 import Dropdown from './dropdown/Dropdown';
 import { FiChevronDown } from "react-icons/fi";
-import { FiMessageCircle } from "react-icons/fi";
+import { BiMessageRounded } from "react-icons/bi";
 import Button from '../../../../atoms/button/Button';
-import React, { Suspense, lazy, useEffect, useState } from 'react';
+import React, { Suspense, lazy, useState } from 'react';
 import MessageDropdown from "./dropdown/MessageDropdown";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import Container from '../../../../atoms/container/Container';
@@ -18,23 +18,35 @@ const Header = () => {
     const [isMessageOpen, setIsMessageOpen] = useState(false)
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const [isNotificationOpen, setIsNotificationOpen] = useState(false)
-    const [isDisabled, setIsDisabled] = useState(false)
 
     // toggle dropdown visibility fnc
     const toggleDropdown = (() => {
-        setIsDropdownOpen(!isDropdownOpen)
-    })
-
-    const handleButtonDisabled = () => {
-        if (isMessageOpen || isDropdownOpen || isNotificationOpen) {
-            setIsDisabled(true)
+        if (isMessageOpen || isNotificationOpen) {
+            setIsMessageOpen(false)
+            setIsNotificationOpen(false)
+            setIsDropdownOpen(!isDropdownOpen)
         } else {
-            setIsDisabled(false)
+            setIsDropdownOpen(!isDropdownOpen)
         }
-    }
-    useEffect(() => {
-        handleButtonDisabled()
-    }, [isMessageOpen, isDropdownOpen, isNotificationOpen])
+    })
+    const toggleNotificationDropdown = (() => {
+        if (isMessageOpen || isDropdownOpen) {
+            setIsMessageOpen(false)
+            setIsDropdownOpen(false)
+            setIsNotificationOpen(!isNotificationOpen)
+        } else {
+            setIsNotificationOpen(!isNotificationOpen)
+        }
+    })
+    const toggleMessageDropdown = (() => {
+        if (isNotificationOpen || isDropdownOpen) {
+            setIsDropdownOpen(false)
+            setIsNotificationOpen(false)
+            setIsMessageOpen(!isMessageOpen)
+        } else {
+            setIsMessageOpen(!isMessageOpen)
+        }
+    })
 
     return (
         <>
@@ -48,16 +60,15 @@ const Header = () => {
                     <Link className='link'>Switch to Client</Link>
                     <FaBars className="header--hamburger-menu" onClick={toggleDropdown} />
                     <div className="header--conditional-icons">
-                        <Button variant="no-bg" isDisabled={isDisabled} className={isDisabled? "disabled" :"header--icon"}>
-                            <FiMessageCircle
-                                // className='header--icon'
-                                onClick={() => setIsMessageOpen(!isMessageOpen)}
+                        <Button variant="no-bg" className="header--icon">
+                            <BiMessageRounded
+                                onClick={toggleMessageDropdown}
                             />
                         </Button>
                         <Button variant="no-bg">
                             <IoMdNotificationsOutline
                                 className='header--icon'
-                                onClick={() => setIsNotificationOpen(!isNotificationOpen)}
+                                onClick={toggleNotificationDropdown}
                             />
                         </Button>
                         <Button onClick={toggleDropdown} variant="transparent" className="header--profile-dropdown">

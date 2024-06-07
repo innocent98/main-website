@@ -96,29 +96,67 @@
     width: 300px;
   }
 }
-.message--dropdown{
+.message--dropdown {
   top: 70px;
   right: 30px;
   width: 300px;
   z-index: 1000;
   background-color: white;
-  padding: 10px 0;
+  padding: 25px;
   position: absolute;
   border: 1px solid $grey;
   border-radius: 10px;
   box-shadow: 0px 4px 25px -3px rgba(0, 0, 0, 0.2);
+  .title p {
+    margin: 0;
+    font-weight: bold;
+    color: $black;
+  }
+  .notification-text {
+    text-align: center;
+    margin-top: 40px;
+    p {
+      margin: 0 0 10px 0;
+    }
+  }
+  .notification-text :nth-child(1) {
+    color: $black;
+    font-weight: bold;
+  }
+  .notification-text :nth-child(2) {
+    color: $slate;
+  }
 }
-.notification--dropdown{
+.notification--dropdown {
   top: 70px;
   right: 30px;
   width: 300px;
   z-index: 1000;
   background-color: white;
-  padding: 10px 0;
+  padding: 25px;
   position: absolute;
   border: 1px solid $grey;
   border-radius: 10px;
   box-shadow: 0px 4px 25px -3px rgba(0, 0, 0, 0.2);
+  .title p {
+    margin: 0;
+    font-weight: bold;
+    color: $black;
+  }
+  .notification-text {
+    text-align: center;
+    margin-top: 40px;
+    p {
+      margin: 0 0 10px 0;
+    }
+  }
+  .notification-text :nth-child(1) {
+    color: $black;
+    font-weight: bold;
+  }
+  .notification-text :nth-child(2) {
+    color: $slate;
+  }
 }
 
 //**********************************link items***************************\\
@@ -144,6 +182,22 @@
 .Fdashboard {
   gap: 30px;
   margin-top: 30px;
+  .Dashboard__item-Fcard {
+    justify-content: space-between;
+  }
+  .downloadIcon {
+    font-size: 20px;
+    color: $black;
+    padding: 10px 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 60px;
+  }
+  .card-title {
+    margin-top: 50px;
+  }
 
   @include mq(200px) {
     .card-wrapper {
@@ -208,7 +262,7 @@
     font-weight: 800;
     text-align: center;
   }
-  .footer {
+  .jobs--section-footer {
     font-size: 17px;
     font-weight: 700;
     text-align: center;
@@ -223,7 +277,6 @@
   background-color: $white;
   margin-top: 30px;
   border: 1px solid $grey;
-  padding: 20px 25px;
   border-radius: 6px;
   text-decoration: none;
   color: $slate;
@@ -237,10 +290,48 @@
     height: 1px;
     width: 100%;
   }
-  .jobs-flex-gap {
-    gap: 40px;
+  @include mq(200px) {
+    padding: 20px 15px;
+    .jobs-flex-gap {
+      gap: 15px;
+      :nth-child(2){
+        >p{
+          margin: 7px 0;
+        }
+        .job--location-section{
+          :nth-child(1){
+            margin: 0;
+            font-size: 13px;
+          }
+          :nth-child(3){
+            margin: 0;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  @include mq(741px){
+    padding: 20px 25px;
+    .jobs-flex-gap {
+      gap: 40px;
+      :nth-child(2){
+        >p{
+          margin: 16px 0;
+        }
+        .job--location-section{
+          :nth-child(1){
+            margin: 0;
+          }
+          :nth-child(3){
+            margin: 0;
+          }
+        }
+      }
+    }
   }
 }
+
 .job--location-section {
   display: flex;
   align-items: center;
@@ -278,8 +369,8 @@
       gap: 40px;
       .project-wrapper {
         width: 100%;
-        .project--imageWrapper{
-          .project-img{
+        .project--imageWrapper {
+          .project-img {
             width: 100%;
           }
         }
@@ -382,7 +473,7 @@
     margin-top: 50px;
     .verification--info-wrapper {
       gap: 15px;
-     
+
       .verification--username {
         color: $slate;
         margin-bottom: 7px;
@@ -416,28 +507,44 @@
     }
     .verification--status {
       padding: 10px 25px;
-      .verified{
+      .verified--badge {
         display: flex;
         justify-content: space-between;
         color: $slate;
-        small{
+        small {
           display: flex;
           align-items: center;
           gap: 5px;
           background-color: $transparent_green;
           padding: 3px 7px;
           border-radius: 10px;
-          .check-icon{
+          .check-icon {
             color: $active_status-green;
+          }
+        }
+      }
+      .unverified--badge{
+        display: flex;
+        justify-content: space-between;
+        color: $slate;
+        small {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          background-color: $error-transparent;
+          padding: 3px 7px;
+          border-radius: 10px;
+          .cross-icon {
+            color: $error;
           }
         }
       }
     }
   }
   @include mq(200px) {
-    .user-info{
+    .user-info {
       padding: 30px 1rem;
-      .profile-avatar{
+      .profile-avatar {
         width: 50px;
         height: 50px;
         border-radius: 100%;
@@ -448,7 +555,7 @@
       }
     }
     .verification--userMembership p {
-     font-size: 14px;
+      font-size: 14px;
     }
     .verification--userMembership p {
       padding: 10px 15px;
@@ -458,54 +565,571 @@
     .verification--status--wrapper {
       width: 40%;
     }
-    .user-info{
+    .user-info {
       padding: 30px 10rem;
-      .profile-avatar{
+      .profile-avatar {
         width: 80px;
         height: 80px;
         border-radius: 100%;
       }
     }
-    .verification--userMembership{
+    .verification--userMembership {
       padding: 10px 25px;
-     }
+    }
   }
 }
 
 //************************8 review page style
-.no-review-text{
+.no-review-text {
   text-align: center;
   height: 70dvh;
-  p{
+  p {
     color: $slate;
     font-weight: 600;
-    margin: 0
+    margin: 0;
   }
   @include mq(200px) {
-    h2{
+    h2 {
       font-size: 20px;
     }
   }
   @include mq(768px) {
-   h2{
-    font-size: 25px;
-   }
+    h2 {
+      font-size: 25px;
+    }
   }
 }
-.review-count{
+.review-count {
   color: $slate;
-  font-weight: 700
+  font-weight: 700;
 }
-.review--item{
+.review--item {
   background-color: $white;
   padding: 10px 30px;
   margin-bottom: 30px;
   border-radius: 9px;
-  .review--username{
+  .review--username {
     gap: 15px;
   }
-  .review-text{
-    margin-top: 20px
+  .review-text {
+    margin-top: 20px;
+  }
+}
+
+//*********************** transaction history
+.transaction--history {
+  .history-filter {
+    color: $active_status-green;
+    font-weight: 600;
+  }
+  .input-date {
+    width: 200px;
+    padding: 7px 5px;
+    border: 1px solid $grey;
+    border-radius: 5px;
+    color: $slate;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+      text-align: left;
+      background-color: transparent;
+      color: $slate;
+      th {
+        padding: 20px 10px;
+      }
+    }
+    tbody > tr {
+      border: 1px solid $grey;
+      gap: 10px;
+      overflow-x: scroll;
+      margin-bottom: 10px;
+    }
+
+    tr td {
+      background-color: white;
+      padding: 10px 10px;
+      color: $slate;
+
+      p {
+        margin: 0;
+      }
+      .status-check {
+        color: $active_status-green;
+        font-size: 17px;
+      }
+      .status-cross {
+        color: $error;
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
+  }
+  .header {
+    background-color: $white;
+    color: $slate;
+    font-weight: 600;
+    border: 1px solid $grey;
+    p {
+      margin: 0;
+    }
+  }
+  @include mq(200px) {
+    tr td {
+      font-size: 13px;
+    }
+    thead {
+      font-size: 13px;
+    }
+    .transaction--history {
+      .header {
+        font-size: 20px;
+      }
+    }
+  }
+  @include mq(941px) {
+    tr td {
+      font-size: 17px;
+    }
+    .header {
+      font-size: 19px;
+    }
+    thead {
+      font-size: 17px;
+    }
+  }
+}
+
+// s**********************settings style
+
+@include mq(200px) {
+  .settings-lg {
+    margin-top: 5rem;
+    align-items: self-start;
+    gap: 20px;
+    display: none;
+
+    .settings_name {
+      font-size: 25px;
+      font-weight: 600;
+      padding: 0 20px;
+      margin: 0 0 20px 0;
+    }
+    .settings--nav {
+      display: flex;
+      flex-direction: column;
+      border-bottom: none;
+      align-items: flex-start;
+      width: 230px;
+      background-color: $white;
+      border: 1px solid $grey;
+      padding: 20px 0;
+      border-radius: 10px;
+    }
+    .active {
+      text-decoration: none;
+      color: $zeal_purple;
+      border-left: 2px solid $zeal_purple;
+      width: 100%;
+      padding: 10px;
+      p {
+        margin: 0;
+      }
+    }
+    .link-style {
+      text-decoration: none;
+      color: $black;
+      width: 100%;
+      padding: 10px;
+      p {
+        margin: 0;
+      }
+    }
+    .account--settings {
+      width: 50%;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid $grey;
+      h3 {
+        margin: 0;
+      }
+      h4 {
+        margin-top: 50px;
+        color: $slate;
+      }
+      .input--wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        position: relative;
+        .acc-info-edit {
+          position: absolute;
+          top: 45px;
+          color: $slate;
+          right: 10px;
+        }
+        .acc-name {
+          color: $slate;
+        }
+        .input-active {
+          @include input(15px, 15px, $grey);
+        }
+        .input-disabled {
+          @include input(15px, 15px, $grey);
+          background-color: $grey;
+        }
+        label {
+          font-weight: 700;
+          font-size: 15px;
+          margin-bottom: 9px;
+        }
+        .btn-wrapper {
+          justify-content: flex-end;
+          gap: 10px;
+        }
+      }
+    }
+    .noticifation--settings {
+      width: 50%;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid $grey;
+      .hr {
+        height: 1px;
+        background-color: $grey;
+      }
+      h3 {
+        margin: 0 0 30px 0;
+      }
+      .notification-sec-wrapper {
+        justify-content: space-between;
+        margin-bottom: 25px;
+        h4 {
+          margin: 0 0 6px 0;
+        }
+        p {
+          margin: 0;
+          color: $slate;
+        }
+      }
+    }
+    .security--settings {
+      width: 50%;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid $grey;
+      h3 {
+        margin: 0 0 30px 0;
+      }
+      .input--wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        position: relative;
+        .eye--btn {
+          position: absolute;
+          top: 35px;
+          color: $slate;
+          right: 10px;
+          cursor: pointer;
+        }
+      }
+      input {
+        @include input(15px, 15px, $grey);
+      }
+    }
+  }
+  .settings-md {
+    margin-top: 3rem;
+    align-items: self-start;
+    gap: 20px;
+    display: block;
+
+    .settings_name {
+      font-size: 25px;
+      font-weight: 600;
+      padding: 0 20px;
+      margin: 0 0 20px 0;
+    }
+    .settings--nav {
+      display: flex;
+      flex-direction: column;
+      border-bottom: none;
+      align-items: flex-start;
+      width: 100%;
+      // height: 100dvh;
+      background-color: transparent;
+      padding: 20px 0;
+      border-radius: 10px;
+    }
+    .active {
+      text-decoration: none;
+      color: $zeal_purple;
+      border-left: 2px solid $zeal_purple;
+      width: 100%;
+      padding: 10px;
+      p {
+        margin: 0;
+      }
+    }
+    .link-style {
+      text-decoration: none;
+      // color: $black;
+      width: 100%;
+      padding: 10px;
+      p {
+        margin: 0;
+      }
+    }
+    .account--settings {
+      border-radius: 10px;
+      padding: 15px;
+      border: 1px solid $grey;
+      h3 {
+        margin: 0;
+      }
+      h4 {
+        margin-top: 50px;
+        color: $slate;
+      }
+      .input--wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        position: relative;
+        .acc-info-edit {
+          position: absolute;
+          top: 45px;
+          color: $slate;
+          right: 10px;
+        }
+        .acc-name {
+          color: $slate;
+        }
+        .input-active {
+          @include input(15px, 15px, $grey);
+        }
+        .input-disabled {
+          @include input(15px, 15px, $grey);
+          background-color: $grey;
+        }
+        label {
+          font-weight: 700;
+          font-size: 15px;
+          margin-bottom: 9px;
+        }
+        .btn-wrapper {
+          justify-content: flex-end;
+          gap: 10px;
+        }
+      }
+    }
+    .noticifation--settings {
+      width: 100;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid $grey;
+      .hr {
+        height: 1px;
+        background-color: $grey;
+      }
+      h3 {
+        margin: 0 0 30px 0;
+      }
+      .notification-sec-wrapper {
+        justify-content: space-between;
+        margin-bottom: 25px;
+        h4 {
+          margin: 0 0 6px 0;
+        }
+        p {
+          margin: 0;
+          color: $slate;
+        }
+      }
+    }
+    .security--settings {
+      width: 100;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid $grey;
+      h3 {
+        margin: 0 0 30px 0;
+      }
+      .input--wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        position: relative;
+        .eye--btn {
+          position: absolute;
+          top: 35px;
+          color: $slate;
+          right: 10px;
+          cursor: pointer;
+        }
+      }
+      input {
+        @include input(15px, 15px, $grey);
+      }
+    }
+  }
+}
+@include mq(562px) {
+  .settings-md {
+    display: none;
+  }
+  .settings-lg {
+    display: flex;
+  }
+}
+
+.wallet-tab {
+  border: 1px solid $grey;
+  width: fit-content;
+  margin-top: 2rem;
+  padding: 10px 0;
+  // margin-bottom: 2rem;
+}
+.wallet-sub-sec {
+  background-color: $white;
+  height: 17rem;
+  .wallet--flex--header {
+    align-content: center;
+    justify-content: space-between;
+    padding: 10px 25px;
+    border-bottom: 1px solid $grey;
+    p {
+      font-weight: 600;
+    }
+  }
+  .wallet--body {
+    margin-top: 3rem;
+    font-weight: 800;
+  }
+  .cashAcc-input {
+    @include input(15px, 15px, $grey);
+  }
+  .amnt--label {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .balanceCheck {
+    font-size: 14px;
+    font-weight: 700;
+    text-align: right;
+    color: $slate;
+  }
+  .withdrawal-location {
+    margin-bottom: 20px;
+    > p {
+      text-align: left;
+    }
+    div {
+      margin-right: 15px;
+      border: 1px solid $grey;
+      padding: 15px;
+      border-radius: 10px;
+      width: 150px;
+      // >div {
+      //   display: flex;
+      //   align-items: flex-end;
+      //   width: 100%;
+      // }
+      p {
+        margin: 0;
+        text-align: left;
+      }
+      :nth-child(2) {
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 3px;
+      }
+      :nth-child(3) {
+        font-size: 14px;
+        color: $slate;
+        margin-bottom: 3px;
+      }
+      :nth-child(4) {
+        font-size: 13px;
+        color: $slate;
+      }
+      input {
+        accent-color: $zeal_purple;
+      }
+    }
+  }
+}
+
+.verified {
+  height: 100dvh;
+  @include mq(200px) {
+    .verified--nav {
+      padding: 10px 30px;
+    }
+  }
+  @include mq(768px) {
+    .verified--nav {
+      padding: 20px 60px;
+    }
+  }
+
+  .account--verified {
+    flex-direction: column;
+    margin-top: 4rem;
+    .verified--nav {
+      padding: 10px 30px;
+    }
+    @include mq(200px) {
+      .verification--img {
+        width: 200px;
+      }
+      .verification--text h3 {
+        font-size: 20px;
+        margin: 10px 0 10px 0;
+      }
+      .verification--text p {
+        margin: 0;
+        color: $slate;
+        font-size: 14px;
+      }
+      .verification--btn {
+        padding: 8px 10px;
+        width: 150px;
+        margin-top: 20px;
+      }
+    }
+    @include mq(768px) {
+      .verification--img {
+        width: 300px;
+      }
+      .verification--text h3 {
+        font-size: 30px;
+        margin: 10px 0 10px 0;
+      }
+      .verification--text p {
+        margin: 0;
+        color: $slate;
+        font-size: 17px;
+      }
+      .verification--btn {
+        padding: 12px 10px;
+        width: 150px;
+      }
+    }
+
+    .verification--text {
+      text-align: center;
+    }
+  }
+  .verifying-email{
+    height: 80dvh;
+    color: $slate;
+    font-size: 16px;
+    font-weight: 500
   }
 }
 
@@ -539,5 +1163,42 @@
   }
   @include mq(768px) {
     font-size: 30px;
+  }
+}
+.active {
+  text-decoration: none;
+  color: $zeal_purple;
+  // width: 100%; //dropdown link width affected. Ignore!
+  padding: 10px;
+}
+.link-style {
+  text-decoration: none;
+  color: $slate;
+  width: 100%;
+  padding: 10px;
+}
+.wallet-active {
+  text-decoration: none;
+  color: $zeal_purple;
+  background-color: rgba(157, 22, 190, 0.2);
+  padding: 10px 10px;
+  font-weight: 700;
+}
+.wallet-link-style {
+  text-decoration: none;
+  color: $slate;
+  padding: 10px 10px;
+}
+
+.modal--header {
+  justify-content: space-between;
+  border-bottom: 1px solid $grey;
+  padding: 15px 0;
+  p {
+    margin: 0;
+  }
+  :nth-child(1) {
+    font-weight: 700;
+    font-size: 20px;
   }
 }

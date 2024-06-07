@@ -3,12 +3,16 @@ import { lazy, Suspense } from 'react'
 import { NavLink } from 'react-router-dom'
 import { GoDotFill } from "react-icons/go";
 import { FaCalendarPlus } from "react-icons/fa";
+import { RxCrossCircled } from "react-icons/rx";
 import { FaRegCheckCircle } from "react-icons/fa";
 import Container from '../../../../atoms/container/Container'
 const LazyLoadedImg = lazy(() => import("../../../../atoms/image/Image"))
+import useAuthStore from "../../../../../../zustand/authstore/useAuthStore"
 
 
 const VerificationPage = () => {
+    const { verified } = useAuthStore()
+
     return (
         <main className='verification'>
             <NavLink to="/overview" className="link">Back to dashboard</NavLink>
@@ -16,7 +20,7 @@ const VerificationPage = () => {
                 <Container variant="wrapper--flex" className="verification--info-wrapper">
                     <div>
                         <Suspense fallback={<div>loading...</div>}>
-                            <LazyLoadedImg src="profileAvatar" alt="user" extension="svg" className="profile-avatar"/>
+                            <LazyLoadedImg src="profileAvatar" alt="user" extension="svg" className="profile-avatar" />
                         </Suspense>
                     </div>
                     <div>
@@ -31,10 +35,19 @@ const VerificationPage = () => {
                 </div>
                 <div className='verification--status'>
                     <p>Verification</p>
-                    <p className='verified'>
+                    <p className={verified ? 'verified--badge' : 'unverified--badge'}>
                         <span>Email Address</span>
                         <small>
-                            <FaRegCheckCircle className='check-icon'/> <span>verified</span>
+                            {verified ?
+                                <>
+                                    <FaRegCheckCircle className='check-icon' /> <span>verified</span>
+                                </>
+                                :
+                                <>
+                                    <RxCrossCircled className='cross-icon' />
+                                    <span> Not verified</span>
+                                </>
+                            }
                         </small>
                     </p>
                 </div>

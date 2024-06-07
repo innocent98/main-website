@@ -1,40 +1,64 @@
 import "./App.scss";
-import AfilliatePage from "./pages/landing/AfilliatePage";
-import ContactPage from "./pages/landing/ContactPage";
-
 import Layout from "./Layout";
 import "../src/scss/_globals.scss";
 import Auth from "./atomic/pages/auth/Auth";
-
+import ContactPage from "./pages/landing/ContactPage";
+import AfilliatePage from "./pages/landing/AfilliatePage";
 import SignIn from "./atomic/organisms/authframe/authforms/SignIn";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Intro from "./atomic/pages/freelancer/profileSetUp/intro/Intro";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Jobs from "./atomic/pages/freelancer/dashboard/overview/jobs/Jobs";
 import Preview from "./atomic/pages/freelancer/profileSetUp/preview/Preview";
 import Success from "./atomic/pages/freelancer/profileSetUp/success/Success";
 import SkillSet from "./atomic/pages/freelancer/profileSetUp/skillSet/SkillSet";
+import Wallet from "./atomic/pages/freelancer/dashboard/overview/wallet/Wallet";
 import ProfilePage from "./atomic/pages/freelancer/dashboard/profile/ProfilePage";
 import ReviewsPage from "./atomic/pages/freelancer/dashboard/reviews/ReviewsPage";
 import UploadImg from "./atomic/pages/freelancer/profileSetUp/uploadImg/UploadImg";
+import NewPassword from "./atomic/organisms/authframe/forgotpasswordflow/NewPassword";
 import GetStarted from "./atomic/pages/freelancer/profileSetUp/getStarted/GetStarted";
 import VerifyEmail from "./atomic/organisms/authframe/forgotpasswordflow/VerifyEmail";
-import NewPassword from "./atomic/organisms/authframe/forgotpasswordflow/NewPassword";
+import AccountSettings from "./atomic/pages/freelancer/dashboard/settings/AccountSettings";
+import Settings from "./atomic/pages/freelancer/dashboard/settings/settingsLayout/Settings";
 import ForgotPassword from "./atomic/organisms/authframe/forgotpasswordflow/ForgotPassword";
 import Dashboard from "./atomic/pages/freelancer/dashboard/overview/dashboardPage/Dashboard";
-import VerificationPage from "./atomic/pages/freelancer/dashboard/verification/VerificationPage";
+import SecuritySettings from "./atomic/pages/freelancer/dashboard/settings/SecuritySettings";
+import EmailVerified from "./atomic/pages/freelancer/verification/emailVerification/EmailVerified";
+import NotificationSettings from "./atomic/pages/freelancer/dashboard/settings/NotificationSettings";
+import VerificationPage from "./atomic/pages/freelancer/verification/accountVerification/VerificationPage";
 import FreelancerDashboardLayout from "./atomic/pages/freelancer/dashboard/freelancerLayout/FreelancerDashboardLayout";
 
+import React from "react";
+import Home from "./pages/landing/Home";
 import About from "./pages/landing/About";
+import { Navigate } from "react-router-dom";
 import FaqPage from "./pages/landing/FaqPage";
+import useAuthStore from "../zustand/authstore/useAuthStore";
+import Logout from "./atomic/pages/freelancer/dashboard/logout/Logout";
+import ClientDashboard from "./pages/client-flow/dashboard/ClientDashboard";
 import ClientIntro from "./pages/client-flow/profileSetUp copy/intro/Intro";
-import ClientSkillSet from "./pages/client-flow/profileSetUp copy/skillSet/SkillSet";
-import ClientUploadImg from "./pages/client-flow/profileSetUp copy/uploadImg/UploadImg";
 import ClientPreview from "./pages/client-flow/profileSetUp copy/preview/Preview";
 import ClientSuccess from "./pages/client-flow/profileSetUp copy/success/Success";
+import ClientSkillSet from "./pages/client-flow/profileSetUp copy/skillSet/SkillSet";
+import ClientUploadImg from "./pages/client-flow/profileSetUp copy/uploadImg/UploadImg";
 import ClientGetStarted from "./pages/client-flow/profileSetUp copy/getStarted/GetStarted";
-import Home from "./pages/landing/Home";
-import ClientDashboard from "./pages/client-flow/dashboard/ClientDashboard";
-import React from "react";
+import CashAcc from "./atomic/pages/freelancer/dashboard/overview/wallet/walletTabs/CashAcc";
+import RefBalance from "./atomic/pages/freelancer/dashboard/overview/wallet/walletTabs/RefBalance";
+import CryptoBalance from "./atomic/pages/freelancer/dashboard/overview/wallet/walletTabs/CryptoBalance";
+import TransactionHistory from "./atomic/pages/freelancer/dashboard/transactionHistory/TransactionHistory";
+import WalletTransactionHistory from "./atomic/pages/freelancer/dashboard/overview/wallet/walletTabs/WalletTransactionHistory";
+
+
+const ProtectedRoute = ({ element: Element }) => {
+  const { isAuthenticated, isLoading } = useAuthStore();
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  return isAuthenticated ? Element : <Navigate to="/signin" replace/>; // Redirect to login if not authenticated
+};
+
 
 const router = createBrowserRouter([
   {
@@ -78,7 +102,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/profile-setup-page1",
-    element: <Intro />,
+    element:  <Intro />
   },
   {
     path: "/profile-setup-page2",
@@ -90,11 +114,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/setup_profile/preview_profile",
-    element: <Preview />,
+    element:  <Preview />,
   },
   {
     path: "/setup_profile/success",
-    element: <Success />,
+    element:  <Success />,
   },
   {
     path: "forgot_password",
@@ -110,12 +134,16 @@ const router = createBrowserRouter([
   },
   {
     path: "/get-started",
-    element: <GetStarted />,
+    element:  <GetStarted />,
+  },
+  {
+    path: "/verified",
+    element: <EmailVerified />,
   },
 
   {
     path: "/overview",
-    element: <FreelancerDashboardLayout />,
+    element:  <FreelancerDashboardLayout />,
     children: [
       {
         path: "/overview",
@@ -137,12 +165,57 @@ const router = createBrowserRouter([
         path:"/overview/reviews",
         element:<ReviewsPage/>
       },
+      {
+        path:"/overview/transaction-history",
+        element:<TransactionHistory/>
+      },
+      {
+        path:"/overview/wallet",
+        element:<Wallet/>,
+        children:[
+          {
+            index: true,
+            element: <CashAcc/>
+          },
+          {
+            path: "/overview/wallet/crypto_balance",
+            element: <CryptoBalance/>
+          },
+          {
+            path: "/overview/wallet/ref_balance",
+            element: <RefBalance/>
+          },
+          {
+            path: "/overview/wallet/transaction_history",
+            element: <WalletTransactionHistory/>
+          },
+        ]
+
+      },
+      {
+        path: "/overview/settings",
+        element:<Settings/>,
+        children:[
+          {
+            index: true,
+            element:<AccountSettings/>
+          },
+          {
+            path:"/overview/settings/security_settings",
+            element:<SecuritySettings/>
+          },
+          {
+            path:"/overview/settings/notification_settings",
+            element:<NotificationSettings/>
+          },
+        ]
+      },
+      {
+        path:"/overview/logout",
+        element:<Logout/>
+      },
     ],
   },
-  //     path: "/overview/verification",
-  //     element: <VerificationPage />,
-  //   },
-  // ],
 
   //CLIENT PROFILE-FLOW
   {
