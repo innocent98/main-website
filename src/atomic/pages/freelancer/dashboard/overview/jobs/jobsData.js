@@ -3,7 +3,7 @@ import jobImg from "../../../../../../assets/loveclip.svg";
 const jobData = [
   {
     id: 1,
-    image: jobImg,
+    image: "loveclip",
     time_stamp: "Posted 2 days ago",
     role: "Product Designer",
     company: "LOVECLIP",
@@ -13,7 +13,7 @@ const jobData = [
   },
   {
     id: 2,
-    image: jobImg,
+    image: "loveclip",
     time_stamp: "Posted 2 days ago",
     role: "Product Designer",
     company: "LOVECLIP",
@@ -23,7 +23,7 @@ const jobData = [
   },
   {
     id: 3,
-    image: jobImg,
+    image: "loveclip",
     time_stamp: "Posted 2 days ago",
     role: "Product Designer",
     company: "LOVECLIP",
@@ -33,7 +33,7 @@ const jobData = [
   },
   {
     id: 4,
-    image: jobImg,
+    image: "loveclip",
     time_stamp: "Posted 2 days ago",
     role: "Product Designer",
     company: "LOVECLIP",

@@ -5,20 +5,44 @@ import Button from '../../../../atoms/button/Button'
 import Container from '../../../../atoms/container/Container'
 
 const SearchSection = () => {
+    const linksSchema = [
+        {
+            name: 'Dashboard',
+            path: '/overview',
+            exact: true
+        },
+        {
+            name: 'Jobs',
+            path: '/overview/jobs'
+        },
+        {
+            name: 'Wallet',
+            path: '/overview/wallet'
+        },
+    ]
     return (
         <>
             <main>
                 <p className='welcome-user'>Welcome Solomon</p>
                 <div className='header-input_sec'>
-                    <Input className="dashboardInput" placeholder="search for jobs, talents..."/>
+                    <Input className="dashboardInput" placeholder="search for jobs, talents..." />
                     <Button variant="default--fit" className="search-btn">
                         Search
                     </Button>
                 </div>
                 <Container variant="wrapper-flex" className="link-items">
-                    <NavLink className="link-item-active" to="/overview">Dashboard</NavLink>
-                    <NavLink className="link-item" to="/overview/jobs">Jobs</NavLink>
-                    <NavLink className="link-item" to="/overview/wallet" >Wallet</NavLink>
+                    {linksSchema.map((link, i) => {
+                        return (
+                            <NavLink
+                                key={i}
+                                className={({ isActive }) => isActive ? "active" : "link-style"}
+                                to={link.path}
+                                end={link.exact}
+                            >
+                                {link.name}
+                            </NavLink>
+                        )
+                    })}
                 </Container>
             </main>
         </>

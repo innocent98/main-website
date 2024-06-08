@@ -2,20 +2,30 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Image from '../../../../atoms/image/Image'
 import Button from '../../../../atoms/button/Button'
-import ClientSignUp from '../accounts/client/ClientSignUp'
+// import ClientSignUp from '../accounts/client/ClientSignUp'
 import Container from '../../../../atoms/container/Container'
-import FreelancerSignUp from '../accounts/freelancer/FreelancerSignUp'
+import SignUp from "../../../../../atomic/organisms/authframe/authforms/SignUp"
+import  useUserStore  from '../../../../../../zustand/useUserStore'
 
 const InteractiveFormComponent = () => {
     // button active states
+    const { setUserRole } = useUserStore();
     const [clientActive, setClientActive] = useState(false)
     const [freelanceActive, setFreelanceActive] = useState(true)
 
     //handle button active state function
-    const handleActiveState = () => {
+    const handleFreelancerClick = () => {
+        setUserRole('freelancer');
         setClientActive(!clientActive)
         setFreelanceActive(!freelanceActive)
-    }
+      };
+    
+      const handleClientClick = () => {
+        setUserRole('client');
+        setClientActive(!clientActive)
+        setFreelanceActive(!freelanceActive)
+      };
+
     return (
         <Container variant="wrapper" className="signup">
             <Container variant="wrapper--flex--center" className="signup--img-container">
@@ -28,21 +38,21 @@ const InteractiveFormComponent = () => {
                 <Container variant="flex" className="wraper--btn-group">
                     <Button
                         variant="transparent"
-                        onClick={handleActiveState}
+                        onClick={handleFreelancerClick}
                         className={freelanceActive ? "wrapper--btn-group__itemOne-active" : "wrapper--btn-group__itemOne"}
                     >
                         Freelancer
                     </Button>
                     <Button
                         variant="transparent"
-                        onClick={handleActiveState}
+                        onClick={handleClientClick}
                         className={clientActive ? "wrapper--btn-group__itemTwo-active" : "wrapper--btn-group__itemTwo"}
                     >
                         Client
                     </Button>
                 </Container>
             </Container>
-            {freelanceActive ? <FreelancerSignUp /> : <ClientSignUp />}
+            <SignUp/>
         </ Container>
     )
 }

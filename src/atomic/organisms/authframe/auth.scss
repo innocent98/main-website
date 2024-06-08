@@ -15,7 +15,7 @@
     z-index: 1000;
     background: rgba($color: $surface_purple, $alpha: 0.9);
     .left-frame--img {
-      margin-top: 15%;
+      margin-top: 25%;
     }
     .left-frame--info__masthead {
       font-size: $text_xxl;
@@ -338,4 +338,9 @@
 .link {
   color: $zeal_purple;
   text-align: center;
+}
+
+.auth-btn{
+  display: flex;
+  justify-content: center;
 }

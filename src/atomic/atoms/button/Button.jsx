@@ -48,6 +48,12 @@ const Button = ({
         case "transparent":
             style = clsx(style, "button--transparent")
             break;
+        case "transparent-black":
+            style = clsx(style, "button--transparent_black")
+            break;
+        case "no-bg":
+            style = clsx(style, "button--no-bg")
+            break;
 
         default:
             break;

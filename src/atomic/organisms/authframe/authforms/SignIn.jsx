@@ -4,20 +4,45 @@ import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import { FiEyeOff } from "react-icons/fi";
 import Image from '../../../atoms/image/Image';
+import { useNavigate } from 'react-router-dom';
 import Input from '../../../atoms/input/Input';
 import Button from '../../../atoms/button/Button';
 import Container from '../../../atoms/container/Container';
+import useAuthStore from '../../../../../zustand/authstore/useAuthStore';
+import Loader from '../../../atoms/loader/Loader';
 
 
 //this page is still under development!!!
 const SignIn = () => {
+    const navigate = useNavigate()
     //password visibility state
+    const [loginCred, setLoginCred] = useState({
+        email: "",
+        password: ""
+    })
+    const { signIn, isLoading, message } = useAuthStore()
     const [isPasswordVisible, setIsPasswordVisible] = useState(false)
 
     //password visibiity handler
     const handlePasswordVisibility = () => {
         setIsPasswordVisible(!isPasswordVisible)
     }
+
+    //handle input change function
+    const handleChange = (e, name) => {
+        const value = e.target.value;
+        setLoginCred(prevData => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    //handle signin function
+    const handleSignIn = (event) => {
+        event.preventDefault()
+        signIn(loginCred, navigate)
+    }
+
     return (
         <Container variant="wrapper--flex">
             <LeftFrame />
@@ -28,7 +53,7 @@ const SignIn = () => {
                 <div className='wrapper--link-container'>
                     <Link to="/" className='link'>Back to website</Link>
                 </div>
-                <h2>Create Account</h2>
+                <h2>Welcome Back!</h2>
                 <Container variant="wrapper--flex" className="auth--wrapper">
                     <Button variant="outlined" className="gridItemOne">
                         <Image extension='svg' src="google" alt="google" />
@@ -44,11 +69,11 @@ const SignIn = () => {
                     <p className='auth--wrapper__text'> or continue with</p>
                     <div className='auth--wrapper__hr'></div>
                 </Container>
-                <form action="" >
+                <form onSubmit={handleSignIn}>
                     <div className='auth--wrapper__form'>
-                        <Input placeholder="Enter Email Address" type="email" className="auth--wrapper__form-itemThree" />
+                        <Input required={true} onChange={(e) => handleChange(e, "email")} value={loginCred.email} placeholder="Enter Email Address" type="email" className="auth--wrapper__form-itemThree" />
                         <div className="auth--wrapper-password">
-                            <Input placeholder={isPasswordVisible ? "Enter Password" : "**********"} type={isPasswordVisible ? "text" : "password"} className="auth--wrapper__form-itemFour" />
+                            <Input required={true} onChange={(e) => handleChange(e, "password")} value={loginCred.password} placeholder={isPasswordVisible ? "Enter Password" : "**********"} type={isPasswordVisible ? "text" : "password"} className="auth--wrapper__form-itemFour" />
                             {isPasswordVisible ? <FiEye onClick={handlePasswordVisibility} className='auth--wrapper-password__icon' /> : <FiEyeOff onClick={handlePasswordVisibility} className='auth--wrapper-password__icon' />}
                         </div>
                     </div>
@@ -60,7 +85,7 @@ const SignIn = () => {
                             </Container>
                             <Link to="/forgot_password" className='link'>Forgot Password</Link>
                         </Container>
-                        <Button variant="default">Login</Button>
+                        <Button variant="default" className="auth-btn">{isLoading ? <Loader variant="default"/> : "Login"}</Button>
                         <Container variant="wrapper--flex--center">
                             <p>Dont have an account? <Link className='link' to="/signup">Create Account</Link></p>
                         </Container>

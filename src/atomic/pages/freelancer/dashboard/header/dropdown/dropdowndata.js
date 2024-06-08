@@ -13,22 +13,22 @@ const dropdownLinks=[
     {
         icon:"settings (1)",
         title:"Settings",
-        href:"/settings"
+        href:"/overview/settings"
     },
     {
         icon:"star",
         title:"Reviews",
-        href:"/reviews"
+        href:"/overview/reviews"
     },
     {
         icon:"dollar-sign",
         title:"Wallet",
-        href:"/wallet"
+        href:"/overview/wallet"
     },
     {
         icon:"bar-chart-2",
         title:"Transaction History",
-        href:"/transaction-history"
+        href:"/overview/transaction-history"
     },
     {
         icon:"award",
@@ -38,7 +38,7 @@ const dropdownLinks=[
     {
         icon:"log-out",
         title:"Logout",
-        href:"/logout"
+        href:"/overview/logout"
     },
 ]
 export default dropdownLinks
