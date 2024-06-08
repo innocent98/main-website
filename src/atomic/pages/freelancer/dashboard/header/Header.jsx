@@ -53,7 +53,7 @@ const Header = () => {
             <Container variant="wrapper--flex" className="header">
                 <div>
                     <Suspense fallback={<div>loading...</div>}>
-                        <LazyLoadedImg src="logo" alt="logo" width={40} height={40} extension='svg' />
+                        <LazyLoadedImg src='/assets/imgs/logo.svg' alt="logo" width={40} height={40} extension='svg' />
                     </Suspense>
                 </div>
                 <Container variant="wrapper--flex" className='header--icons'>

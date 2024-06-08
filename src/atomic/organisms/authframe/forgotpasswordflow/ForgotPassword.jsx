@@ -13,7 +13,7 @@ const ForgotPassword = () => {
                 <Link to="/signin" className='link'>Go back</Link>
             </div>
             <Container variant="wrapper--flex--center">
-                <Image src="logo" alt="logo" extension='svg' width={150} />
+                <Image src="/assets/imgs/logo.svg" alt="logo" extension='svg' width={150} />
             </Container>
             <section className='layout--text'>
                 <h3>Forgot Password</h3>

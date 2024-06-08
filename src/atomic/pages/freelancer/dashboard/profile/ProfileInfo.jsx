@@ -12,7 +12,7 @@ const ProfileInfo = () => {
         <section className='profile-info'>
             <>
                 <Suspense fallback={<div>loading...</div>}>
-                    <LazyLoadedImg src="profileAvatar" extension='svg' width={60} height={60} alt="user" />
+                    <LazyLoadedImg src="/assets/imgs/profileAvatar.svg" extension='svg' width={60} height={60} alt="user" />
                 </Suspense>
                 <h2>Surname Solomon</h2>
             </>

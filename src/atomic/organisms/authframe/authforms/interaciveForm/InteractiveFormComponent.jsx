@@ -29,7 +29,7 @@ const InteractiveFormComponent = () => {
     return (
         <Container variant="wrapper" className="signup">
             <Container variant="wrapper--flex--center" className="signup--img-container">
-                <Image className="" src="logo" extension="svg" width={150} />
+                <Image className="" src="/assets/imgs/logo.svg" extension="svg" width={150} />
             </Container>
             <div className='wrapper--link-container'>
                 <Link to="/" className='link'>Back to website</Link>
