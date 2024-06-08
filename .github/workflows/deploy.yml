@@ -30,7 +30,7 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
             nvm use v18.17.1
             cd zealworkers/main-client/
-            git pull origin main
+            git pull origin main --force
             git status
             npm install --omit=dev
             npm install vite@latest # Install vite as a development dependency
