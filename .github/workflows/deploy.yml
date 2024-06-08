@@ -37,3 +37,4 @@ jobs:
             npx vite build
             cp -r dist/* /var/www/zealworkers/main-client
             sudo systemctl reload nginx
+            
