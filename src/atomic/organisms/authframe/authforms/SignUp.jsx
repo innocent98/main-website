@@ -99,7 +99,7 @@ const SignUp = () => {
                         <Input type="checkbox" />
                         <p>I agree to the <Link className="link">Privacy Policy</Link> and <Link className="link">Terms of Service</Link></p>
                     </Container>
-                    <Button variant="default" className="auth-btn">{isLoading ? <Loader /> : "Create Account"}</Button>
+                    <Button variant="default" className="auth-btn">{isLoading ? <Loader variant="default"/> : "Create Account"}</Button>
                     <Container variant="wrapper--flex--center">
                         <p>Already have an account? <Link className='link' to="/signin">Login</Link></p>
                     </Container>

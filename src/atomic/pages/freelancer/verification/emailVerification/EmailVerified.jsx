@@ -26,9 +26,6 @@ const EmailVerified = () => {
                 navigate('/')
             })
         }
-
-        //ignore! 
-        dummyEmailVerification()
     },[])
 
     return (
@@ -46,7 +43,7 @@ const EmailVerified = () => {
                                 You're now ready to explore our platform.
                             </p>
                         </div>
-                        <NavLink to="/">
+                        <NavLink to="/overview">
                             <Button variant="fitted" className="verification--btn">Continue</Button>
                         </NavLink>
                     </Container>

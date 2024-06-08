@@ -21,7 +21,8 @@ const useAuthStore = create((set) => ({
       set({ isLoading: false });
 
       //redirect to overview page for now!
-      navigate("/overview");
+      alert("sign up successful! Proceed to verify email")
+      navigate("/verified");
 
       set({ user: response.data });
       console.log(response.data);
@@ -92,24 +93,6 @@ const useAuthStore = create((set) => ({
     } catch (error) {
       console.error("Email verification failed:", error.message);
     }
-  },
-
-  // dummy code to test verification and loading state. PLEASE IGNORE FOR NOW!!
-  dummyEmailVerification: () => {
-    set({ isLoading: true }); 
-
-    const timeoutId = setTimeout(() => {
-      set((state) => ({
-        user: {
-          ...state.user,
-        },
-        verified: true,
-        isLoading: false, 
-      }));
-      console.log("Email verification completed (simulated)");
-    }, 5000);
-
-    return () => clearTimeout(timeoutId);
   },
 
   logout: () => {

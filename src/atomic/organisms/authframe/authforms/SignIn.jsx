@@ -85,7 +85,7 @@ const SignIn = () => {
                             </Container>
                             <Link to="/forgot_password" className='link'>Forgot Password</Link>
                         </Container>
-                        <Button variant="default" className="auth-btn">{isLoading ? <Loader/> : "Login"}</Button>
+                        <Button variant="default" className="auth-btn">{isLoading ? <Loader variant="default"/> : "Login"}</Button>
                         <Container variant="wrapper--flex--center">
                             <p>Dont have an account? <Link className='link' to="/signup">Create Account</Link></p>
                         </Container>
