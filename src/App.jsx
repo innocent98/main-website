@@ -15,10 +15,8 @@ import Wallet from "./atomic/pages/freelancer/dashboard/overview/wallet/Wallet";
 import ProfilePage from "./atomic/pages/freelancer/dashboard/profile/ProfilePage";
 import ReviewsPage from "./atomic/pages/freelancer/dashboard/reviews/ReviewsPage";
 import UploadImg from "./atomic/pages/freelancer/profileSetUp/uploadImg/UploadImg";
-import NewPassword from "./atomic/organisms/authframe/forgotpasswordflow/NewPassword";
 
 import GetStarted from "./atomic/pages/freelancer/profileSetUp/getStarted/GetStarted";
-import VerifyEmail from "./atomic/organisms/authframe/forgotpasswordflow/VerifyEmail";
 import AccountSettings from "./atomic/pages/freelancer/dashboard/settings/AccountSettings";
 
 import Settings from "./atomic/pages/freelancer/dashboard/settings/settingsLayout/Settings";
@@ -37,6 +35,7 @@ import { Navigate } from "react-router-dom";
 import FaqPage from "./pages/landing/FaqPage";
 import useAuthStore from "../zustand/authstore/useAuthStore";
 import Logout from "./atomic/pages/freelancer/dashboard/logout/Logout";
+
 import ClientDashboard from "./pages/client-flow/dashboard/ClientDashboard";
 import ClientIntro from "./pages/client-flow/profileSetUp copy/intro/Intro";
 import ClientPreview from "./pages/client-flow/profileSetUp copy/preview/Preview";
@@ -45,8 +44,6 @@ import ClientSkillSet from "./pages/client-flow/profileSetUp copy/skillSet/Skill
 import ClientUploadImg from "./pages/client-flow/profileSetUp copy/uploadImg/UploadImg";
 import ClientGetStarted from "./pages/client-flow/profileSetUp copy/getStarted/GetStarted";
 
-import Home from "./pages/landing/Home";
-import ClientDashboard from "./pages/client-flow/dashboard/ClientDashboard";
 
 import Profile from "./pages/client-flow/freelancer-profile/Profile";
 import ContactProfile from "./pages/client-flow/dashboard/dashboardtab/ContactProfile";
