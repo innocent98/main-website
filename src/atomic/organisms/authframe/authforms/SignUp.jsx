@@ -36,7 +36,6 @@ const SignUp = () => {
     useEffect(() => {
         //update formData with userRole
         setFormData((prevData) => ({ ...prevData, userRole }));
-        // console.log(formData.userRole)
     }, [userRole]);
 
 
@@ -50,12 +49,6 @@ const SignUp = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        if (formData.password.length < 8) {
-            setMessage("Password must be at least 8 characters long.");
-            return;
-        } else {
-            setMessage('')
-        }
         signUp(formData, navigate);
         setFormData({
             firstName: "",
@@ -91,7 +84,8 @@ const SignUp = () => {
                     <div className="auth--wrapper-password">
                         <Input required={true} onChange={(e) => handleChange(e, "password")} value={formData.password} placeholder={isPasswordVisible ? "Enter Password" : "**********"} type={isPasswordVisible ? "text" : "password"} className="auth--wrapper__form-itemFour" />
                         {isPasswordVisible ? <FiEye onClick={handlePasswordVisibility} className='auth--wrapper-password__icon' /> : <FiEyeOff onClick={handlePasswordVisibility} className='auth--wrapper-password__icon' />}
-                        {message && <small style={{ color: "red" }}>{message}</small>}
+                        {/* {message && <small style={{ color: "red" }}>{message}</small>} */}
+                        {errormessage && <small style={{ color: "red" }}>{errormessage}</small>}
                     </div>
                 </div>
                 <section>
@@ -99,7 +93,7 @@ const SignUp = () => {
                         <Input type="checkbox" />
                         <p>I agree to the <Link className="link">Privacy Policy</Link> and <Link className="link">Terms of Service</Link></p>
                     </Container>
-                    <Button variant="default" className="auth-btn">{isLoading ? <Loader variant="default"/> : "Create Account"}</Button>
+                    <Button variant="default" className="auth-btn">{isLoading ? <Loader variant="default" /> : "Create Account"}</Button>
                     <Container variant="wrapper--flex--center">
                         <p>Already have an account? <Link className='link' to="/signin">Login</Link></p>
                     </Container>

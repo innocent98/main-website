@@ -16,7 +16,7 @@ const Jobs = () => {
                         <Container variant="wrapper--flex--between" >
                             <Container variant="wrapper--flex" className="jobs-flex-gap">
                                 <div>
-                                    <Image src={job.image} extension='svg'/>
+                                    <Image src={job.image} extension='svg' width={70} height={70}/>
                                 </div>
                                 <div>
                                     <small>{job.time_stamp}</small>

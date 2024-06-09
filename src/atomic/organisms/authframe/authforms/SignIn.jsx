@@ -20,7 +20,7 @@ const SignIn = () => {
         email: "",
         password: ""
     })
-    const { signIn, isLoading, message } = useAuthStore()
+    const { signIn, isLoading, errormessage, user } = useAuthStore()
     const [isPasswordVisible, setIsPasswordVisible] = useState(false)
 
     //password visibiity handler
@@ -41,6 +41,10 @@ const SignIn = () => {
     const handleSignIn = (event) => {
         event.preventDefault()
         signIn(loginCred, navigate)
+        setLoginCred({
+            email: "",
+            password: ""
+        })
     }
 
     return (
@@ -77,6 +81,7 @@ const SignIn = () => {
                             {isPasswordVisible ? <FiEye onClick={handlePasswordVisibility} className='auth--wrapper-password__icon' /> : <FiEyeOff onClick={handlePasswordVisibility} className='auth--wrapper-password__icon' />}
                         </div>
                     </div>
+                    {errormessage && <small style={{ color: "red" }}>{errormessage}</small>}
                     <section>
                         <Container variant="wrapper--flex--between">
                             <Container variant="wrapper--flex">
@@ -85,7 +90,7 @@ const SignIn = () => {
                             </Container>
                             <Link to="/forgot_password" className='link'>Forgot Password</Link>
                         </Container>
-                        <Button variant="default" className="auth-btn">{isLoading ? <Loader variant="default"/> : "Login"}</Button>
+                        <Button variant="default" className="auth-btn">{isLoading ? <Loader variant="default" /> : "Login"}</Button>
                         <Container variant="wrapper--flex--center">
                             <p>Dont have an account? <Link className='link' to="/signup">Create Account</Link></p>
                         </Container>

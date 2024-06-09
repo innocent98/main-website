@@ -12,29 +12,47 @@ const useAuthStore = create((set) => ({
 
   //create user api
   signUp: async (userData, navigate) => {
+    //declare timeoutId
+    let timeoutId = null;
+
+
     set({ isLoading: true, errormessage: null });
     try {
       const response = await axios.post(
         "https://api.zealworkers.com/api/v1/auth/register",
         userData
       );
+
+      //return loading state to false on request complets
       set({ isLoading: false });
 
-      //redirect to overview page for now!
-      alert("sign up successful! Proceed to verify email")
-      navigate("/verified");
+      //ensure password is atleast 8 char long
+      if (userData.password.length < 8) {
+        set({
+          isLoading: false,
+          errorMessage: "Password must be at least 8 characters long.",
+        });
+
+        // Clear the message after timeout
+        const timeoutId = setTimeout(() => {
+          set({ errorMessage: null });
+        }, 5000);
+
+        // Optionally return the timeoutId for cleanup
+        return timeoutId;
+      }
+      navigate("/profile-setup-page1");
 
       set({ user: response.data });
       console.log(response.data);
     } catch (error) {
       //handle error
       console.log("Signup failed:", error);
-      if (error.status === 400) {
+      if (error.response.status === 400) {
         set({
           isLoading: false,
           errormessage: "User with email already exists",
         });
-
         return;
       } else {
         set({
@@ -42,11 +60,26 @@ const useAuthStore = create((set) => ({
           errormessage: "Unable to create an account. Please try again.",
         });
       }
+
+      // timeout to clear the error message after 5 seconds
+      timeoutId = setTimeout(() => {
+        set({ errorMessage: null });
+      }, 5000);
+    } finally {
+      //clear timeout if the request completes successfully
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
     }
   },
+//\end code
+
 
   // sign in user api
   signIn: async (userData, navigate) => {
+    //timeoutID declaration
+    let timeoutId = null;
+
     set({ isLoading: true, errormessage: null });
 
     try {
@@ -55,20 +88,37 @@ const useAuthStore = create((set) => ({
         userData
       );
 
-      set({ isLoading: false });
       set({ user: response.data, isLoading: false });
+      console.log(user);
 
       navigate("/overview");
     } catch (error) {
-      if (error.status === 403) {
+      if (error.response.status === 403) {
         set({ isLoading: false, errormessage: "Email not verified." });
         return;
+      } else if (error.response.status === 400) {
+        set({
+          isLoading: false,
+          errormessage:
+            "The email or password you entered is incorrect. Please try again.",
+        });
       } else {
-        set({ errormessage: "An error occured. Please tr again." });
-        console.error("Signin failed:", error);
+        set({ errormessage: "An error occured. Please try again." });
+      }
+
+      // timeout to clear the error message after 5 seconds
+      timeoutId = setTimeout(() => {
+        set({ errorMessage: null });
+      }, 5000);
+    } finally {
+      //clear timeout if the request completes successfully
+      if (timeoutId) {
+        clearTimeout(timeoutId);
       }
     }
   },
+  //\end code
+  
 
   //email verification api
   verifyEmail: async () => {
@@ -97,7 +147,7 @@ const useAuthStore = create((set) => ({
 
   // dummy code to test verification and loading state. PLEASE IGNORE FOR NOW!!
   dummyEmailVerification: () => {
-    set({ isLoading: true }); 
+    set({ isLoading: true });
 
     const timeoutId = setTimeout(() => {
       set((state) => ({
@@ -115,9 +165,9 @@ const useAuthStore = create((set) => ({
 
   logout: () => {
     set({
+      user: null,
       isLoading: false,
       isAuthenticated: false,
-      user: null,
       errorMessage: null,
     });
   },

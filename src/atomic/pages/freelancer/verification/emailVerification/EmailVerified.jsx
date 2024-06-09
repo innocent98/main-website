@@ -26,7 +26,6 @@ const EmailVerified = () => {
                 navigate('/')
             })
         }
-
         //ignore! 
         dummyEmailVerification()
     },[])
