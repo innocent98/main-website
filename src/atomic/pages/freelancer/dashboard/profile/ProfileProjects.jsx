@@ -11,7 +11,7 @@ const ProfileProjects = () => {
                 <aside className='project-wrapper'>
                     <div className='project--imageWrapper'>
                         <Suspense fallback={<div>loading...</div>}>
-                            <LazyLoadedImg src="profile-project" extension='png' className="project-img" />
+                            <LazyLoadedImg src="/assets/imgs/profile-project.png" extension='png' className="project-img" />
                         </Suspense>
                     </div>
                     <h3>Project Name</h3>
@@ -20,7 +20,7 @@ const ProfileProjects = () => {
                 <aside className='project-wrapper'>
                     <div className='project--imageWrapper'>
                         <Suspense fallback={<div>loading...</div>}>
-                            <LazyLoadedImg src="profile-project" extension='png' className="project-img" />
+                            <LazyLoadedImg src="/assets/imgs/profile-project.png" extension='png' className="project-img" />
                         </Suspense>
                     </div>
                     <h3>Project Name</h3>

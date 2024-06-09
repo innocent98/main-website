@@ -1,0 +1,89 @@
+@import "../../../../scss/colors";
+@import "../../../../scss/globals";
+@import "../../../../scss/typography.scss";
+@import "../../../../scss/utils";
+
+//CARD
+
+.card {
+    width: 340px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    background: #ffff;
+
+    .card-slide {
+        flex: 40%;
+        img {
+            width: 100%;
+        }
+    }
+    .card-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .card-info-freelancer-info {
+            display: flex;
+            gap: 20px;
+            .new {
+                color: $zeal_purple;
+                background: rgba(179, 4, 253, 0.2);
+                width: fit-content;
+                padding: 2px 10px;
+                border-radius: 15px;
+                font-size: 12px;
+                font-weight: 500;
+            }
+            span {
+                color: #777777;
+                font-weight: 600;
+                font-size: 14px;
+            }
+            .card-info-details {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                p {
+                    margin: 0;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+                
+            }
+        }
+
+        .card-info-skills {
+            display: flex;
+            gap: 7px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e7e6e6;
+            p {
+                margin: 0;
+                background:rgb(138, 137, 137, 0.2);
+                color: #777777;
+                padding: 4px 10px;
+                border-radius: 50px;
+                width: fit-content;
+                font-size: 12px;
+                font-weight: 500;
+            }
+        }
+        .btn {
+                width: 111px;
+                padding: 16px;
+                height: 48px;
+                font-size: 16px;
+                background: $zeal_purple;
+                border: 1px solid;
+                color: #ffff;
+                border-radius: 8px;
+                cursor: pointer;
+                :hover {
+                    opacity: .5;
+                }
+        }
+    }
+}

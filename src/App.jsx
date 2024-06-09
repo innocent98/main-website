@@ -15,10 +15,10 @@ import Wallet from "./atomic/pages/freelancer/dashboard/overview/wallet/Wallet";
 import ProfilePage from "./atomic/pages/freelancer/dashboard/profile/ProfilePage";
 import ReviewsPage from "./atomic/pages/freelancer/dashboard/reviews/ReviewsPage";
 import UploadImg from "./atomic/pages/freelancer/profileSetUp/uploadImg/UploadImg";
-import NewPassword from "./atomic/organisms/authframe/forgotpasswordflow/NewPassword";
+
 import GetStarted from "./atomic/pages/freelancer/profileSetUp/getStarted/GetStarted";
-import VerifyEmail from "./atomic/organisms/authframe/forgotpasswordflow/VerifyEmail";
 import AccountSettings from "./atomic/pages/freelancer/dashboard/settings/AccountSettings";
+
 import Settings from "./atomic/pages/freelancer/dashboard/settings/settingsLayout/Settings";
 import ForgotPassword from "./atomic/organisms/authframe/forgotpasswordflow/ForgotPassword";
 import Dashboard from "./atomic/pages/freelancer/dashboard/overview/dashboardPage/Dashboard";
@@ -35,6 +35,7 @@ import { Navigate } from "react-router-dom";
 import FaqPage from "./pages/landing/FaqPage";
 import useAuthStore from "../zustand/authstore/useAuthStore";
 import Logout from "./atomic/pages/freelancer/dashboard/logout/Logout";
+
 import ClientDashboard from "./pages/client-flow/dashboard/ClientDashboard";
 import ClientIntro from "./pages/client-flow/profileSetUp copy/intro/Intro";
 import ClientPreview from "./pages/client-flow/profileSetUp copy/preview/Preview";
@@ -42,6 +43,11 @@ import ClientSuccess from "./pages/client-flow/profileSetUp copy/success/Success
 import ClientSkillSet from "./pages/client-flow/profileSetUp copy/skillSet/SkillSet";
 import ClientUploadImg from "./pages/client-flow/profileSetUp copy/uploadImg/UploadImg";
 import ClientGetStarted from "./pages/client-flow/profileSetUp copy/getStarted/GetStarted";
+
+
+import Profile from "./pages/client-flow/freelancer-profile/Profile";
+import ContactProfile from "./pages/client-flow/dashboard/dashboardtab/ContactProfile";
+
 import CashAcc from "./atomic/pages/freelancer/dashboard/overview/wallet/walletTabs/CashAcc";
 import RefBalance from "./atomic/pages/freelancer/dashboard/overview/wallet/walletTabs/RefBalance";
 import CryptoBalance from "./atomic/pages/freelancer/dashboard/overview/wallet/walletTabs/CryptoBalance";
@@ -123,14 +129,6 @@ const router = createBrowserRouter([
   {
     path: "forgot_password",
     element: <ForgotPassword />,
-  },
-  {
-    path: "forgot_password/verify_email",
-    element: <VerifyEmail />,
-  },
-  {
-    path: "forgot_password/new_password",
-    element: <NewPassword />,
   },
   {
     path: "/get-started",
@@ -247,6 +245,14 @@ const router = createBrowserRouter([
   {
     path: "/client-dashboard",
     element: <ClientDashboard />,
+  },
+  {
+    path: "/freelancer-profile",
+    element: <Profile />,
+  },
+  {
+    path: "/contact-profile",
+    element: <ContactProfile />,
   },
 ]);
 

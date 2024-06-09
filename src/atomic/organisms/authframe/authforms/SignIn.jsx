@@ -52,7 +52,7 @@ const SignIn = () => {
             <LeftFrame />
             <Container variant="wrapper" className='signup'>
                 <Container variant="wrapper--flex--center" className="signup--img-container">
-                    <Image className="" src="logo" extension="svg" width={150} />
+                    <Image className="" src="/assets/imgs/logo.svg" extension="svg" width={150} />
                 </Container>
                 <div className='wrapper--link-container'>
                     <Link to="/" className='link'>Back to website</Link>
@@ -60,11 +60,11 @@ const SignIn = () => {
                 <h2>Welcome Back!</h2>
                 <Container variant="wrapper--flex" className="auth--wrapper">
                     <Button variant="outlined" className="gridItemOne">
-                        <Image extension='svg' src="google" alt="google" />
+                        <Image extension='svg' src="/assets/imgs/google.svg" alt="google" />
                         Google
                     </Button>
                     <Button variant="outlined" className="gridItemTwo">
-                        <Image extension='svg' src="linkedIn" alt="linkedIn" />
+                        <Image extension='svg' src="/assets/imgs/linkedIn.svg" alt="linkedIn" />
                         LinkedIn
                     </Button>
                 </Container>

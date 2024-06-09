@@ -63,11 +63,11 @@ const SignUp = () => {
             <h2>Create Account</h2>
             <Container variant="wrapper--flex" className="auth--wrapper">
                 <Button variant="outlined" className="gridItemOne">
-                    <Image extension='svg' src="google" alt="google" />
+                    <Image extension='svg' src="/assets/imgs/google.svg" alt="google" />
                     Google
                 </Button>
                 <Button variant="outlined" className="gridItemTwo">
-                    <Image extension='svg' src="linkedIn" alt="linkedIn" />
+                    <Image extension='svg' src="/assets/imgs/linkedIn.svg" alt="linkedIn" />
                     LinkedIn
                 </Button>
             </Container>
