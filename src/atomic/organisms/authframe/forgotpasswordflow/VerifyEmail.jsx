@@ -5,10 +5,14 @@ import { useState, useRef } from 'react'
 import Image from '../../../atoms/image/Image'
 import Button from '../../../atoms/button/Button'
 import Container from '../../../atoms/container/Container'
+import useAuthStore from '../../../../../zustand/authstore/useAuthStore'
+import Loader from '../../../atoms/loader/Loader'
 
 const VerifyEmail = ({ length = 6 }) => {
     // state
     const [code, setCode] = useState(new Array(length).fill(""));
+    const { userEmail, passwordResetCode } = useAuthStore()
+
 
     const handleCodeComplete = (code) => {
         console.log("Code entered:", code);
@@ -25,9 +29,9 @@ const VerifyEmail = ({ length = 6 }) => {
         setCode(newCode);
 
         // If all input boxes are filled, call handleComplete
-        if (newCode.every((val) => val !== "")) {
-            handleCodeComplete(newCode.join(""));
-        }
+        // if (newCode.every((val) => val !== "")) {
+        //     handleCodeComplete(newCode.join(""));
+        // }
     };
 
     const handleKeyDown = (index, e) => {
@@ -44,17 +48,43 @@ const VerifyEmail = ({ length = 6 }) => {
         }
     };
 
+
+    //TODO: complete.....
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+      
+        // Ensure all code inputs are filled before submitting
+        if (!code.every((val) => val !== "")) {
+          console.error('Please enter all verification digits.');
+          return; // Prevent submission if code is incomplete
+        }
+      
+        const enteredCode = code.join(""); // Combine individual digits into the full code
+      
+        try {
+          await useAuthStore().passwordReset(userEmail, enteredCode); // Call passwordReset action with email and entered code
+          // Handle successful password reset (e.g., show success message, redirect)
+          console.log('Password reset successful!');
+        } catch (error) {
+          console.error('Error resetting password:', error.response?.data?.message || 'An error occurred.');
+          // Handle errors (e.g., invalid code, expired code)
+        }
+      };
+
+
+
     return (
         <Layout>
             <div className='wrapper--link-container'>
                 <Link to="/signin" className='link'>Go back</Link>
             </div>
             <Container variant="wrapper--flex--center">
-                <Image src="logo" alt="logo" extension='svg' width={150} />
+                <Image src="/assets/imgs/logo.svg" alt="logo" extension='svg' width={150} />
             </Container>
             <section className='layout--text'>
                 <h3>Code Sent</h3>
-                <p>Enter code sent to, <br /> youremail@gmail.com</p>
+                <p>Enter code sent to, <br /> {userEmail}</p>
             </section>
             <Container variant="wrapper-flex--center" className="input--wrapper">
                 {code.map((value, index) => (
@@ -68,8 +98,8 @@ const VerifyEmail = ({ length = 6 }) => {
                         ref={inputRefs[index]} className="auth--input" />
                 ))}
             </Container>
-            <Button variant="default">
-                <Link to="/forgot_password/new_password" className='button--link'>Confirm</Link>
+            <Button variant="default" className="auth-btn" onClick={handleSubmit}>
+                {isLoading ? <Loader/> : "Confirm"}
             </Button>
             <Container variant="wrapper--flex--center">
                 <p>Didnt receive code? <Link to="/signin">Resend Code</Link></p>

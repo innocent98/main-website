@@ -15,6 +15,7 @@ import Wallet from "./atomic/pages/freelancer/dashboard/overview/wallet/Wallet";
 import ProfilePage from "./atomic/pages/freelancer/dashboard/profile/ProfilePage";
 import ReviewsPage from "./atomic/pages/freelancer/dashboard/reviews/ReviewsPage";
 import UploadImg from "./atomic/pages/freelancer/profileSetUp/uploadImg/UploadImg";
+import VerifyEmail from "./atomic/organisms/authframe/forgotpasswordflow/VerifyEmail";
 
 import GetStarted from "./atomic/pages/freelancer/profileSetUp/getStarted/GetStarted";
 import AccountSettings from "./atomic/pages/freelancer/dashboard/settings/AccountSettings";
@@ -127,8 +128,12 @@ const router = createBrowserRouter([
     element:  <Success />,
   },
   {
-    path: "forgot_password",
+    path: "/forgot_password",
     element: <ForgotPassword />,
+  },
+  {
+    path: "/verify_email",
+    element: <VerifyEmail />,
   },
   {
     path: "/get-started",

@@ -4,17 +4,21 @@ import { useNavigate } from "react-router-dom";
 
 //Zustand store for managing user authentication state
 const useAuthStore = create((set) => ({
+  // Initial state for email
+  userEmail: "",
+
+  // Initial user for email
   user: null,
-  errormessage: null,
   verified: false,
   isLoading: false,
+  errormessage: null,
+  setUserEmail: (email) => set({ email }),
   setUser: (newUser) => set({ user: newUser }),
 
-  //create user api
+  //create user action
   signUp: async (userData, navigate) => {
     //declare timeoutId
     let timeoutId = null;
-
 
     set({ isLoading: true, errormessage: null });
     try {
@@ -72,10 +76,9 @@ const useAuthStore = create((set) => ({
       }
     }
   },
-//\end code
+  //\end code
 
-
-  // sign in user api
+  // sign in user action
   signIn: async (userData, navigate) => {
     //timeoutID declaration
     let timeoutId = null;
@@ -118,9 +121,8 @@ const useAuthStore = create((set) => ({
     }
   },
   //\end code
-  
 
-  //email verification api
+  //email verification action
   verifyEmail: async () => {
     set({ isLoading: true });
     try {
@@ -161,6 +163,78 @@ const useAuthStore = create((set) => ({
     }, 5000);
 
     return () => clearTimeout(timeoutId);
+  },
+
+  //forgot password action
+  forgotPassword: async (email, navigate) => {
+    set({ isLoading: true });
+
+    try {
+      const response = await axios.post(
+        "https://api.zealworkers.com/api/v1/auth/forgot-password",
+        { email }
+      );
+
+      set({ isLoading: false });
+      navigate("/verify_email");
+      console.log(response);
+    } catch (error) {
+      if (error.response.status === 400) {
+        set({
+          isLoading: false,
+          errormessage: "User with email dosen't exist.",
+        });
+      } else {
+        set({
+          isLoading: false,
+          errormessage: "An error occurred. Please try again later",
+        });
+      }
+      console.log(error.response.status);
+    }
+  },
+
+  //reset password action
+  resetPassword: async (newPassword) => {
+    set({ isLoading: true, errormessage: null });
+
+    try {
+      const response = await axios.post(
+        "http://api.zealworkers.com/api/v1/auth/reset-password",
+        { newPassword },
+        {
+          headers: {
+            Authorization: `Bearer ${your_access_token}`,
+          },
+        }
+      );
+
+      set({ isLoading: false });
+      console.log(response);
+    } catch (error) {
+      set({
+        isLoading: false,
+        errormessage: error.response?.data?.message || "An error occurred.",
+      });
+    }
+  },
+
+
+  //TODO: complele.........
+  //password reset code action
+  passwordResetCode: async (code, navigate) => {
+    set({isLoading:true})
+    try {
+      const response = await axios.post(
+        "https://api.zealworkers.com/api/v1/auth/confirm-password-code",
+        { code }
+      );
+      set({isLoading:false})
+      navigate("/new_password")
+      console.log(response);
+    } catch (error) {
+      console.log(error.response.data);
+    }
   },
 
   logout: () => {
