@@ -1,4 +1,4 @@
-import React from 'react'
+
 import "./faq.scss"
 import Accordion from '../../organisms/accordion/accordion'
 

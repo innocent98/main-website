@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import "./accordion.scss"
 import accordionData from "./FaqData"
 import { LuPlus } from "react-icons/lu";

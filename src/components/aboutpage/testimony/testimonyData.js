@@ -7,41 +7,41 @@ import AVTR4 from '../../../assets/Frame 133776.png'
  const testimonyData = [ 
     {
     avatar: AVTR1,
-    name: "Michael King",
+    name: "Client",
     review: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur ipsum dolor sit amet consectetur "
  },
 
  {
     avatar: AVTR3,
-    name: "Chioma",
-    review: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur ipsum dolor sit amet consectetur  "
+    name: "Client",
+    review: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur ipsum dolor sit amet consectetur"
  },
 
  {
     avatar: AVTR2,
-    name: "innocent",
+    name: "Client",
     review: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur ipsum dolor sit amet consectetur "
  },
 
  {
     avatar: AVTR4,
-    name: "Lionel Messi",
+    name: "Client",
     review: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur ipsum dolor sit amet consectetur "
  },
 
  {
     avatar: AVTR4,
-    name: "Harry Kane",
+    name: "Client",
     review: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur ipsum dolor sit amet consectetur "
  },
  {
     avatar: AVTR4,
-    name: "Gerard Pique",
+    name: "Client",
     review: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur ipsum dolor sit amet consectetur "
  },
  {
     avatar: AVTR4,
-    name: "Pablo Gavi",
+    name: "Client",
     review: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur ipsum dolor sit amet consectetur "
  },
 
