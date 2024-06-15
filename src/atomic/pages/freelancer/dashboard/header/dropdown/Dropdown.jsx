@@ -18,7 +18,7 @@ const Dropdown = ({ toggleDropdown }) => {
     <>
       <main className='dropdown'>
         <div className='dropdown--image'>
-          <Image src="profileAvatar" alt="user" width={80} height={80} extension='svg' />
+          <Image src="/assets/imgs/profileAvatar.svg" alt="user" width={80} height={80} extension='svg' />
           <p className='username'>Solomon Tosin</p>
         </div>
         {dropdownLinks.map((items, i) => {

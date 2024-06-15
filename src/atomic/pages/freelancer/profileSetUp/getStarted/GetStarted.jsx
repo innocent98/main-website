@@ -29,7 +29,7 @@ const GetStarted = () => {
           </Container>
         </section>
         <section>
-          <Image src="right-img" width={250} extension="svg" alt="profile" />
+          <Image src="/assets/imgs/right-img.svg" width={250} extension="svg" alt="profile" />
         </section>
         <Container variant="wrapper--flex" className="wrapper--flex__hidden">
           <Button variant="default--fit">

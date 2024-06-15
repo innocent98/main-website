@@ -3,8 +3,10 @@ import { NavLink } from 'react-router-dom'
 import Input from '../../../../atoms/input/Input'
 import Button from '../../../../atoms/button/Button'
 import Container from '../../../../atoms/container/Container'
+import useAuthStore from '../../../../../../zustand/authstore/useAuthStore'
 
 const SearchSection = () => {
+    const {userName} = useAuthStore()
     const linksSchema = [
         {
             name: 'Dashboard',
@@ -23,7 +25,7 @@ const SearchSection = () => {
     return (
         <>
             <main>
-                <p className='welcome-user'>Welcome Solomon</p>
+                <p className='welcome-user'>Welcome {userName ? userName : "User"}</p>
                 <div className='header-input_sec'>
                     <Input className="dashboardInput" placeholder="search for jobs, talents..." />
                     <Button variant="default--fit" className="search-btn">

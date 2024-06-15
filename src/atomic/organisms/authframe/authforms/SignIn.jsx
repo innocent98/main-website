@@ -12,16 +12,17 @@ import useAuthStore from '../../../../../zustand/authstore/useAuthStore';
 import Loader from '../../../atoms/loader/Loader';
 
 
-//this page is still under development!!!
 const SignIn = () => {
+    //navigation hook
     const navigate = useNavigate()
-    //password visibility state
-    const [loginCred, setLoginCred] = useState({
+   
+    //initial states
+    const { signIn, isLoading, errormessage } = useAuthStore()
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false)
+     const [loginCred, setLoginCred] = useState({
         email: "",
         password: ""
     })
-    const { signIn, isLoading, errormessage, user } = useAuthStore()
-    const [isPasswordVisible, setIsPasswordVisible] = useState(false)
 
     //password visibiity handler
     const handlePasswordVisibility = () => {
@@ -50,7 +51,7 @@ const SignIn = () => {
     return (
         <Container variant="wrapper--flex">
             <LeftFrame />
-            <Container variant="wrapper" className='signup'>
+            <Container variant="wrapper" className='signin'>
                 <Container variant="wrapper--flex--center" className="signup--img-container">
                     <Image className="" src="/assets/imgs/logo.svg" extension="svg" width={150} />
                 </Container>
@@ -96,6 +97,7 @@ const SignIn = () => {
                         </Container>
                     </section>
                 </form>
+                
             </Container>
         </Container>
     )

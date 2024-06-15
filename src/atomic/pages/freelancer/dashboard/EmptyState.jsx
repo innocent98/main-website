@@ -7,7 +7,7 @@ const EmptyState = ({toggleState, stateTitle, stateDescription}) => {
     return (
         <Container variant="wrapper--flex--center">
             <section className='no-review-text'>
-                <Image src="no-review" alt="no-review" extension='png' width={250} />
+                <Image src="/assets/imgs/no-review.png" alt="no-review" extension='png' width={250} />
                 <h2>{stateTitle}</h2>
                 <p>{stateDescription}</p>
                 <Button variant="default" onClick={toggleState}>Click to toggle state</Button>

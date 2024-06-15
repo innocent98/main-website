@@ -10,7 +10,7 @@ const Success = () => {
         <Layout footerLayout={false}>
             <Container variant="wrapper--flex--center__col">
                 <div>
-                    <Image src="cong 1" alt="congratulations" extension='svg' width={200} height={200} />
+                    <Image src="/assets/imgs/cong 1.svg" alt="congratulations" extension='svg' width={200} height={200} />
                 </div>
                 <h1>Profile successfully created</h1>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure dolorem ratione maiores, assumenda blanditiis facilis earum aspernatur perspiciatis cupiditate! Exercitationem.</p>

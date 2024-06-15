@@ -1,41 +1,41 @@
 const dropdownLinks = [
   {
-    icon: "dashboard",
+    icon: "/assets/imgs/dashboard.svg",
     title: "Dashboard",
     href: "/overview",
   },
   {
-    icon: "user (1)",
+    icon: "/assets/imgs/user (1).svg",
     title: "Profile",
     href: "/overview/profile",
   },
   {
-    icon: "settings (1)",
+    icon: "/assets/imgs/settings (1).svg",
     title: "Settings",
     href: "/overview/settings",
   },
   {
-    icon: "star",
+    icon: "/assets/imgs/star.svg",
     title: "Reviews",
     href: "/overview/reviews",
   },
   {
-    icon: "dollar-sign",
+    icon: "/assets/imgs/dollar-sign.svg",
     title: "Wallet",
     href: "/overview/wallet",
   },
   {
-    icon: "bar-chart-2",
+    icon: "/assets/imgs/bar-chart-2.svg",
     title: "Transaction History",
     href: "/overview/transaction-history",
   },
   {
-    icon: "award",
+    icon: "/assets/imgs/award.svg",
     title: "Verification",
     href: "/overview/verification",
   },
   {
-    icon: "log-out",
+    icon: "/assets/imgs/log-out.svg",
     title: "Logout",
     onClick: () => {},
   },

@@ -4,6 +4,10 @@
 .container--flexcenter {
   @include flex_center($gap: 0, $width: 100%);
 }
+.container--flexcenter_fullH {
+  @include flex_center($gap: 0, $width: 100%);
+  height: 100vh;
+}
 .container--flexcenter_col{
   @include flex_center($gap: 0, $width: 100%);
   flex-direction: column;
@@ -42,6 +46,10 @@
 }
 .container--wrapper {
   padding: 30px;
+}
+.container--wrapper-center-align {
+  padding: 30px;
+  text-align: center;
 }
 .container--padded {
   @include mq(220px) {

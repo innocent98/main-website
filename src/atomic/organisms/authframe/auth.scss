@@ -182,6 +182,142 @@
     text-align: center;
   }
 }
+.signin {
+  @include mq(220px) {
+    width: 100%;
+    margin-left: 0;
+    .signup--img-container {
+      display: inline-flex;
+      margin-bottom: 25px;
+    }
+    .auth--wrapper__form {
+      display: block;
+      .auth--wrapper-password {
+        width: 100%;
+        position: relative;
+        .auth--wrapper-password__icon {
+          top: 16px;
+          right: 10px;
+          color: $slate;
+          cursor: pointer;
+          position: absolute;
+        }
+      }
+    }
+    .auth--wrapper__form-itemOne {
+      width: 100%;
+      margin-bottom: 20px;
+      @include input(15px, 15px, $grey);
+    }
+    .auth--wrapper__form-itemTwo {
+      width: 100%;
+      margin-bottom: 20px;
+      @include input(15px, 15px, $grey);
+    }
+    .auth--wrapper__form-itemThree {
+      width: 100%;
+      margin-bottom: 20px;
+      @include input(15px, 15px, $grey);
+    }
+    .auth--wrapper__form-itemFour {
+      width: 100%;
+      margin-bottom: 20px;
+      @include input(15px, 15px, $grey);
+    }
+    .auth--wrapper {
+      gap: 20px;
+      display: block;
+    }
+    .gridItemOne,
+    .gridItemTwo {
+      width: 100%;
+      padding: 13px 0;
+      font-weight: 500;
+      font-size: $text_sm;
+      margin-bottom: 20px;
+      @include flex_align(17px);
+    }
+  }
+  @include mq(768px) {
+    width: 55%;
+    margin-left: 40%;
+    h2{
+      margin-top: 8.5rem;
+    }
+    .signup--img-container {
+      display: none;
+    }
+    .auth--wrapper {
+      gap: 20px;
+      display: flex;
+    }
+    .auth--wrapper__form {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      .auth--wrapper-password {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        position: relative;
+        .auth--wrapper-password__icon {
+          top: 15px;
+          right: 10px;
+          color: $slate;
+          cursor: pointer;
+          position: absolute;
+        }
+      }
+    }
+    .auth--wrapper__form-itemOne {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      margin-bottom: 0;
+      @include input(15px, 15px, $grey);
+    }
+    .auth--wrapper__form-itemTwo {
+      grid-column-start: 3;
+      grid-column-end: 5;
+      margin-bottom: 0;
+      @include input(15px, 15px, $grey);
+    }
+    .auth--wrapper__form-itemThree {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      margin-bottom: 0;
+      @include input(15px, 15px, $grey);
+    }
+    .auth--wrapper__form-itemFour {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      margin-bottom: 0;
+      @include input(15px, 15px, $grey);
+    }
+    .gridItemOne,
+    .gridItemTwo {
+      width: 100%;
+      padding: 13px 0;
+      font-size: $text_sm;
+      font-weight: 500;
+      @include flex_align(17px);
+    }
+  }
+  .wrapper--flex {
+    margin-bottom: 20px;
+  }
+  .auth--wrapper__hr {
+    height: 1px;
+    background-color: $grey;
+    width: 43%;
+  }
+  .auth--wrapper__text {
+    color: $slate;
+    font-size: $text_s;
+    background-color: $white;
+    padding: 0 9px;
+    width: 200px;
+    text-align: center;
+  }
+}
 
 //*******************************************button group
 

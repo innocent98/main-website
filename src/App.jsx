@@ -15,7 +15,9 @@ import Wallet from "./atomic/pages/freelancer/dashboard/overview/wallet/Wallet";
 import ProfilePage from "./atomic/pages/freelancer/dashboard/profile/ProfilePage";
 import ReviewsPage from "./atomic/pages/freelancer/dashboard/reviews/ReviewsPage";
 import UploadImg from "./atomic/pages/freelancer/profileSetUp/uploadImg/UploadImg";
-import VerifyEmail from "./atomic/organisms/authframe/forgotpasswordflow/VerifyEmail";
+import NewPassword from "./atomic/organisms/authframe/forgotpasswordflow/NewPassword";
+import GetVerificationCode from "./atomic/organisms/authframe/forgotpasswordflow/GetVerificationCode";
+import PasswordResetSuccess from "./atomic/organisms/authframe/forgotpasswordflow/PasswordResetSuccess";
 
 import GetStarted from "./atomic/pages/freelancer/profileSetUp/getStarted/GetStarted";
 import AccountSettings from "./atomic/pages/freelancer/dashboard/settings/AccountSettings";
@@ -56,14 +58,15 @@ import TransactionHistory from "./atomic/pages/freelancer/dashboard/transactionH
 import WalletTransactionHistory from "./atomic/pages/freelancer/dashboard/overview/wallet/walletTabs/WalletTransactionHistory";
 
 
-const ProtectedRoute = ({ element: Element }) => {
-  const { isAuthenticated, isLoading } = useAuthStore();
+const ProtectedRoute = ({ children }) => {
+  const { isAuthenticated } = useAuthStore();
 
-  if (isLoading) {
-    return <p>Loading...</p>;
+  if (!isAuthenticated) {
+    // Redirect to login if not authenticated
+    return <Navigate to="/signin" replace />;
   }
 
-  return isAuthenticated ? Element : <Navigate to="/signin" replace/>; // Redirect to login if not authenticated
+  return children
 };
 
 
@@ -109,7 +112,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/profile-setup-page1",
-    element:  <Intro />
+    element: <Intro />
   },
   {
     path: "/profile-setup-page2",
@@ -121,23 +124,31 @@ const router = createBrowserRouter([
   },
   {
     path: "/setup_profile/preview_profile",
-    element:  <Preview />,
+    element: <Preview />,
   },
   {
     path: "/setup_profile/success",
-    element:  <Success />,
+    element: <Success />,
   },
   {
     path: "/forgot_password",
     element: <ForgotPassword />,
   },
   {
+    path: "/new_password",
+    element: <NewPassword />,
+  },
+  {
+    path: "/success",
+    element: <PasswordResetSuccess />,
+  },
+  {
     path: "/verify_email",
-    element: <VerifyEmail />,
+    element: <GetVerificationCode />,
   },
   {
     path: "/get-started",
-    element:  <GetStarted />,
+    element: <GetStarted />,
   },
   {
     path: "/verified",
@@ -146,7 +157,9 @@ const router = createBrowserRouter([
 
   {
     path: "/overview",
-    element:  <FreelancerDashboardLayout />,
+    element: <FreelancerDashboardLayout />,
+    //  <ProtectedRoute>
+    // </ProtectedRoute>,
     children: [
       {
         path: "/overview",
@@ -165,57 +178,57 @@ const router = createBrowserRouter([
         element: <VerificationPage />,
       },
       {
-        path:"/overview/reviews",
-        element:<ReviewsPage/>
+        path: "/overview/reviews",
+        element: <ReviewsPage />
       },
       {
-        path:"/overview/transaction-history",
-        element:<TransactionHistory/>
+        path: "/overview/transaction-history",
+        element: <TransactionHistory />
       },
       {
-        path:"/overview/wallet",
-        element:<Wallet/>,
-        children:[
+        path: "/overview/wallet",
+        element: <Wallet />,
+        children: [
           {
             index: true,
-            element: <CashAcc/>
+            element: <CashAcc />
           },
           {
             path: "/overview/wallet/crypto_balance",
-            element: <CryptoBalance/>
+            element: <CryptoBalance />
           },
           {
             path: "/overview/wallet/ref_balance",
-            element: <RefBalance/>
+            element: <RefBalance />
           },
           {
             path: "/overview/wallet/transaction_history",
-            element: <WalletTransactionHistory/>
+            element: <WalletTransactionHistory />
           },
         ]
 
       },
       {
         path: "/overview/settings",
-        element:<Settings/>,
-        children:[
+        element: <Settings />,
+        children: [
           {
             index: true,
-            element:<AccountSettings/>
+            element: <AccountSettings />
           },
           {
-            path:"/overview/settings/security_settings",
-            element:<SecuritySettings/>
+            path: "/overview/settings/security_settings",
+            element: <SecuritySettings />
           },
           {
-            path:"/overview/settings/notification_settings",
-            element:<NotificationSettings/>
+            path: "/overview/settings/notification_settings",
+            element: <NotificationSettings />
           },
         ]
       },
       {
-        path:"/overview/logout",
-        element:<Logout/>
+        path: "/overview/logout",
+        element: <Logout />
       },
     ],
   },

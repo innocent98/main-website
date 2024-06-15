@@ -74,7 +74,7 @@ const Header = () => {
                         <Button onClick={toggleDropdown} variant="transparent" className="header--profile-dropdown">
                             <Suspense fallback={<div>loading...</div>}>
                                 <LazyLoadedImg
-                                    src="profileAvatar"
+                                    src="/assets/imgs/profileAvatar.svg"
                                     alt="user"
                                     width={30}
                                     height={30}

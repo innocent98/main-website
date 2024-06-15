@@ -3,13 +3,11 @@ import data from "./data"
 import React, { useState } from 'react'
 import SearchSection from "../../header/SearchSection"
 import { LuDownload } from "react-icons/lu";
-
 import Container from '../../../../../atoms/container/Container'
 
 
 
 const Dashboard = () => {
-
   const [jobs, setJobs] = useState(false)
 
   return (

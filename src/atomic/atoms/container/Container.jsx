@@ -8,6 +8,9 @@ const Container = ({ variant, children, className }) => {
         case "wrapper":
             style = clsx(style, "container--wrapper")
             break;
+        case "wrapper-center-align":
+            style = clsx(style, "container--wrapper-center-align")
+            break;
         case "wrapper--flex":
             style = clsx(style, "container--flex")
             break;
@@ -16,6 +19,9 @@ const Container = ({ variant, children, className }) => {
             break;
         case "wrapper--flex--center":
             style = clsx(style, "container--flexcenter")
+            break;
+        case "wrapper--flex--center_fullH":
+            style = clsx(style, "container--flexcenter_fullH")
             break;
         case "wrapper--flex--center__col":
             style = clsx(style, "container--flexcenter_col")

@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
   return (
     <Container variant="wrapper--padded" className="wrapper--padded">
       <div>
-        <Image src="logo" alt="logo" extension={ext} />
+        <Image src="/assets/imgs/logo.svg" alt="logo" extension={ext} />
       </div>
       <section className='wrapper--padded__children'>
         {children}

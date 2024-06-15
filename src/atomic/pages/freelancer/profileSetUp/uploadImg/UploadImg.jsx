@@ -46,7 +46,7 @@ const UploadImg = () => {
             <section className='uploadImage--wrapper--flex__imageSection'>
               <div>
                 <Image
-                  src={selectedImage ? selectedImage : "profileAvatar"}
+                  src={selectedImage ? selectedImage : "/assets/imgs/profileAvatar.svg"}
                   alt="Selected"
                   extension={imageExtension}
                   width={100} height={100} />
@@ -57,7 +57,7 @@ const UploadImg = () => {
                 style={{ display: 'none' }}
                 ref={fileInputRef}
               />
-              <Button variant="border" onClick={handleModalOpen}>Upload Image</Button>
+              <Button variant="border--fit" onClick={handleModalOpen}>Upload Image</Button>
             </section>
             <section className='uploadImage--wrapper--flex__formSection'>
               <form action="">
