@@ -10,12 +10,12 @@ import Button from '../../../atoms/button/Button';
 import Loader from '../../../atoms/loader/Loader';
 import Container from '../../../atoms/container/Container'
 import useUserStore from '../../../../../zustand/useUserStore';
-import useAuthStore from '../../../../../zustand/authstore/useAuthStore';
+import useAuthStore from '../../../../../zustand/useAuthStore';
 
 const SignUp = () => {
     const navigate = useNavigate()
     const { userRole } = useUserStore()
-    const { signUp, isLoading, errormessage } = useAuthStore()
+    const { signUp, isLoading, signup_errormessage } = useAuthStore()
 
     //password visibility state
     const [isPasswordVisible, setIsPasswordVisible] = useState(false)
@@ -85,7 +85,7 @@ const SignUp = () => {
                         <Input required={true} onChange={(e) => handleChange(e, "password")} value={formData.password} placeholder={isPasswordVisible ? "Enter Password" : "**********"} type={isPasswordVisible ? "text" : "password"} className="auth--wrapper__form-itemFour" />
                         {isPasswordVisible ? <FiEye onClick={handlePasswordVisibility} className='auth--wrapper-password__icon' /> : <FiEyeOff onClick={handlePasswordVisibility} className='auth--wrapper-password__icon' />}
                         {/* {message && <small style={{ color: "red" }}>{message}</small>} */}
-                        {errormessage && <small style={{ color: "red" }}>{errormessage}</small>}
+                        {signup_errormessage && <small style={{ color: "red" }}>{signup_errormessage}</small>}
                     </div>
                 </div>
                 <section>

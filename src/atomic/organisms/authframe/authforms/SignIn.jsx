@@ -1,15 +1,15 @@
 import LeftFrame from '../LeftFrame';
 import { FiEye } from "react-icons/fi";
-import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FiEyeOff } from "react-icons/fi";
-import Image from '../../../atoms/image/Image';
 import { useNavigate } from 'react-router-dom';
 import Input from '../../../atoms/input/Input';
+import Image from '../../../atoms/image/Image';
 import Button from '../../../atoms/button/Button';
-import Container from '../../../atoms/container/Container';
-import useAuthStore from '../../../../../zustand/authstore/useAuthStore';
 import Loader from '../../../atoms/loader/Loader';
+import Container from '../../../atoms/container/Container';
+import useAuthStore from '../../../../../zustand/useAuthStore';
 
 
 const SignIn = () => {
@@ -17,7 +17,7 @@ const SignIn = () => {
     const navigate = useNavigate()
    
     //initial states
-    const { signIn, isLoading, errormessage } = useAuthStore()
+    const { signIn, isLoading, signin_errormessage } = useAuthStore()
     const [isPasswordVisible, setIsPasswordVisible] = useState(false)
      const [loginCred, setLoginCred] = useState({
         email: "",
@@ -82,7 +82,7 @@ const SignIn = () => {
                             {isPasswordVisible ? <FiEye onClick={handlePasswordVisibility} className='auth--wrapper-password__icon' /> : <FiEyeOff onClick={handlePasswordVisibility} className='auth--wrapper-password__icon' />}
                         </div>
                     </div>
-                    {errormessage && <small style={{ color: "red" }}>{errormessage}</small>}
+                    {signin_errormessage && <small style={{ color: "red" }}>{signin_errormessage}</small>}
                     <section>
                         <Container variant="wrapper--flex--between">
                             <Container variant="wrapper--flex">

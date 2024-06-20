@@ -10,17 +10,16 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../../../atoms/button/Button';
 import Loader from '../../../atoms/loader/Loader';
 import Container from '../../../atoms/container/Container';
-import useAuthStore from '../../../../../zustand/authstore/useAuthStore';
+import useUserPasswordStore from '../../../../../zustand/useUserPasswordStore';
 
 const NewPassword = () => {
     const navigate = useNavigate();
-    const { resetPassword, isLoading, token } = useAuthStore()
+    const { resetPassword, isLoading, token } = useUserPasswordStore()
 
     //initial states
     const [error, setError] = useState(false)
     const [password, setPassword] = useState('')
     const [errorMessage, setErrorMessage] = useState("")
-    // const [isModalOpen, setIsModalOpen] = useState(false)
     const [confirmPassword, setConfirmPassword] = useState('')
     const [isPasswordVisible, setIsPasswordVisible] = useState(false)
     const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false)
@@ -111,4 +110,4 @@ const NewPassword = () => {
     )
 }
 
-export default NewPassword
+export default NewPassword;

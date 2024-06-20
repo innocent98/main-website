@@ -7,7 +7,7 @@ import { RxCrossCircled } from "react-icons/rx";
 import { FaRegCheckCircle } from "react-icons/fa";
 import Container from '../../../../atoms/container/Container'
 const LazyLoadedImg = lazy(() => import("../../../../atoms/image/Image"))
-import useAuthStore from "../../../../../../zustand/authstore/useAuthStore"
+import useAuthStore from "../../../../../../zustand/useAuthStore"
 
 
 const VerificationPage = () => {
