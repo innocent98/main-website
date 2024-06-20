@@ -5,14 +5,14 @@ import { useState, useRef } from 'react'
 import Image from '../../../atoms/image/Image'
 import Button from '../../../atoms/button/Button'
 import Container from '../../../atoms/container/Container'
-import useAuthStore from '../../../../../zustand/authstore/useAuthStore'
 import Loader from '../../../atoms/loader/Loader'
+import useUserPasswordStore from '../../../../../zustand/useUserPasswordStore'
 
 const GetVerificationCode = ({ length = 6 }) => {
     const navigate = useNavigate()
     // state
     const [code, setCode] = useState(new Array(length).fill(""));
-    const { userEmail, passwordResetCode, isLoading } = useAuthStore()
+    const { userEmail, passwordResetCode, isLoading } = useUserPasswordStore()
 
 
     const handleCodeComplete = (code) => {

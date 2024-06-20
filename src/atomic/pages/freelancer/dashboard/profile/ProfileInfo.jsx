@@ -1,13 +1,30 @@
-import React, { lazy, Suspense } from 'react'
+import React, { lazy, Suspense, useState } from 'react'
 import { FiPlusCircle } from "react-icons/fi";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Button from '../../../../atoms/button/Button'
+import useUserProfileStore from '../../../../../../zustand/useUserProfileStore';
 import Container from '../../../../atoms/container/Container'
 
 const LazyLoadedImg = lazy(() => import("../../../../atoms/image/Image"))
 
 
 const ProfileInfo = () => {
+
+    const { user, updateUser } = useUserProfileStore();
+
+    //initial state
+    const [formData, setFormData] = useState({ ...user });
+    const [toggleEdit, setToggleEdit] = useState(false)
+  
+    const handleChange = (event) => {
+      setFormData({ ...formData, [event.target.name]: event.target.value });
+    };
+  
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      await updateUser(formData);
+    };
+
     return (
         <section className='profile-info'>
             <>
@@ -19,9 +36,10 @@ const ProfileInfo = () => {
             <div>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <h3>Bio</h3>
-                    <Button variant="transparent">Edit</Button>
+                    <Button variant="transparent" onClick={()=> setToggleEdit(!toggleEdit)}>Edit</Button>
                 </div>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non cum, amet eaque vel nisi delectus!</p>
+                {toggleEdit && <div>Start editing...</div>}
             </div>
             <div>
                 <h3>Skills</h3>

@@ -1,19 +1,19 @@
-import React, { useState } from 'react'
 import Layout from './Layout'
-import Image from '../../../atoms/image/Image'
+import React, { useState } from 'react'
 import Input from '../../../atoms/input/Input'
+import Image from '../../../atoms/image/Image'
 import Loader from '../../../atoms/loader/Loader'
 import Button from '../../../atoms/button/Button'
 import { Link, useNavigate } from 'react-router-dom'
 import Container from '../../../atoms/container/Container'
-import useAuthStore from '../../../../../zustand/authstore/useAuthStore'
+import useUserPasswordStore from '../../../../../zustand/useUserPasswordStore'
 
 const ForgotPassword = () => {
 
     //states
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
-    const { forgotPassword, isLoading, setUserEmail, userEmail, errormessage } = useAuthStore()
+    const { forgotPassword, isLoading, userEmail, errormessage } = useUserPasswordStore()
 
 
     //handle input change function
@@ -27,7 +27,6 @@ const ForgotPassword = () => {
         e.preventDefault()
 
         await forgotPassword(email, navigate)
-        setUserEmail(email)
         setEmail('')
         console.log(userEmail);
     }
