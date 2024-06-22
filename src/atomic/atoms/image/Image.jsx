@@ -1,14 +1,5 @@
-import React from "react";
-const Image = ({
-  src,
-  alt,
-  width,
-  height,
-  className,
-  extension = "jpg" || "png" || "jpeg" || "svg",
-}) => {
+const Image = ({ src, alt, width, height, className }) => {
   // dynamic image source URL using the provided source and extension
-  const dynamicSrc = `/src/assets/${src}.${extension}`;
 
   return (
     <img
@@ -16,7 +7,6 @@ const Image = ({
       width={width}
       height={height}
       src={src}
-      extension={extension}
       className={className}
     />
   );
