@@ -30,7 +30,6 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
             nvm use v18.17.1
             cd zealworkers/main-client/
-            git fetch
             git pull origin main
             git status
             npm install --omit=dev
