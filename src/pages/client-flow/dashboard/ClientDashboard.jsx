@@ -8,6 +8,7 @@ import EnhancedNavbar from "../../../organisms/navbar/EnhancedNavbar";
 import Alert from "./notification/Alert";
 import { Link } from "react-router-dom";
 import DiscoverTalent from "./discoverTalent/DiscoverTalent";
+import Wallet from "./wallet/Wallet";
 
 const Tabs = ({ children }) => {
   const [activeTab, setActiveTab] = useState(0);
@@ -70,7 +71,9 @@ const App = () => {
       <Tab title="Discover Talent">
         <DiscoverTalent />
       </Tab>
-      <Tab title="Wallet">Wallet</Tab>
+      <Tab title="Wallet">
+        <Wallet/>
+      </Tab>
     </Tabs>
   );
 };
