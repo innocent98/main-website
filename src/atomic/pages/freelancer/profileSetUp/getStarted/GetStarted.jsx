@@ -1,5 +1,4 @@
 import Layout from '../layout/Layout'
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaUser } from "react-icons/fa6";
 import { BiSolidEnvelope } from "react-icons/bi";

@@ -4,7 +4,7 @@ import profileProject from "../../../assets/profile-project.png";
 import "./profile.scss";
 import { GrLocation } from "react-icons/gr";
 import { Rating } from "@mui/material";
-
+import Button from "../../../atomic/atoms/button/Button"
 const Profile = () => {
   return (
     <div className="freelancer-profile_container">
@@ -22,8 +22,8 @@ const Profile = () => {
           </div>
 
           <div className="freelancer-CTA">
-            <button>Accept</button>
-            <button>Ignore</button>
+            <Button variant="default--fit">Accept</Button>
+            <Button variant="border--fit">Ignore</Button>
           </div>
 
           <div className="freelancer-bio">

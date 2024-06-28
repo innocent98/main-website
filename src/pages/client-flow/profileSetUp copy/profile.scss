@@ -26,15 +26,15 @@
         border-radius: 8px;
         text-indent: 20px;
         font-size: 14px;
-        color: #cccccc;
+        color: #353333;
         &:focus {
-            outline: none; // Remove the outline when textarea is in focus
-            border-color: #AAAAAA; // Set border color to transparent
-            box-shadow: none; // Remove any box shadow
+            outline: none; 
+            border-color: #AAAAAA; 
+            box-shadow: none;
         }
     }
     .com-desc {
-        height: 150px;
+        height: 100px;
         border: 1px solid #AAAAAA;
         border-radius: 8px;
         font-size: 14px;
@@ -42,9 +42,9 @@
         resize: none; 
         font-family: inherit;
         &:focus {
-            outline: none; // Remove the outline when textarea is in focus
-            border-color: #AAAAAA; // Set border color to transparent
-            box-shadow: none; // Remove any box shadow
+            outline: none; 
+            border-color: #AAAAAA; 
+            box-shadow: none;
         }
     }
      label {
@@ -60,10 +60,21 @@
 
 }
 .f-progress-section {
-    margin-top: 120PX;
+    margin-top: 200PX;
     padding: 40px;
 }
 .fp-progress-section {
-    margin-top: 300PX;
+    margin-top: 400px;
     padding: 40px;
+}
+
+@media screen  and (max-width: 600px) {
+    .f-progress-section {
+        margin-top: 100px;
+        padding: 20px;
+    }
+    .fp-progress-section {
+        margin-top: 350PX;
+        padding: 20px;
+    }
 }

@@ -26,8 +26,8 @@ const ClientSkillSet = () => {
           </form>
           <section>
             <p>Suggested skill</p>
-            <Button variant="border" className="wrapper--padded__children-skills_skills--button">UI/UX Designer</Button>
-            <Button variant="border" className="wrapper--padded__children-skills_skills--button">Software Developer</Button>
+            <Button variant="border-zeal"  className="wrapper--padded__children-skills_skills--button">UI/UX Designer</Button>
+            <Button variant="border-zeal"  className="wrapper--padded__children-skills_skills--button">Software Developer</Button>
           </section>
         </main>
       </Layout>

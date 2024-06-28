@@ -1,6 +1,5 @@
 import Footer from "../layout/Footer";
-import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import  { useRef, useState } from "react";
 import Container from "../../../../atomic/atoms/container/Container";
 import Layout from "../../../../atomic/pages/freelancer/profileSetUp/layout/Layout";
 import ProgressBar from "../layout/ProgressBar";
@@ -8,6 +7,7 @@ import "../profile.scss";
 import Button from "../../../../atomic/atoms/button/Button";
 import Image from "../../../../atomic/atoms/image/Image";
 import Modal from "../../../../atomic/molecules/modal/Modal";
+import profilepic from "../../../../assets/Frame 133776(1).png"
 
 const ClientIntro = () => {
   const [progress, setProgress] = useState(33.33);
@@ -51,7 +51,7 @@ const ClientIntro = () => {
             <div className="upload-image">
               <Image
                 className="avatar"
-                src={selectedImage ? selectedImage : "profileAvatar"}
+                src={selectedImage ? selectedImage : profilepic}
                 alt="Selected"
                 extension={imageExtension}
                 width={100}
@@ -65,7 +65,7 @@ const ClientIntro = () => {
                 style={{ display: "none" }}
                 ref={fileInputRef}
               />
-              <Button variant="border" onClick={handleModalOpen}>
+              <Button  variant="default-fit" onClick={handleModalOpen}>
                 Upload company's logo
               </Button>
             </div>

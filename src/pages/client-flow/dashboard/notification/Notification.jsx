@@ -1,3 +1,4 @@
+import Button from "../../../../atomic/atoms/button/Button";
 import "./notification.scss";
 import { Link } from "react-router-dom";
 
@@ -18,8 +19,8 @@ const Notification = ({ notifications }) => {
                 </div>
                 <div>
                   <p style={{ color: "#777777" }}>{notification.timestamp}</p>
-                  <Link to={notification.profileLink}>
-                    <button>View Profile</button>
+                  <Link className="link" to={notification.profileLink}>
+                    <Button variant="default--fit" style={{padding:"10px"}}>View Profile</Button>
                   </Link>
                 </div>
               </div>

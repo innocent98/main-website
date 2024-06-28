@@ -4,6 +4,7 @@ import { IoNotifications } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import alertNotificationSound from "../../../../assets/alert_notification.mp3";
 import { Link } from "react-router-dom";
+import Button from "../../../../atomic/atoms/button/Button";
 
 const Alert = () => {
   const [alertData, setAlertData] = useState([]);
@@ -71,7 +72,7 @@ const Alert = () => {
               posted
             </p>
             <Link to="/freelancer-profile">
-              <button onClick={handleCloseAlert}>View Profile</button>
+              <Button variant="default--fit" onClick={handleCloseAlert}>View Profile</Button>
             </Link>
           </div>
           <div className="close" onClick={handleCloseAlert}>

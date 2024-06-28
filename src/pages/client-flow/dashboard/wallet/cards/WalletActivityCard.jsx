@@ -6,11 +6,11 @@ const WalletActivityCard = ({type, amount, status, withdraw, time}) => {
   const getStatusColor = (status) => {
     switch (status.toLowerCase()) {
       case "pending":
-        return "gray";
+        return "Pending";
       case "completed":
-        return "green";
+        return "#2BC155";
       case "cancel":
-        return "red";
+        return "#FF3E3E";
       default:
         return "black";
     }

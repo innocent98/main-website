@@ -94,7 +94,7 @@ const Jobs = () => {
             </span>
             <input className="jobs_input" placeholder="1" />
           </div>
-          <Button onClick={handleNextClick}>Next</Button>
+          <Button variant="default--fit" onClick={handleNextClick}>Next</Button>
         </div>
       )}
 
@@ -128,8 +128,8 @@ const Jobs = () => {
             <input className="jobs_input" />
           </div>
           <div className="jobs_buttons">
-            <Button onClick={handleBackClick}>Back</Button>
-            <Button onClick={handleShowPreview}>Preview</Button>
+            <Button variant="default--fit" onClick={handleBackClick}>Back</Button>
+            <Button variant="default--fit" onClick={handleShowPreview}>Preview</Button>
           </div>
         </div>
       )}
@@ -144,7 +144,7 @@ const Jobs = () => {
               <span>{jobData.country}</span>
             </div>
             <div>
-              <Button isDisabled={true}>Under review</Button>
+              <Button variant="default--fit" isDisabled={true}>Under review</Button>
             </div>
           </div>
           <div className="jobs-preview_div2">
@@ -195,7 +195,7 @@ const Jobs = () => {
               </p>
             </div>
           </div>
-          <Button onClick={handleModalOpen}>Post a Job</Button>
+          <Button variant="default--fit" onClick={handleModalOpen}>Post a Job</Button>
         </div>
       )}
 

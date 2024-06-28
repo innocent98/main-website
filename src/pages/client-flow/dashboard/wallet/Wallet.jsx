@@ -8,21 +8,31 @@ import Emptystate from "./Emptystate";
 import BasicModal from "./Modal";
 
 
+
+
 const Wallet = () => {
-  const copy = (
-    <small style={{ color: "gray" }}>
-      <IoCopy />
-    </small>
-  );
-  const walletAddress = (
-    <small style={{ color: "gray" }}>Twbbwwtud109hjuy</small>
-  );
-  const [data, setData] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState('default');
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setModalContent('default'); // this reset modal content when closed
+  };
+
+  const handlePayClick = () => setModalContent('pay');
+  const handlePaywithClick = () => setModalContent('paywith');
+  const handleAddFundsClick = () => setModalContent('addFunds');
+
+  
+  const data = false
   const [showWalletActivity, setShowWalletActivity] = useState(false);
+
 
   const handleWalletActivityClick = () => {
     setShowWalletActivity(!showWalletActivity);
   };
+ 
 
   return (
     <div className="wallet_wrapper">
@@ -32,13 +42,26 @@ const Wallet = () => {
           walletBalance="$ 0.00"
           lastChild="Escrowed:"
           lastChildContent="$0.00"
+         
+          onFundWalletClick={handleOpenModal}
         />
         <Card
           cardTitle="Crypto Balance"
-          walletBalance="$ 10,000ZWT"
-          lastChild={walletAddress}
-          lastChildContent={copy}
+          walletBalance="10,000ZWT"
+          walletAddress="Twbbwwtud109hjuy"
+         
+          type= "crypto"
+          onFundWalletClick={handleOpenModal}
+     
         />
+        <BasicModal 
+        show={isModalOpen} 
+        onClose={handleCloseModal} 
+        content={modalContent}
+        onPayClick={handlePayClick}
+        onPaywithClick={handlePaywithClick}
+        onAddFundsClick={handleAddFundsClick}
+      />
       </div>
 
       <div className="chart-sections">
@@ -100,7 +123,7 @@ const Wallet = () => {
           </div>
         </div>
       </div>
-      <BasicModal />
+      
     </div>
   );
 };

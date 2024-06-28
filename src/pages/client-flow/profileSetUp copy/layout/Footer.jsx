@@ -9,7 +9,7 @@ const Footer = ({ handleNext, handlePrev, prevRoute, nextRoute, btnText }) => {
     <main>
       <Container variant="wrapper--flex--between" className="footer">
         <NavLink to={prevRoute}>
-          <Button variant="border" onClick={handlePrev}>
+          <Button variant="border--fit" onClick={handlePrev}>
             Back
           </Button>
         </NavLink>
