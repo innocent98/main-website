@@ -1,4 +1,4 @@
-import React from 'react'
+
 import "./header.scss"
 import imageFrame from "../../../assets/IMG Frame.png"
 

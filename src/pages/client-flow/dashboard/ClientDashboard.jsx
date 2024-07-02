@@ -6,7 +6,6 @@ import Dashboard from "./dashboardtab/Dashboard";
 import Jobs from "./jobs/Jobs";
 import EnhancedNavbar from "../../../organisms/navbar/EnhancedNavbar";
 import Alert from "./notification/Alert";
-import { Link } from "react-router-dom";
 import DiscoverTalent from "./discoverTalent/DiscoverTalent";
 import Wallet from "./wallet/Wallet";
 
@@ -29,7 +28,9 @@ const Tabs = ({ children }) => {
               <BiSearch />
               <input className="input" placeholder="Search for jobs, talents" />
             </div>
-            <Button className="search-btn">Search</Button>
+            <Button variant="default--fit" className="search-btn">
+              Search
+            </Button>
           </div>
         </div>
 
@@ -72,7 +73,7 @@ const App = () => {
         <DiscoverTalent />
       </Tab>
       <Tab title="Wallet">
-        <Wallet/>
+        <Wallet />
       </Tab>
     </Tabs>
   );

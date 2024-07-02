@@ -13,7 +13,7 @@
     }
 
     textarea {
-        height: 150px;
+        height: 120px;
         border: 1px solid #AAAAAA;
         border-radius: 10px;
         font-size: 14px;
@@ -21,9 +21,9 @@
         resize: none; 
         font-family: inherit;
         &:focus {
-            outline: none; // Remove the outline when textarea is in focus
-            border-color: #AAAAAA; // Set border color to transparent
-            box-shadow: none; // Remove any box shadow
+            outline: none; 
+            border-color: #AAAAAA; 
+            box-shadow: none;
         }
     }
     

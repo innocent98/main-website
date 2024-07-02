@@ -105,10 +105,6 @@
     border-bottom:1px solid #cccccc;
     border-radius:5px;
     background: #ffffff;
-    
- 
-
-
     .alert-box_icon {
       flex: .5;
       div {
@@ -120,7 +116,6 @@
         border: 1px solid $zeal-purple;
         border-radius: 8px;
         color: $zeal-purple;
-       
       }
     }
     .alert-box_info {
@@ -151,5 +146,28 @@
       font-size: 25px;
      
     }
+}
+
+@media screen  and (max-width: 600px) {
+  //ALERT//
+//......................................//
+.alert-box {
+  display: flex;
+  width: 80%;
+  gap: 10px;
+  .alert-box_icon {
+    flex: .5;
+    div {
+      width: 22px;
+      height: 22px; 
+    }
+  }
+  .alert-box_info {
+    gap: 10px;
+    button {
+      font-size: 14px;
+    }
+  }
+}
 }
 

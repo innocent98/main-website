@@ -31,7 +31,9 @@ const ContactProfile = () => {
           </div>
 
           <div className="freelancer-CTA">
-            <button onClick={BasicModal} style={{ width: "111px" }}>Contact</button>
+            <button onClick={BasicModal} style={{ width: "111px" }}>
+              Contact
+            </button>
             <button style={{ display: "none" }}></button>
           </div>
 

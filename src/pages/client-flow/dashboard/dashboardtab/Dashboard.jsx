@@ -1,4 +1,4 @@
-
+import Button from "../../../../atomic/atoms/button/Button";
 import Card from "./Card";
 import { Link } from "react-router-dom";
 
@@ -38,17 +38,12 @@ const Dashboard = () => {
               </div>
 
               <div>
-                <button className="btn">Mark as complete</button>
-                <button
-                  style={{
-                    background: "none",
-                    color: "#B304FD",
-                    border: "1px solid #B304FD",
-                  }}
-                  className="btn"
-                >
+                <Button className="btn" variant="default--fit">
+                  Mark as complete
+                </Button>
+                <Button className="btn" variant="border--fit">
                   Report
-                </button>
+                </Button>
               </div>
             </div>
           </div>
