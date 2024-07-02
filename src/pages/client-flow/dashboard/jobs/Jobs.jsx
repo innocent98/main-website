@@ -1,10 +1,35 @@
-import  { useState } from "react";
+import { useState } from "react";
 import Button from "../../../../atomic/atoms/button/Button";
 import Modal from "../../../../atomic/molecules/modal/Modal";
 import check from "../../../../assets/check-circle.svg";
-import jobData from "./dummyjob";
+import useJobStore from "../../../../../zustand/client/useJobStore.js";
+
 
 const Jobs = () => {
+  const {
+    jobCategory,
+    serviceType,
+    jobTitle,
+    jobDesc,
+    requiredSkills,
+    noToHire,
+    budget,
+    country,
+    startDate,
+    duration,
+    setJobCategory,
+    setServiceType,
+    setJobTitle,
+    setJobDesc,
+    setRequiredSkills,
+    setNoToHire,
+    setBudget,
+    setCountry,
+    setStartDate,
+    setDuration,
+    postJob,
+  } = useJobStore();
+
   const [firstdiv, showFirstdiv] = useState(true);
   const [seconddiv, showSeconddiv] = useState(false);
   const [previewdiv, showPreviewdiv] = useState(false);
@@ -28,7 +53,8 @@ const Jobs = () => {
     showPreviewdiv(true);
   };
 
-  const handleModalOpen = () => {
+  const handlePostJob = async () => {
+    await postJob();
     setIsModalOpen(true);
   };
 
@@ -38,61 +64,78 @@ const Jobs = () => {
         <div className="jobs_wrapper">
           <div>
             <label htmlFor="work-category">Select Work Category</label>
-            <select className="jobs_select" id="work-category">
-              <option disabled value="category" selected>
+            <select
+              className="jobs_select"
+              id="work-category"
+              value={jobCategory}
+              onChange={(e) => setJobCategory(e.target.value)}
+            >
+              <option disabled value="">
                 Search to select category...
               </option>
-              <option value="Art and Creative designs">
-                Art and Creative designs
-              </option>
+              <option value="Art and Creative designs">Art and Creative designs</option>
               <option value="Video And Animation">Video And Animation</option>
               <option value="Event Planning">Event Planning</option>
             </select>
           </div>
           <div>
             <label htmlFor="service-type">Service type</label>
-            <select className="jobs_select" id="service-type">
-              <option disabled value="service" selected>
+            <select
+              className="jobs_select"
+              id="service-type"
+              value={serviceType}
+              onChange={(e) => setServiceType(e.target.value)}
+            >
+              <option disabled value="">
                 Search to select category...
               </option>
               <option value="UI/UX Designs">UI/UX Designs</option>
               <option value="Blockchain Developer">Blockchain Developer</option>
               <option value="Web Design">Web Design</option>
               <option value="Video Editing">Video Editing</option>
-              <option value="Translation And Transcription">
-                Translation And Transcription
-              </option>
+              <option value="Translation And Transcription">Translation And Transcription</option>
               <option value="Others">Others</option>
             </select>
           </div>
           <div>
-            <label htmlFor="">Enter a title for your post</label>
+            <label htmlFor="job-title">Enter a title for your post</label>
             <input
               className="jobs_input"
               placeholder="The Landing Page for Elementary School"
+              value={jobTitle}
+              onChange={(e) => setJobTitle(e.target.value)}
             />
             <span>Max. 100 characters</span>
           </div>
           <div>
-            <label htmlFor="">
-              Please describe your project as detailed as you can
-            </label>
-            <input className="jobs_input" />
+            <label htmlFor="job-desc">Please describe your project as detailed as you can</label>
+            <input
+              className="jobs_input"
+              value={jobDesc}
+              onChange={(e) => setJobDesc(e.target.value)}
+            />
             <span>Max. 100 characters</span>
           </div>
           <div>
-            <label htmlFor="">Required contents</label>
+            <label htmlFor="required-skills">Required contents</label>
             <span className="special_span">
-              The Frelancer must have e.g content in HTML, Figma, JavaScript etc
+              The Freelancer must have e.g content in HTML, Figma, JavaScript etc
             </span>
-            <input className="jobs_input" />
+            <input
+              className="jobs_input"
+              value={requiredSkills}
+              onChange={(e) => setRequiredSkills(e.target.value)}
+            />
           </div>
           <div>
-            <label htmlFor="">Number to Hire</label>
-            <span className="special_span">
-              Number of Frelancer to be hired for this Job
-            </span>
-            <input className="jobs_input" placeholder="1" />
+            <label htmlFor="no-to-hire">Number to Hire</label>
+            <span className="special_span">Number of Freelancers to be hired for this Job</span>
+            <input
+              className="jobs_input"
+              placeholder="1"
+              value={noToHire}
+              onChange={(e) => setNoToHire(e.target.value)}
+            />
           </div>
           <Button variant="default--fit" onClick={handleNextClick}>Next</Button>
         </div>
@@ -101,31 +144,48 @@ const Jobs = () => {
       {seconddiv && (
         <div className="jobs_wrapper">
           <div>
-            <label htmlFor="">Budget</label>
+            <label htmlFor="budget">Budget</label>
             <span className="special_span">Leave blank if not sure</span>
             <input
               className="jobs_input"
-              placeholder="The Landing Page for Elementary School"
+              placeholder="Budget"
+              value={budget}
+              onChange={(e) => setBudget(e.target.value)}
             />
           </div>
           <div>
-            <label htmlFor="work-category">Select Country</label>
-            <select className="jobs_select" id="select_country">
-              <option disabled value="category" selected>
+            <label htmlFor="country">Select Country</label>
+            <select
+              className="jobs_select"
+              id="select_country"
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+            >
+              <option disabled value="">
                 Select Country
               </option>
-              <option value="Pending">Pending</option>
-              <option value="Pending">Pending</option>
+              <option value="Canada">Canada</option>
+              <option value="USA">USA</option>
+             
             </select>
           </div>
           <div>
-            <label htmlFor="">Propose start date</label>
-            <input className="jobs_input" />
+            <label htmlFor="start-date">Propose start date</label>
+            <input
+              className="jobs_input"
+              type="datetime-local"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+            />
             <span>Max. 100 characters</span>
           </div>
           <div>
-            <label htmlFor="">Duration</label>
-            <input className="jobs_input" />
+            <label htmlFor="duration">Duration</label>
+            <input
+              className="jobs_input"
+              value={duration}
+              onChange={(e) => setDuration(e.target.value)}
+            />
           </div>
           <div className="jobs_buttons">
             <Button variant="default--fit" onClick={handleBackClick}>Back</Button>
@@ -134,14 +194,14 @@ const Jobs = () => {
         </div>
       )}
 
-      {previewdiv && (
+{previewdiv && (
         <div className="jobs-preview_wrapper">
           <div className="jobs-preview_div1">
             <div>
-              <span>{jobData.datePosted}</span>
-              <p>Freelance job for {jobData.duration}</p>
-              <h3>{jobData.title}</h3>
-              <span>{jobData.country}</span>
+              <span>{new Date().toLocaleDateString()}</span>
+              <p>Freelance job for {duration}</p>
+              <h3>{jobTitle}</h3>
+              <span>{country}</span>
             </div>
             <div>
               <Button variant="default--fit" isDisabled={true}>Under review</Button>
@@ -149,44 +209,42 @@ const Jobs = () => {
           </div>
           <div className="jobs-preview_div2">
             <p>Acceptance Criteria</p>
-            {jobData.acceptanceCriteria.map((criteria, index) => (
-              <span key={index}>{criteria}</span>
-            ))}
+            <span>{jobDesc}</span>
           </div>
           <div className="jobs-preview_div3">
             <div className="jobs-preview_div3_sub">
               <div>
                 <p>Proposed start date</p>
-                <p>{jobData.startDate}</p>
+                <p>{startDate}</p>
               </div>
               <div>
                 <p>Estimated Budget</p>
-                <p>{jobData.budget}</p>
+                <p>{budget}</p>
               </div>
             </div>
             <hr />
             <div className="jobs-preview_div3_sub">
               <div>
                 <p>Preferred candidate</p>
-                <p>{jobData.preferredCandidate}</p>
+                <p>{requiredSkills}</p>
               </div>
               <div>
                 <p>Category</p>
-                <p>{jobData.category}</p>
+                <p>{jobCategory}</p>
               </div>
             </div>
             <hr />
             <div className="jobs-preview_div3_main">
-              <small>Responses: {jobData.responses}</small>
-              <small>Slot Left: {jobData.slotsLeft}</small>
-              <small>Hired: {jobData.hired}</small>
-              <small>Application: {jobData.applications}</small>
+              <small>Responses: 0</small>
+              <small>Slot Left: {noToHire}</small>
+              <small>Hired: 0</small>
+              <small>Application: 0</small>
             </div>
           </div>
           <div className="jobs-link">
             <div>
               <label htmlFor="job-link">Copy Job Link</label>
-              <input id="job-link" value={jobData.jobLink} />
+              <input id="job-link" value="" readOnly />
             </div>
             <div>
               <p>
@@ -195,13 +253,14 @@ const Jobs = () => {
               </p>
             </div>
           </div>
-          <Button variant="default--fit" onClick={handleModalOpen}>Post a Job</Button>
+          <Button variant="default--fit" onClick={handlePostJob}>Post a Job</Button>
         </div>
       )}
 
+
       {isModalOpen && (
         <Modal className="modal">
-          <div onClick={handleModalOpen}>
+          <div onClick={() => setIsModalOpen(false)}>
             <img src={check} alt="submitted" />
             <h3>Job Post Submitted</h3>
             <p>
