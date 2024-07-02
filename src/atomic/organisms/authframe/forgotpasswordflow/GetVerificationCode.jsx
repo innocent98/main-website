@@ -6,7 +6,7 @@ import Image from '../../../atoms/image/Image'
 import Button from '../../../atoms/button/Button'
 import Container from '../../../atoms/container/Container'
 import Loader from '../../../atoms/loader/Loader'
-import useUserPasswordStore from '../../../../../zustand/useUserPasswordStore'
+import useUserPasswordStore from '../../../../../zustand/freelancerStore/useUserPasswordStore'
 
 const GetVerificationCode = ({ length = 6 }) => {
     const navigate = useNavigate()

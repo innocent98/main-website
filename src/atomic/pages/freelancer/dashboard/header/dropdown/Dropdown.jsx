@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import dropdownLinks from './dropdowndata'
 import Container from '../../../../../atoms/container/Container'
 import Image from '../../../../../atoms/image/Image'
-import useAuthStore from '../../../../../../../zustand/useAuthStore'
+import useAuthStore from '../../../../../../../zustand/freelancerStore/useAuthStore'
 import Button from '../../../../../atoms/button/Button'
 import Modal from '../../../../../molecules/modal/Modal'
 

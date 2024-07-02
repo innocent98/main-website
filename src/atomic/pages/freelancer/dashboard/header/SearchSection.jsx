@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import Input from '../../../../atoms/input/Input'
 import Button from '../../../../atoms/button/Button'
 import Container from '../../../../atoms/container/Container'
-import useAuthStore from '../../../../../../zustand/useAuthStore'
+import useAuthStore from '../../../../../../zustand/freelancerStore/useAuthStore'
 
 const SearchSection = () => {
 

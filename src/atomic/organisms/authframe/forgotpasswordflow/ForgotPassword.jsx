@@ -6,7 +6,7 @@ import Loader from '../../../atoms/loader/Loader'
 import Button from '../../../atoms/button/Button'
 import { Link, useNavigate } from 'react-router-dom'
 import Container from '../../../atoms/container/Container'
-import useUserPasswordStore from '../../../../../zustand/useUserPasswordStore'
+import useUserPasswordStore from '../../../../../zustand/freelancerStore/useUserPasswordStore'
 
 const ForgotPassword = () => {
 

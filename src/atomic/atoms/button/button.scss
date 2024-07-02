@@ -56,13 +56,26 @@
 .button--outlined {
   @include btn(
     0,
-    $black,
+    $slate,
     12px,
     1px solid $grey,
     pointer,
     transparent,
-    20%,
+    fit-content,
     8px,
+    7px
+  );
+}
+.button--outlined--full {
+  @include btn(
+    0,
+    $slate,
+    12px,
+    1px solid $grey,
+    pointer,
+    transparent,
+    fit-content,
+    25px,
     7px
   );
 }

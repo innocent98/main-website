@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import axios from "axios";
-import { baseUrl } from "../src/utils/baseUrl";
+import { baseUrl } from "../../src/utils/baseUrl";
 
 // const apiUrl = import.meta.env.VITE_REACT_APP_BASE_URL;
 
@@ -84,7 +84,7 @@ const useAuthStore = create((set) => ({
     try {
       const response = await axios.post(`${baseUrl}/auth/login`, userData);
 
-      const currentUser = response
+      const currentUser = response.data
       set({ user: currentUser, isLoading: false });
 
       //save user login token to localstorage
