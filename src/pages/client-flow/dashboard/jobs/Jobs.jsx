@@ -29,6 +29,16 @@ const Jobs = () => {
     postJob,
   } = useJobStore();
 
+  const handlePostJob = async () => {
+    console.log("clicked");
+    try {
+      await postJob();
+      setIsModalOpen(true);
+    } catch (error) {
+      console.error("Error posting job:", error);
+    }
+  };
+
   const [firstDiv, showFirstDiv] = useState(true);
   const [secondDiv, showSecondDiv] = useState(false);
   const [previewDiv, showPreviewDiv] = useState(false);
@@ -52,15 +62,6 @@ const Jobs = () => {
     showPreviewDiv(true);
   };
 
-  const handlePostJob = async () => {
-    try {
-      await postJob();
-      setIsModalOpen(true);
-    } catch (error) {
-      console.error("Error posting job:", error);
-    }
-  };
-
   return (
     <>
       {firstDiv && (
@@ -76,7 +77,9 @@ const Jobs = () => {
               <option disabled value="">
                 Search to select category...
               </option>
-              <option value="Art and Creative designs">Art and Creative designs</option>
+              <option value="Art and Creative designs">
+                Art and Creative designs
+              </option>
               <option value="Video And Animation">Video And Animation</option>
               <option value="Event Planning">Event Planning</option>
             </select>
@@ -96,7 +99,9 @@ const Jobs = () => {
               <option value="Blockchain Developer">Blockchain Developer</option>
               <option value="Web Design">Web Design</option>
               <option value="Video Editing">Video Editing</option>
-              <option value="Translation And Transcription">Translation And Transcription</option>
+              <option value="Translation And Transcription">
+                Translation And Transcription
+              </option>
               <option value="Others">Others</option>
             </select>
           </div>
@@ -111,7 +116,9 @@ const Jobs = () => {
             <span>Max. 100 characters</span>
           </div>
           <div>
-            <label htmlFor="job-desc">Please describe your project as detailed as you can</label>
+            <label htmlFor="job-desc">
+              Please describe your project as detailed as you can
+            </label>
             <input
               className="jobs_input"
               value={jobDesc}
@@ -122,7 +129,8 @@ const Jobs = () => {
           <div>
             <label htmlFor="required-skills">Required contents</label>
             <span className="special_span">
-              The Freelancer must have e.g content in HTML, Figma, JavaScript etc
+              The Freelancer must have e.g content in HTML, Figma, JavaScript
+              etc
             </span>
             <input
               className="jobs_input"
@@ -132,7 +140,9 @@ const Jobs = () => {
           </div>
           <div>
             <label htmlFor="no-to-hire">Number to Hire</label>
-            <span className="special_span">Number of Freelancers to be hired for this Job</span>
+            <span className="special_span">
+              Number of Freelancers to be hired for this Job
+            </span>
             <input
               className="jobs_input"
               placeholder="1"
@@ -140,7 +150,9 @@ const Jobs = () => {
               onChange={(e) => setNoToHire(e.target.value)}
             />
           </div>
-          <Button variant="default--fit" onClick={handleNextClick}>Next</Button>
+          <Button variant="default--fit" onClick={handleNextClick}>
+            Next
+          </Button>
         </div>
       )}
 
@@ -190,8 +202,12 @@ const Jobs = () => {
             />
           </div>
           <div className="jobs_buttons">
-            <Button variant="default--fit" onClick={handleBackClick}>Back</Button>
-            <Button variant="default--fit" onClick={handleShowPreview}>Preview</Button>
+            <Button variant="default--fit" onClick={handleBackClick}>
+              Back
+            </Button>
+            <Button variant="default--fit" onClick={handleShowPreview}>
+              Preview
+            </Button>
           </div>
         </div>
       )}
@@ -206,7 +222,9 @@ const Jobs = () => {
               <span>{country}</span>
             </div>
             <div>
-              <Button variant="default--fit" isDisabled={true}>Under review</Button>
+              <Button variant="default--fit" isDisabled={true}>
+                Under review
+              </Button>
             </div>
           </div>
           <div className="jobs-preview_div2">
@@ -255,7 +273,9 @@ const Jobs = () => {
               </p>
             </div>
           </div>
-          <Button variant="default--fit" onClick={handlePostJob}>Post a Job</Button>
+          <Button variant="default--fit" onClick={handlePostJob}>
+            Post a Job
+          </Button>
         </div>
       )}
 

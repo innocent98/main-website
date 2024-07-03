@@ -1,19 +1,19 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 import requestMethod from "../../src/utils/helper";
 
 const { userRequest } = requestMethod();
 
 const useJobStore = create((set) => ({
-  jobCategory: '',
-  serviceType: '',
-  jobTitle: '',
-  jobDesc: '',
-  requiredSkills: '',
+  jobCategory: "",
+  serviceType: "",
+  jobTitle: "",
+  jobDesc: "",
+  requiredSkills: "",
   noToHire: 1,
-  budget: '',  
-  country: '',
-  startDate: '',
-  duration: '',
+  budget: "",
+  country: "",
+  startDate: "",
+  duration: "",
   setJobCategory: (jobCategory) => set({ jobCategory }),
   setServiceType: (serviceType) => set({ serviceType }),
   setJobTitle: (jobTitle) => set({ jobTitle }),
@@ -39,7 +39,7 @@ const useJobStore = create((set) => ({
     } = useJobStore.getState();
 
     try {
-      const response = await userRequest.post('/job/create', {
+      const response = await userRequest.post("/job/create", {
         jobCategory,
         serviceType,
         jobTitle,
@@ -51,7 +51,6 @@ const useJobStore = create((set) => ({
         startDate,
         duration,
       });
-
       return response.data;
     } catch (error) {
       console.error("Error posting job:", error);
