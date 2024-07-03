@@ -36,7 +36,7 @@ import Home from "./pages/landing/Home";
 import About from "./pages/landing/About";
 import { Navigate } from "react-router-dom";
 import FaqPage from "./pages/landing/FaqPage";
-import useAuthStore from "../zustand/useAuthStore";
+import useAuthStore from "../zustand/freelancerStore/useAuthStore";
 import Logout from "./atomic/pages/freelancer/dashboard/logout/Logout";
 
 import ClientDashboard from "./pages/client-flow/dashboard/ClientDashboard";

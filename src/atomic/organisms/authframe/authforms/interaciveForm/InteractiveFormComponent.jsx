@@ -7,7 +7,7 @@ import Auth from '../../../../pages/auth/Auth'
 // import ClientSignUp from '../accounts/client/ClientSignUp'
 import Container from '../../../../atoms/container/Container'
 import SignUp from "../../../../../atomic/organisms/authframe/authforms/SignUp"
-import useUserStore from '../../../../../../zustand/useUserStore'
+import useUserStore from '../../../../../../zustand/freelancerStore/useUserStore'
 
 const InteractiveFormComponent = () => {
     // button active states

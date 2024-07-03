@@ -39,6 +39,9 @@ const Button = ({
         case "outlined":
             style = clsx(style, "button--outlined")
             break;
+        case "outlined--full":
+            style = clsx(style, "button--outlined--full")
+            break;
         case "border--slate":
             style = clsx(style, "button--border__slate")
             break;

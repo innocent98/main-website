@@ -9,7 +9,7 @@ import Image from '../../../atoms/image/Image';
 import Button from '../../../atoms/button/Button';
 import Loader from '../../../atoms/loader/Loader';
 import Container from '../../../atoms/container/Container';
-import useAuthStore from '../../../../../zustand/useAuthStore';
+import useAuthStore from '../../../../../zustand/freelancerStore/useAuthStore';
 
 
 const SignIn = () => {

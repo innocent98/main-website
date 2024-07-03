@@ -14,7 +14,7 @@
   text-align: center;
 }
 .container--flexfit {
-  @include flex_fit($gap: 20px);
+  @include flex_fit($gap: 10px);
   align-items: center; //////////to edit///
 }
 
@@ -25,7 +25,6 @@
 
 .container--flex--col {
   display: flex;
-  // align-items: ;
   flex-direction: column
 }
 
@@ -44,6 +43,7 @@
   display: grid;
   grid-template-columns: auto auto;
 }
+
 .container--wrapper {
   padding: 30px;
 }

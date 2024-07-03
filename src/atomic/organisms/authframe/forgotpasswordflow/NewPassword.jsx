@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../../../atoms/button/Button';
 import Loader from '../../../atoms/loader/Loader';
 import Container from '../../../atoms/container/Container';
-import useUserPasswordStore from '../../../../../zustand/useUserPasswordStore';
+import useUserPasswordStore from '../../../../../zustand/freelancerStore/useUserPasswordStore';
 
 const NewPassword = () => {
     const navigate = useNavigate();

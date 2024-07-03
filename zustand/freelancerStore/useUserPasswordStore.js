@@ -1,5 +1,5 @@
 import {create} from "zustand";
-import { baseUrl } from "../src/utils/baseUrl";
+import { baseUrl } from "../../src/utils/baseUrl";
 
 //zustand store for managing user password reset
 const useUserPasswordStore = create((set)=> ({

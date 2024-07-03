@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import Button from '../../../../atoms/button/Button'
 import Modal from '../../../../molecules/modal/Modal'
 import Container from '../../../../atoms/container/Container'
-import useAuthStore from '../../../../../../zustand/useAuthStore'
+import useAuthStore from '../../../../../../zustand/freelancerStore/useAuthStore'
 
 const Logout = () => {
     const {logout} = useAuthStore()

@@ -348,8 +348,19 @@
       .skill-icon {
         color: $black;
         font-size: 18px;
-        margin-left: 11px;
+        // margin-left: 11px;
         cursor: pointer;
+      }
+      .bioInput{
+        width: 100%;
+        resize: none;
+        outline: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid $grey;
+        background-color: transparent;
+        font-family: "Nunito", sans-serif;
       }
     }
 
