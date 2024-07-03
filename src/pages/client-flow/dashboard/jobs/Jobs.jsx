@@ -4,7 +4,6 @@ import Modal from "../../../../atomic/molecules/modal/Modal";
 import check from "../../../../assets/check-circle.svg";
 import useJobStore from "../../../../../zustand/client/useJobStore.js";
 
-
 const Jobs = () => {
   const {
     jobCategory,
@@ -30,37 +29,41 @@ const Jobs = () => {
     postJob,
   } = useJobStore();
 
-  const [firstdiv, showFirstdiv] = useState(true);
-  const [seconddiv, showSeconddiv] = useState(false);
-  const [previewdiv, showPreviewdiv] = useState(false);
+  const [firstDiv, showFirstDiv] = useState(true);
+  const [secondDiv, showSecondDiv] = useState(false);
+  const [previewDiv, showPreviewDiv] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleNextClick = () => {
-    showFirstdiv(false);
-    showSeconddiv(true);
+    showFirstDiv(false);
+    showSecondDiv(true);
   };
 
   const handleBackClick = () => {
-    showFirstdiv(true);
-    showSeconddiv(false);
-    showPreviewdiv(false);
+    showFirstDiv(true);
+    showSecondDiv(false);
+    showPreviewDiv(false);
     setIsModalOpen(false);
   };
 
   const handleShowPreview = () => {
-    showFirstdiv(false);
-    showSeconddiv(false);
-    showPreviewdiv(true);
+    showFirstDiv(false);
+    showSecondDiv(false);
+    showPreviewDiv(true);
   };
 
   const handlePostJob = async () => {
-    await postJob();
-    setIsModalOpen(true);
+    try {
+      await postJob();
+      setIsModalOpen(true);
+    } catch (error) {
+      console.error("Error posting job:", error);
+    }
   };
 
   return (
     <>
-      {firstdiv && (
+      {firstDiv && (
         <div className="jobs_wrapper">
           <div>
             <label htmlFor="work-category">Select Work Category</label>
@@ -141,7 +144,7 @@ const Jobs = () => {
         </div>
       )}
 
-      {seconddiv && (
+      {secondDiv && (
         <div className="jobs_wrapper">
           <div>
             <label htmlFor="budget">Budget</label>
@@ -166,7 +169,6 @@ const Jobs = () => {
               </option>
               <option value="Canada">Canada</option>
               <option value="USA">USA</option>
-             
             </select>
           </div>
           <div>
@@ -194,7 +196,7 @@ const Jobs = () => {
         </div>
       )}
 
-{previewdiv && (
+      {previewDiv && (
         <div className="jobs-preview_wrapper">
           <div className="jobs-preview_div1">
             <div>
@@ -256,7 +258,6 @@ const Jobs = () => {
           <Button variant="default--fit" onClick={handlePostJob}>Post a Job</Button>
         </div>
       )}
-
 
       {isModalOpen && (
         <Modal className="modal">

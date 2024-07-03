@@ -1,8 +1,5 @@
-import {create} from 'zustand';
-import axios from 'axios';
-import requestMethod from "../../src/utils/helper.jsx"
-import {baseUrl} from "../../src/utils/baseUrl"
-
+import { create } from 'zustand';
+import requestMethod from "../../src/utils/helper";
 
 const { userRequest } = requestMethod();
 
@@ -13,11 +10,10 @@ const useJobStore = create((set) => ({
   jobDesc: '',
   requiredSkills: '',
   noToHire: 1,
-  budget: "",  
+  budget: '',  
   country: '',
   startDate: '',
   duration: '',
-  token: '',
   setJobCategory: (jobCategory) => set({ jobCategory }),
   setServiceType: (serviceType) => set({ serviceType }),
   setJobTitle: (jobTitle) => set({ jobTitle }),
@@ -28,7 +24,6 @@ const useJobStore = create((set) => ({
   setCountry: (country) => set({ country }),
   setStartDate: (startDate) => set({ startDate }),
   setDuration: (duration) => set({ duration }),
-  setToken: (token) => set({ token }),
   postJob: async () => {
     const {
       jobCategory,
@@ -44,25 +39,22 @@ const useJobStore = create((set) => ({
     } = useJobStore.getState();
 
     try {
-      const response = await axios.post(`${baseUrl}/job/create`,
-        {
-          jobCategory,
-          serviceType,
-          jobTitle,
-          jobDesc,
-          requiredSkills,
-          noToHire,
-          budget,
-          country,
-          startDate,
-          duration,
-        },  userRequest()
-       
-      );
+      const response = await userRequest.post('/job/create', {
+        jobCategory,
+        serviceType,
+        jobTitle,
+        jobDesc,
+        requiredSkills,
+        noToHire,
+        budget,
+        country,
+        startDate,
+        duration,
+      });
 
       return response.data;
     } catch (error) {
-      console.error(error);
+      console.error("Error posting job:", error);
     }
   },
 }));
