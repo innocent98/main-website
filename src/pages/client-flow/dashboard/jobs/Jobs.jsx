@@ -35,16 +35,20 @@ const Jobs = () => {
   const [secondDiv, showSecondDiv] = useState(false);
   const [previewDiv, showPreviewDiv] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [jobApproval, setJobApproval] = useState(null)
+  //const [isLoading, setIsLoading] = useState(false)
 
   const handlePostJob = async () => {
-    console.log('clicked');
+    setIsLoading(true)
     try {
      const response =  await postJob();
      if (response ) {
       setIsModalOpen(true);
+      setJobApproval(response)
       handleShowPreview()
+
      } else (
-      ""
+      console.log("error")
      ) 
     } catch (error) {
       console.error('Error posting job:', error);
@@ -188,7 +192,7 @@ const Jobs = () => {
           </div>
           <div className="jobs_buttons">
             <Button variant="default--fit" onClick={handlePostJob}>
-              Post a Job
+            Post a Job
             </Button>
             <Button variant="default--fit" onClick={handleBackClick}>
               Back
@@ -207,8 +211,9 @@ const Jobs = () => {
               <span>{country}</span>
             </div>
             <div>
-              <Button variant="default--fit" isDisabled={true} style={{color:"white"}}>
-                Under review
+              <Button variant="default--fit" isDisabled={false} style={{color:"white"}}>
+              {jobApproval?.data?.status === "pending"?  'Unders Review' : 'Submitted' }
+               
               </Button>
             </div>
           </div>

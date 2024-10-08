@@ -36,6 +36,7 @@ const useJobStore = create((set) => ({
       country,
       startDate,
       duration,
+      isLoading,
     } = useJobStore.getState();
 
     try {
@@ -49,7 +50,7 @@ const useJobStore = create((set) => ({
         budget,
         country,
         startDate,
-        duration,
+
       });
       return response.data;
     } catch (error) {

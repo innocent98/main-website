@@ -12,6 +12,9 @@
         gap: 40px;
 
         .freelancer-profile-left {
+            .freelancer-profile-left-content {
+
+            
             display: flex;
             flex-direction: column;
             flex: 1;
@@ -74,16 +77,10 @@
                     }
                 }
             }
-            .freelancer-CTA {
-                display: flex;
-                justify-content: space-between;
-                :first-child {
-                   width: 180px;
-                }
-                :last-child {
-                    border-radius: 8px;
-                    width: 180px;
-                 }
+            .freelancer-CTA-convo {
+              
+                width: 180px;
+                
             }
             .freelancer-bio {
                 display: flex;
@@ -117,6 +114,20 @@
                     gap: 12px;
                 }
             }
+            }
+            .freelancer-cta {
+                padding: 0 25px;
+                margin-top: 20px;
+                display: flex;
+                justify-content: space-between;
+                :first-child {
+                   width: 180px;
+                }
+                :last-child {
+                    border-radius: 8px;
+                    width: 180px;
+                 }
+            }
         }
 
         
@@ -137,12 +148,16 @@
                     display: flex;
                    gap: 48px;
                     .work {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
                         width: 300px;
                         img {
                            width: 100%;
                         }
                         .work-info {
                             display: flex;
+                            gap: 8px;
                             flex-direction: column;
                             :first-child {
                                 font-weight: 700;
@@ -202,32 +217,46 @@
                     p {
                         margin: 0;
                         font-size: 20px;
+                       
 
                     }
                     div {
                         display: flex;
                         gap: 12px;
                         align-items: center;
+                        
                     }
+                   
                 }
-            }      
+                .review-content {
+                    p {
+                        margin: 0;
+                        line-height: 23px;
+                    }
+                } 
+                
+            }   
+            
         }
+      
     }
 }
 
 @media screen  and (max-width: 600px) {
     .freelancer-profile_container {
-        padding: 10px 20px;
+        padding: 10px 10px;
         .freelancer-profile_layout {
             display: flex;
             flex-direction: column;
             gap: 20px;
     
             .freelancer-profile-left {
+
+                .freelancer-profile-left-content{
                 display: flex;
                 flex-direction: column;
                 flex: 1;
-                padding: 32px;
+                padding: 10px;
                 gap: 20px;
                 border: solid 1px #cccccc;
                 border-radius: 8px;
@@ -316,6 +345,20 @@
                     }
                 }
             }
+            .freelancer-cta {
+                padding: 0 20px;
+                margin-top: 20px;
+                display: flex;
+                justify-content: space-between;
+                :first-child {
+                   width: 140px;
+                }
+                :last-child {
+                    border-radius: 8px;
+                    width: 140px;
+                 }
+            }
+            }
     
             
             .freelancer-profile-right {
@@ -380,8 +423,18 @@
                     .reviewer-info {
                         display: flex;
                     }
-                }      
+                }  
+                .review-content {
+                    p {
+                        margin: 0;
+                        line-height: 15px;
+                        font-size: 14px;
+                       
+                    }
+                } 
+                    
             }
+            
         }
     }
 }
