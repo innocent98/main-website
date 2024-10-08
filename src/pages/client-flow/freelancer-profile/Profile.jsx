@@ -137,7 +137,7 @@ const Profile = () => {
                 </div>
                 <div className="review-content ">
                   <p>Ojay is a clear communicator, providing regular updates and
-                  promptly addressing any questions or concerns. He exceeded my
+                  promptly addressing any questions or concerns. they exceeded my
                   expectations with their attention to detail and innovative
                   approach to solving challenges. I highly recommend
                   Freelancer's Name for anyone seeking a dedicated and talented
