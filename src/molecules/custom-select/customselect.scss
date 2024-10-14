@@ -1,0 +1,84 @@
+@import "../../scss//colors.scss";
+
+// CustomSelect.scss
+.custom-select {
+    position: relative;
+    font-family: inherit;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    background: #ffffff;
+    font-size: 16px;
+
+    .select-selected {
+      color: #ffffff;
+      cursor: pointer;
+      position: relative;
+      height: 48px;
+      color: #777777;
+      text-indent: 10px;
+      display: flex;
+      justify-content: center;
+  
+      &::after {
+        content: "";
+        position: absolute;
+        top: 40%;
+        right: 20px;
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid #000000;
+        border-bottom: 2px solid #000000;
+        transform: rotate(45deg) translateY(-50%);
+        transform-origin: center;
+      }
+  
+      &.select-arrow-active::after {
+        border-color: transparent transparent #ffffff transparent;
+        top: 7px;
+      }
+    }
+  
+    .select-items {
+      position: absolute;
+      background-color: rgb(255, 255, 255);
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      display: none;
+      padding: 10px 0px;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+      max-height: 300px;
+     
+  
+      div {
+        color: #777777;
+        padding: 6px 16px;
+        cursor: pointer;
+       
+  
+        &:hover,
+        &.same-as-selected {
+          color: $zeal_purple;
+          background-color: none;
+        }
+      }
+    }
+  
+    &.select-open .select-items {
+      display: block;
+    }
+  }
+
+  @media screen  and (max-width: 600px) { 
+    .custom-select {
+      border-radius: 6px;
+      font-size: 16px;
+  
+      .select-selected {
+        height: 38px;
+      }  
+  }}
+  

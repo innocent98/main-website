@@ -66,7 +66,7 @@ const App = () => {
       <Tab title="Dashboard">
         <Dashboard />
       </Tab>
-      <Tab title="Jobs">
+      <Tab title="Create gig">
         <Jobs />
       </Tab>
       <Tab title="Discover Talent">

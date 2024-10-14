@@ -13,6 +13,7 @@ const Profile = () => {
       </Link>
       <div className="freelancer-profile_layout">
         <div className="freelancer-profile-left">
+          <div className="freelancer-profile-left-content">
           <div className="freelancer-info">
             <img src={avatar} alt="" />
             <div>
@@ -21,9 +22,8 @@ const Profile = () => {
             </div>
           </div>
 
-          <div className="freelancer-CTA">
-            <Button variant="default--fit">Accept</Button>
-            <Button variant="border--fit">Ignore</Button>
+          <div className="freelancer-CTA-convo">
+            <Button variant="default--fit">Start Conversation</Button>
           </div>
 
           <div className="freelancer-bio">
@@ -52,7 +52,15 @@ const Profile = () => {
               <span style={{ fontWeight: "600" }}>Lagos, Nigeria</span>
             </div>
           </div>
+          </div>
+          <div className="freelancer-cta">
+          <Button variant="default--fit">Accept</Button>
+          <Button variant="border--fit">Ignore</Button>
+          </div>
+       
         </div>
+       
+        
         <div className="freelancer-profile-right">
           <div className="fp-top">
             <div className="myworks">
@@ -100,11 +108,11 @@ const Profile = () => {
                   </div>
                 </div>
                 <div className="review-content ">
-                  I had the pleasure of working with Ojay on a recent project
+                  <p>I had the pleasure of working with Ojay on a recent project
                   and I am beyond impressed with their skills and
                   professionalism. He demonstrated a deep understanding of the
                   task at hand and delivered high-quality work within the
-                  agreed-upon timeframe.
+                  agreed-upon timeframe.</p>
                 </div>
               </div>
 
@@ -128,12 +136,12 @@ const Profile = () => {
                   </div>
                 </div>
                 <div className="review-content ">
-                  Ojay is a clear communicator, providing regular updates and
-                  promptly addressing any questions or concerns. He exceeded my
+                  <p>Ojay is a clear communicator, providing regular updates and
+                  promptly addressing any questions or concerns. they exceeded my
                   expectations with their attention to detail and innovative
                   approach to solving challenges. I highly recommend
                   Freelancer's Name for anyone seeking a dedicated and talented
-                  professional.
+                  professional.</p>
                 </div>
               </div>
             </div>
