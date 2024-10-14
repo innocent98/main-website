@@ -1,3 +1,3 @@
-const baseUrl = "https://api.zealworkers.com/api/v1";
+const baseUrl = "https://main-api-two.vercel.app/api/v1";
 
 export { baseUrl };
